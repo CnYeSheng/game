@@ -1,0 +1,117 @@
+h1 {
+  text-align: center;
+  padding-bottom: 50px;;
+}
+
+p {
+  padding-bottom: 10px;
+}
+
+p a{
+  color: black;
+  text-decoration: underline;
+}
+
+.navbar-brand {
+  font-size: x-large;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+td {
+  border: 1px solid #DCDCDC;
+}
+
+td input{
+  height:45px;
+  width: 45px;
+  text-align: center;
+  border: 2px none #DCDCDC;;
+  font-size: 22px;
+  color: #696969;
+}
+
+#puzzleBoard {
+  margin-bottom: 15px;
+} 
+
+input:focus{
+  outline: 2px solid #D3D3D3;
+  background-color: #F5F5DC;
+}
+
+.right-boundary {
+  border-right: 2px solid #696969;
+}
+
+.bottom-boundary {
+  border-bottom: 2px solid #696969;
+}
+
+.top-boundary {
+  border-top: 2px solid #696969;
+}
+
+.left-boundary {
+  border-left: 2px solid #696969;
+}
+
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #FFFAFA;
+  margin-bottom: 10%;
+  margin-top: 7rem;
+}
+
+button {
+  margin-top: 20px;
+}
+
+#displayProcessForm{
+  padding-top: 50px;
+  padding-bottom: 30px; 
+}
+
+#displayProcessForm input {
+  margin-top: 10px;
+}
+
+#progressBackground {
+  width: 100%;
+  background-color: #DCDCDC;
+}
+
+#progressBar {
+  width: 0%;
+  height: 5px;
+  background-color: #696969;
+ }
+
+#descriptionArea {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+input[type='range'] {
+  width: 240px;
+  height: 30px;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+.range-container {
+  margin: 30px 0 0 0;
+  padding: 10px 0 0 0;
+}
+
+.range-container label {
+  margin-top: 20px;
+}
+  
