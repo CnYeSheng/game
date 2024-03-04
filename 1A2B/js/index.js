@@ -8,6 +8,8 @@ var inputNum = [];
 var globalInputCounter = 0;
 var answer = random4Numbers();
 
+console.log("正確答案:",answer)
+
 document.querySelectorAll('.inputNumberBtn').forEach(e => {
   e.addEventListener('click', recordInput);
 });
@@ -31,7 +33,7 @@ function random4Numbers() {
 
 function checkAnswer() {
   if (inputNum.length != 4) {
-    window.alert("沒有4位數，母湯喔!");
+    window.alert("請輸入4位數字");
     return;
   }
 
@@ -46,13 +48,21 @@ function checkAnswer() {
   return hint;
 }
 
+function checkDuplicate(num) {
+  return inputNum.includes(num);
+}
+
 function recordInput(e) {
   var input = e.target.innerHTML;
-  if (inputNum.length !== 4) {
+  if (inputNum.length < 4 && !checkDuplicate(input)) {
     inputNum.push(input);
     document.querySelectorAll('.displayRow').forEach((e, index) => {
       e.innerHTML = inputNum[index] ? inputNum[index] : '-';
     });
+  } else if (inputNum.length >= 4) {
+    window.alert("最多輸入4位數字");
+  } else {
+    window.alert("數字不能重複!");
   }
 }
 
@@ -63,14 +73,15 @@ function cleanAnswer() {
   inputNum = [];
 }
 
-function submit(){
+function submit() {
   var result = checkAnswer();
-  if(result){
-    showResult(inputNum.toString().replace(/,/g,''), `${result.A}A${result.B}B`);
+  if (result) {
+    showResult(inputNum.toString().replace(/,/g, ''), `${result.A}A${result.B}B`);
+    console.log("輸入答案:", inputNum); // 在提交時打印
     cleanAnswer();
   }
   if (result.A === 4) {
-    window.alert("恭喜你贏了!");
+    window.alert("恭喜你成功了!");
   }
 }
 
