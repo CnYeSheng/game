@@ -1,0 +1,73 @@
+/* Resetting default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'TaiwanPearl-Regular', sans-serif;
+    background-color: #f8f9fa;
+    color: #333333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+#title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#games-chose {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    border: 2px solid #7952b3;
+    background-color: #7952b3;
+    color: white;
+    border-radius: 12px;
+    font-size: 24px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #5a3e8c;
+}
+
+.update-section {
+    background-color: #f0f0f0;
+    border-left: 5px solid #7952b3;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #dc3545;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

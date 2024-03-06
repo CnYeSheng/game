@@ -1,67 +1,53 @@
 <!DOCTYPE html>
+<html lang="zh-TW">
+
 <head>
-    <title>小遊戲</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小遊戲</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<div id="title">
-    <h1>小遊戲</h1>
-    <h2>請選擇要玩的遊戲</h2>
-</div>
-<div id="games-chose">
-    <a href="./1A2B/" target="_blank" class="btn">1A2B</a>
-    <a href="./2048/" target="_blank" class="btn">2048</a>
-    <a href="./井字棋/" target="_blank" class="btn">井字棋</a>
-    <a href="./俄羅斯方塊/" target="_blank" class="btn">俄羅斯方塊</a>
-    <a href="./像素鳥/" target="_blank" class="btn">像素鳥</a>
-    <a href="./國際象棋/" target="_blank" class="btn">國際象棋(無法遊玩)</a>
-    <a href="./小恐龍/" target="_blank" class="btn">小恐龍</a>
-    <a href="./數獨/" target="_blank" class="btn">數獨</a>
-    <a href="./數獨破解/" target="_blank" class="btn">數獨破解</a>
-    <a href="./滑板/" target="_blank" class="btn">滑板</a>
-    <a href="./踩地雷/" target="_blank" class="btn">踩地雷</a>
-    <a href="./貪吃蛇/" target="_blank" class="btn">貪吃蛇</a>
-    <a href="./小精靈/" target="_blank" class="btn">小精靈</a>
-    <a href="./接龍/" target="_blank" class="btn">接龍</a>
-    <a href="./西洋棋/" target="_blank" class="btn">西洋棋</a>
-</div>
+    <div id="title">
+        <h1>小遊戲</h1>
+        <h2>請選擇要玩的遊戲</h2>
+    </div>
 
-<h1>New Update:</h1>
-    <h3>03/06/24</h3>
-    接龍、西洋棋
+    <div id="games-chose">
+        <a href="./1A2B/" target="_blank" class="btn">1A2B</a>
+        <a href="./2048/" target="_blank" class="btn">2048</a>
+        <a href="./井字棋/" target="_blank" class="btn">井字棋</a>
+        <a href="./俄羅斯方塊/" target="_blank" class="btn">俄羅斯方塊</a>
+        <a href="./像素鳥/" target="_blank" class="btn">像素鳥</a>
+        <a href="./小恐龍/" target="_blank" class="btn">小恐龍</a>
+        <a href="./數獨/" target="_blank" class="btn">數獨</a>
+        <a href="./數獨破解/" target="_blank" class="btn">數獨破解</a>
+        <a href="./滑板/" target="_blank" class="btn">滑板</a>
+        <a href="./踩地雷/" target="_blank" class="btn">踩地雷</a>
+        <a href="./貪吃蛇/" target="_blank" class="btn">貪吃蛇</a>
+        <a href="./小精靈/" target="_blank" class="btn">小精靈</a>
+        <a href="./接龍/" target="_blank" class="btn">接龍</a>
+        <a href="./西洋棋/" target="_blank" class="btn">西洋棋</a>
+    </div>
 
-    <h3>03/05/24</h3>
-    踩地雷、貪吃蛇、小精靈
+    <h1>New Update:</h1>
+    <div class="update-section">
+        <h3>03/06/24</h3>
+        <p>新增：接龍、西洋棋</p>
+        <p>Index頁面修改(使用Claud及ChatGPT則一)</p>
+        <p>原"國際象棋(無法遊玩)"刪除</p>
+    </div>
+    <div class="update-section">
+        <h3>03/05/24</h3>
+        <p>新增：踩地雷、貪吃蛇、小精靈</p>
+    </div>
 
-<footer>
-    &copy; 2024 <a href="https://wmcc.jp.eu.org" style="text-decoration:none; color: white;">YeSheng</a> <a href="./遊戲開源碼.md" style="text-decoration:none; color: white;">source</a>
-</footer>
+    <footer>
+        &copy; 2024 <a href="https://wmcc.jp.eu.org" target="_blank">YeSheng</a> <a href="./遊戲開源碼.md" target="_blank">source</a>
+    </footer>
 
 </body>
 
-<style>
-    #title {
-        text-align: center;
-    }
-    .btn {
-        text-decoration: none;
-        border: 1px solid #333333;
-        background-color: rgb(123, 85, 226);
-        color: white;
-        border-radius: 12px;
-        font-size: 48px;
-    }
-    footer {
-        text-align: center;
-        padding: 5px;
-        background-color: red;
-        color: white;
-    }
-    @font-face {
-        font-family: TaiwanPearl-Regular;
-        src: url(https://cdn.jsdelivr.net/gh/max32002/TaiwanPearl@2.125/webfont/TaiwanPearl-Regular.woff2) format("woff2")
-            , url(https://cdn.jsdelivr.net/gh/max32002/TaiwanPearl@2.125/webfont/TaiwanPearl-Regular.woff) format("woff");
-    }
-</style>
+</html>
