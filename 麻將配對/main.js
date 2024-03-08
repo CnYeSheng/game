@@ -97,11 +97,11 @@ async function checkMovePossible(message) {
 
 function updateStatus(moves) {
     if (moves.length == 0) {
-        writeStatus("There are no moves left. Gameover. 🚧");
+        writeStatus("沒有剩餘動作 Gameover. 🚧");
     } else if (moves.length === 1) {
-        writeStatus("There is <strong>exactly one</strong> possible move.");
+        writeStatus("<strong>只有一個</strong>可能的動作");
     } else {
-        writeStatus("There are <strong>" + moves.length + "</strong> possible moves.");
+        writeStatus("有 <strong>" + moves.length + "</strong> 可能的移動");
     }
 }
 

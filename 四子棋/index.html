@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Connect Four - Connect four game written in html4, css3 and javascript</title>
+  <title>四子棋</title>
   <link rel = "icon" href="Logo.png"
   type = "png">
   <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
@@ -16,7 +16,7 @@
 
 	<div class="flex">
 		<p v-html="message" role="status"></p>
-		<button :disabled="!areThereMoves" @click="startNewGame">New game</button>
+		<button :disabled="!areThereMoves" @click="startNewGame">新遊戲</button>
 	</div>
 
 	<div id="button-board">

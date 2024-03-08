@@ -22,7 +22,7 @@ const game = new Vue({
   //Prevent users from navigating away from a game accidentally
   mounted() {
     window.onbeforeunload = () => {
-      if (this.areThereMoves) return "Are you sure you want to leave this game?";
+      if (this.areThereMoves) return "您確定要離開這個遊戲嗎?";
       //if we return nothing here (just calling return;) then there will be no pop-up question at all
     };
   },
@@ -138,7 +138,7 @@ const game = new Vue({
     startNewGame() {
       if (this.areThereMoves) {
         const areYouSure = confirm(
-        "Start a new game? This one will be lost four-ever :)");
+        "確定要開新戰局嗎?");
 
         if (!areYouSure) return;
       }
@@ -160,11 +160,11 @@ const game = new Vue({
 
     message() {
       if (this.isADraw) {
-        return `<b style="color: inherit">DRAW!</b>`;
+        return `<b style="color: inherit">平手!</b>`;
       } else if (this.gameOver) {
         return `<b class="${this.currentTurnColor}">${this.currentTurnColor} WINS! 🎉</b>`;
       } else {
-        return `<b class="${this.currentTurnColor}">${this.currentTurnColor}</b>’s turn`;
+        return `<b class="${this.currentTurnColor}">${this.currentTurnColor}</b>’s 回合`;
       }
     },
 

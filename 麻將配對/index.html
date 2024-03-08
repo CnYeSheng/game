@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mahjong Solitaire</title>
+        <title>麻將配對</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
@@ -15,41 +15,41 @@
         <meta name="msapplication-config" content="./favicon/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
         <meta property="og:image" content="./img/screenshot.png">
-        <meta property="og:title" content = "Mahjong Solitaire">
-        <meta property="og:description" content="Play the classic game Mahjong Solitaire directly in your browser.">
+        <meta property="og:title" content = "麻將配對">
+        <meta property="og:description" content="Play the classic game 麻將配對 directly in your browser.">
         <meta property="og:type" content="Website">
         <meta property="og:url" content="https://mahjong-solitaire.netlify.app/">
-        <meta property="og:site_name" content="Mahjong Solitaire">
+        <meta property="og:site_name" content="麻將配對">
     </head>
     <body>
-            <header>Mahjong solitaire</header>
+            <header>麻將</header>
 
             <div id="wrapper">
                 <main>
-                    <section id="infoText">               
+                    <!--<section id="infoText">               
                         <p>
-                            Select two identical tiles to remove them. Once all tiles are
-                            removed, the game is won.
+                            選擇兩個相同的圖塊將其移除。 一旦所有瓷磚都被
+                             移除，遊戲獲勝。
                         </p>
                         <p>
-                            Only open tiles can be selected, meaning that they are on top and
-                            at least on one of their sides (left, right) there is no tile.
+                            只能選擇開放的圖塊，這意味著它們位於頂部並且
+                             至少在它們的一側（左、右）沒有瓷磚。
                         </p>
                         <p>
-                            It may happen that you make a wrong move after which the game
-                            cannot be won anymore.
+                            您可能會做出錯誤的舉動，然後遊戲結束
+                             不能再贏了。
                         </p>
                         <p>
-                            Check out
+                            查看
                             <a
                                 href="https://en.wikipedia.org/wiki/Mahjong_tiles"
                                 target="_blank"
-                                >Wikipedia</a
+                                >維基百科</a
                             >
-                            for a description of all the 144 tiles. They fall into 7
-                            categories (dots, bamboos, characters, winds, dragons, seasons,
-                            flowers). Every tile appears exactly 4 times, except for the 4
-                            seasons
+                            有關所有 144 個圖塊的描述。 他們分為7種
+                             類別（點、竹、字、風、龍、季節、
+                             花朵）。 每個圖塊剛好出現 4 次，除了 4
+                             季節
                         </p>
                         <p>
                             <img src="./img/season1.png" />
@@ -58,7 +58,7 @@
                             <img src="./img/season4.png" />
                         </p>
                         <p>
-                            and the 4 flowers
+                            和4朵花
                         </p>
                         <p>
                             <img src="./img/flower1.png" />
@@ -67,19 +67,19 @@
                             <img src="./img/flower4.png" />
                         </p>
                         <p>
-                            which each appear only once. For this reason every pair of seasons
-                            (or flowers) can be removed as well, even if they are not
-                            identical.
+                            每個只出現一次。 為此每一雙季節
+                             （或花）也可以去除，即使它們不是
+                             完全相同的。
                         </p>
                         <p>
-                            You can find the code of this game on
+                            您可以在以下位置找到該遊戲的程式碼
                             <a
                                 target="_blank"
                                 href="https://github.com/ScriptRaccoon/mahjong-solitaire"
                                 >GitHub</a
                             >.
                         </p>                               
-                    </section>
+                    </section>-->
 
                     <section id="game"></section>     
                 </main>
@@ -87,9 +87,9 @@
                 <footer>
                     <span id="statusText"></span>
                     <span id="controls">
-                        <button id="hintButton">Hint</button>
-                        <button id="restartButton">Restart</button>
-                        <button id="infoButton">Info</button>
+                        <button id="hintButton">提示</button>
+                        <button id="restartButton">重新開始</button>
+                        <!--<button id="infoButton">資訊</button>-->
                     </span>
                 </footer> 
             </div>

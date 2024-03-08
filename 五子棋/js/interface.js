@@ -120,17 +120,17 @@ function showWinDialog(game){
         var who=(function(string){ return string.charAt(0).toUpperCase() + string.slice(1);})(game.getCurrentPlayer().color);
         $("#game-won h4").html(who+' Won!');
         gameInfo.value=who+' won.'
-        $("#win-content").html(who+' won the game. Play again?');
+        $("#win-content").html(who+' 贏了遊戲 再玩一次？');
         $('#happy-outer').fadeIn(500);
     }else{
         if(game.getCurrentPlayer() instanceof HumanPlayer){
-            $("#game-won h4").html('You Won!');
-            $("#win-content").html('Great dude! You won the game. Can you do it again?');
+            $("#game-won h4").html('你贏了!');
+            $("#win-content").html('哇！ 你贏了 要不要再來一局？');
             gameInfo.value='You won.'
             $('#sad-outer').fadeIn(800);
         }else{
-            $("#game-won h4").html('You Lost.');
-            $("#win-content").html("Oh damn! We can't let AI take over. Try again?");
+            $("#game-won h4").html('你輸了');
+            $("#win-content").html("哈哈😄！ 你要再多練練啊 不服輸？ 再試一次吧！");
             gameInfo.value='AI won.'
             $('#happy-outer').fadeIn(800);
         }
