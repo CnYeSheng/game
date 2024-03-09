@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>解答之書</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>解答之書</h1>
+    <div id="inputForm">
+      <!--<label for="question">請輸入你的問題：</label>
+      <input type="text" id="question" class="form-control" placeholder="在這裡輸入你的問題">-->
+      <div class="mt-3">
+        <label>選擇版本：</label>
+        <select id="versionSelect" class="form-control">
+          <option value="general">一般版</option>
+          <option value="love">愛情版</option>
+          <option value="combined">綜合版</option>
+        </select>
+      </div>
+    </div>
+    
+    <!-- 書的封面 -->
+    <img id="bookCover" src="./answers-book.jpg" class="img-fluid" alt="解答之書封面" width="400" height="518" onclick="showRandomAnswer()">
+    
+    <!-- 隨機回答的長方形 -->
+    <div id="randomAnswer" class="randomAnswer"></div>
+
+    <!-- 再一次按鈕 -->
+    <button id="againButton" class="btn btn-secondary" onclick="showInputForm()">再一次</button>
+  </div>
+</body>
+</html>

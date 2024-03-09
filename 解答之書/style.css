@@ -1,0 +1,102 @@
+/* Resetting default margin and padding */
+body, h1, h2 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding to the container */
+    box-sizing: border-box; /* Include padding in the width */
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue color for headings */
+  }
+  
+  #inputForm {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #question {
+    width: 100%;
+    max-width: 400px; /* Adjust the width of the input */
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding in the width */
+  }
+  
+  #versionSelect {
+    width: 100%;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding in the width */
+    margin-top: 10px;
+  }
+  
+  #bookCover {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    max-width: 100%; /* Make sure the image is responsive */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease; /* Add a smooth transition */
+  }
+  
+  #bookCover:hover {
+    transform: scale(1.05); /* Scale up the image on hover */
+  }
+  
+  .randomAnswer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 740px;
+    height: 620px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 36px;
+    border: 1px solid #eaeaea;
+    background: #fff;
+    border-radius: 6px;
+    padding: 0 50px;
+    box-shadow: 1px 2px 8px #888;
+    font-family: acme, sans-serif;
+    white-space: pre-line;
+
+  }
+  
+  
+  
+  #againButton {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #againButton:hover {
+    background-color: #0056b3; /* Darken the background on hover */
+  }
+  
