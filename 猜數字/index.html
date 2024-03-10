@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>猜數字遊戲</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4 center">猜數字遊戲</h1>
+    <div id="gameButtons" class="mb-3 center">
+      <button onclick="startGame(100)" class="btn btn-primary me-2">簡單 (1~100)</button>
+      <button onclick="startGame(500)" class="btn btn-primary me-2">中等 (1~500)</button>
+      <button onclick="startGame(1000)" class="btn btn-primary">困難 (1~1000)</button>
+    </div>
+    <div id="gameArea">
+      <div class="mb-3 center">
+        <div id="timer">時間： 00 秒</div>
+        <div id="attempts">次數： 00 次</div>
+      </div>
+      <p id="gameMessage" class="center"></p>
+      <input type="number" id="guessInput" class="form-control center" placeholder="請輸入你的猜測數字">
+      <button onclick="checkGuess()" class="btn btn-primary mt-3 center">送出</button>
+    </div>
+  </div>
+</body>
+</html>
