@@ -1,4 +1,76 @@
 /* Resetting default margins and paddings */
+@keyframes slideInAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+@keyframes slideOutAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+      -webkit-transform: translateY(10px);
+      -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+      -o-transform: translateY(10px);
+}
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+@keyframes scaleAnimation {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+@keyframes fadeInUpAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+@keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+      -webkit-transform: translateY(-10px);
+      -moz-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      -o-transform: translateY(-10px);
+}
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+@keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+      transform: translateX(-20px); /* 從左側偏移 20px */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0); /* 回到原始位置 */
+    }
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -19,17 +91,6 @@
     animation: slideInAnimation 0.5s ease-in-out;
   }
   
-  @keyframes slideInAnimation {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
   h1 {
     font-size: 2.5rem;
   }
@@ -41,13 +102,16 @@
   
   h3 {
     font-size: 1.4rem;
-  }
+    animation: sfadeInAnimation 0.5s ease-in-out  ;
+    -webkit-animation: sfadeInAnimation 0.5s ease-in-out  ;
+}
 
   h1,
-  h2,
-  footer {
+  h2{
     animation: slideInAnimation 0.5s ease-in-out;
-  }
+    -webkit-animation: slideInAnimation 0.5s ease-in-out;
+}
+
   #games-chose {
     display: flex;
     flex-wrap: wrap;
@@ -66,16 +130,7 @@
     transition: background-color 0.3s ease;
     animation: scaleAnimation 0.5s ease-in-out;
   }
-  
-  @keyframes scaleAnimation {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-  
+
   .btn:hover {
     background-color: #5a3e8c;
   }
@@ -86,17 +141,6 @@
     background-color: #dc3545;
     color: white;
     animation: fadeInUpAnimation 0.5s ease-in-out;
-  }
-  
-  @keyframes fadeInUpAnimation {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
   
   .add {
@@ -135,17 +179,6 @@
     margin-bottom: 10px;
   }
   
-  @keyframes fadeInAnimation {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
   .add,
   .remove,
   .other,
@@ -159,6 +192,8 @@
     padding: 20px;
     background-color: #dc3545;
     color: white;
+    animation: slideOutAnimation 0.5s ease-in-out;
+    -webkit-animation: slideOutAnimation 0.5s ease-in-out;
 }
 
 footer a {
