@@ -63,7 +63,7 @@ let answer;
       timerInterval = setInterval(function() {
         let now = new Date().getTime();
         var elapsedTime = Math.floor((now - startTime) / 1000);
-        var seconds = elapsedTime % 60;
+        var seconds = elapsedTime;
         var displaySeconds = seconds < 10 ? "0" + seconds : seconds;
         var displayAttempts = attempts < 10 ? "0" + attempts : attempts;
         document.getElementById('timer').innerHTML = `時間： ${displaySeconds} 秒`;
