@@ -100,7 +100,7 @@ function startTimer() {
 
 function updateTimer() {
   var elapsedTime = Math.floor((Date.now() - startTime) / 1000); // 計算經過的秒數
-  var seconds = elapsedTime % 60;
+  var seconds = elapsedTime;
   var displaySeconds = seconds < 10 ? "0" + seconds : seconds;
   timerDisplay.textContent = `時間：${displaySeconds}秒`;
 }
