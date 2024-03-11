@@ -18,3 +18,4 @@ window.addEventListener('load', function() {
       footer.style.opacity = '1';
     }, 500);
   });
+  

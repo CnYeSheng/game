@@ -1,206 +1,206 @@
 /* Resetting default margins and paddings */
 @keyframes slideInAnimation {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @keyframes slideOutAnimation {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-      -webkit-transform: translateY(10px);
-      -moz-transform: translateY(10px);
-      -ms-transform: translateY(10px);
-      -o-transform: translateY(10px);
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
 }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
 @keyframes scaleAnimation {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
+  from {
+    transform: scale(0);
   }
+  to {
+    transform: scale(1);
+  }
+}
 
 @keyframes fadeInUpAnimation {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-
-@keyframes fadeInAnimation {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-      -webkit-transform: translateY(-10px);
-      -moz-transform: translateY(-10px);
-      -ms-transform: translateY(-10px);
-      -o-transform: translateY(-10px);
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
 @keyframes fadeInAnimation {
-    from {
-      opacity: 0;
-      transform: translateX(-20px); /* 從左側偏移 20px */
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0); /* 回到原始位置 */
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+}
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); /* 從左側偏移 20px */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* 回到原始位置 */
+  }
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'TaiwanPearl-Regular', sans-serif;
-    background-color: #f8f9fa;
-    color: #333333;
-    line-height: 1.6;
-    padding: 20px;
-  }
-  
-  #title {
-    text-align: center;
-    margin-bottom: 20px;
-    animation: slideInAnimation 0.5s ease-in-out;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  h3 {
-    font-size: 1.4rem;
-    animation: sfadeInAnimation 0.5s ease-in-out  ;
-    -webkit-animation: sfadeInAnimation 0.5s ease-in-out  ;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  h1,
-  h2{
-    animation: slideInAnimation 0.5s ease-in-out;
-    -webkit-animation: slideInAnimation 0.5s ease-in-out;
+body {
+  font-family: 'TaiwanPearl-Regular', sans-serif;
+  background-color: #f8f9fa;
+  color: #333333;
+  line-height: 1.6;
+  padding: 20px;
 }
 
-  #games-chose {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .btn {
-    text-decoration: none;
-    border: 2px solid #7952b3;
-    background-color: #7952b3;
-    color: white;
-    border-radius: 12px;
-    font-size: 24px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
-    animation: scaleAnimation 0.5s ease-in-out;
-  }
+#title {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: slideInAnimation 0.5s ease-in-out;
+}
 
-  .btn:hover {
-    background-color: #5a3e8c;
-  }
-  
-  .footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #dc3545;
-    color: white;
-    animation: fadeInUpAnimation 0.5s ease-in-out;
-  }
-  
-  .add {
-    background-color: #f0f0f0;
-    border-left: 5px solid green;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .remove {
-    background-color: #f0f0f0;
-    border-left: 5px solid red;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .other {
-    background-color: #f0f0f0;
-    border-left: 5px solid #f1c232;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .warning {
-    background-color: #fdf2e9; /* 橘黃色背景 */
-    border-left: 5px solid #f2711c; /* 深橘黃色邊框 */
-    color: #dc3545; /* 深橘黃色文字 */
-    padding: 15px; /* 更大的內邊距 */
-    margin-bottom: 15px; /* 更大的下邊距 */
-  }
-  
-  .update-section {
-    background-color: #f0f0f0;
-    border-left: 5px solid #7952b3;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .add,
-  .remove,
-  .other,
-  .warning,
-  .update-section {
-    animation: fadeInAnimation 0.5s ease-in-out;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #dc3545;
-    color: white;
-    animation: slideOutAnimation 0.5s ease-in-out;
-    -webkit-animation: slideOutAnimation 0.5s ease-in-out;
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  animation: sfadeInAnimation 0.5s ease-in-out  ;
+  -webkit-animation: sfadeInAnimation 0.5s ease-in-out  ;
+}
+
+h1,
+h2{
+  animation: slideInAnimation 0.5s ease-in-out;
+  -webkit-animation: slideInAnimation 0.5s ease-in-out;
+}
+
+#games-chose {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  text-decoration: none;
+  border: 2px solid #7952b3;
+  background-color: #7952b3;
+  color: white;
+  border-radius: 12px;
+  font-size: 24px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  animation: scaleAnimation 0.5s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #5a3e8c;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #dc3545;
+  color: white;
+  animation: fadeInUpAnimation 0.5s ease-in-out;
+}
+
+.add {
+  background-color: #f0f0f0;
+  border-left: 5px solid green;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.remove {
+  background-color: #f0f0f0;
+  border-left: 5px solid red;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.other {
+  background-color: #f0f0f0;
+  border-left: 5px solid #f1c232;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.warning {
+  background-color: #fdf2e9; /* 橘黃色背景 */
+  border-left: 5px solid #f2711c; /* 深橘黃色邊框 */
+  color: #dc3545; /* 深橘黃色文字 */
+  padding: 15px; /* 更大的內邊距 */
+  margin-bottom: 15px; /* 更大的下邊距 */
+}
+
+.update-section {
+  background-color: #f0f0f0;
+  border-left: 5px solid #7952b3;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.add,
+.remove,
+.other,
+.warning,
+.update-section {
+  animation: fadeInAnimation 0.5s ease-in-out;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #dc3545;
+  color: white;
+  animation: slideOutAnimation 0.5s ease-in-out;
+  -webkit-animation: slideOutAnimation 0.5s ease-in-out;
 }
 
 footer a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
