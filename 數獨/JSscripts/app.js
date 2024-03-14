@@ -99,6 +99,10 @@ function resetGame() {
     // Display number of lives remaining/left
     displayLives(lives);
     // Set how long the timer should be
+    if (id("time-30s").checked) {
+        TIME_LIMIT = 5;
+        timerType = "countdown";
+    } else
     if (id("time-3mins").checked) {
         TIME_LIMIT = 60 * 3;
         timerType = "countdown";
@@ -234,34 +238,44 @@ function endGame() {
         if (lives == 0 || (parseInt(m, 10) == 0 && parseInt(s, 10) == 0)) {
             var x = id("snackbar-lose");
             var audio = new Audio('./audio/audio-lose.wav');
-            title_txt = "GAME OVER.😮";
+            title_txt = "GAME OVER.";
         } else {
             var x = id("snackbar-win");
             var audio = new Audio('./audio/audio-win.wav');
-            title_txt = "Congrats!🎉";
+            title_txt = "Congrats!";
         }
     } else if (timerType == "stopwatch") {
         cancelAnimationFrame(stopwatch);
         if (lives == 0) {
             var x = id("snackbar-lose");
             var audio = new Audio('./audio/audio-lose.wav');
-            title_txt = "GAME OVER.😮";
+            title_txt = "GAME OVER.";
         } else {
             var x = id("snackbar-win");
             var audio = new Audio('./audio/audio-win.wav');
-            title_txt = "Congrats!🎉";
+            title_txt = "Congrats!";
         }
     }
+    
+    if (lives == 0 || (parseInt(m, 10) == 0 && parseInt(s, 10) == 0)) {
+        swal({
+            title: title_txt,
+            text: "哈哈！再一次吧！",
+            icon: "error",
+
+        });
+    } else
+        swal({
+            title: title_txt,
+            text: "恭喜！！成功了！！！",
+            icon: "success",
+    });
+
     audio.play();
     x.classList.add("show");
     setTimeout(function() {
         x.classList.remove("show");
     }, 2999);
-    swal({
-        title: title_txt,
-        text: "再試一次? 點擊 '開始!' or '刷新/重新開始' 按鈕.🚀",
-        icon: "info",
-    });
     // Set button accessibility
     id("tips-btn").disabled = true;
     id("solve-btn").disabled = true;
@@ -429,8 +443,8 @@ function show_solution() {
     id("resume-btn").disabled = true;
     // Display message to the user
     swal({
-        title: "再試一次? 😉",
-        text: "點擊 '開始!' or '刷新/重新開始' 按鈕.🚀",
+        title: "再試一次?",
+        text: "點擊 '開始!' or '刷新/重新開始' 按鈕.",
         icon: "info",
     });
 }
