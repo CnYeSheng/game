@@ -30,9 +30,9 @@ export default class Scoreboard {
     let fontStyle = {...config.defaultTextStyle, fontSize: rowsHeight * 0.4, fill: '#ddd'};
     let iconStyle = {...fontStyle, fontSize: rowsHeight * 1.2, font: 'minesweeper', fill: '#0e89b6'};
     let icon = this.game.add.text(w / 2, rowsHeight * 1.25, this.gameData.isGameWin ? Icons.wink : Icons.confused, iconStyle);
-    let timeLabel = this.game.add.text(40 * DPR, rowsHeight * 2.5, '游戏用时', fontStyle);
+    let timeLabel = this.game.add.text(40 * DPR, rowsHeight * 2.5, '用時', fontStyle);
     let timeText = this.game.add.text(w - 40 * DPR, rowsHeight * 2.5, this.gameData.currentTime, fontStyle);
-    let bestLabel = this.game.add.text(40 * DPR, rowsHeight * 3.5, '最佳记录', fontStyle);
+    let bestLabel = this.game.add.text(40 * DPR, rowsHeight * 3.5, '最佳記錄', fontStyle);
     let bestText = this.game.add.text(w - 40 * DPR, rowsHeight * 3.5, this.gameData.bestTime, fontStyle);
     icon.setShadow(0, -3, 'rgba(0,0,0, 0.8)', 3);
     icon.anchor.setTo(0.5);
@@ -58,7 +58,7 @@ export default class Scoreboard {
       width: buttonWidth,
       height: buttonHeight,
       icon: Icons.replay,
-      text: '再来一局',
+      text: '再來一局',
       style: 'primaryMini'
     };
 
@@ -71,7 +71,7 @@ export default class Scoreboard {
       ...buttonProps,
       x: w / 2 + 10 * DPR,
       icon: Icons.menu,
-      text: '返回菜单',
+      text: '返回菜單',
       style: 'actionMini'
     });
     menuButton.onClick.add(this.backMenu, this);

@@ -145,9 +145,9 @@ autoUpdater.on('update-available', (info) => {
     .replace(/\..+/, '');
   
   let detailText =
-    `当前版本：${app.getVersion()}\n` +
-    `最新版本：${info.version}\n` +
-    `发布日期：${date}\n\n` +
+    `當前：${app.getVersion()}\n` +
+    `最新：${info.version}\n` +
+    `日期：${date}\n\n` +
     `${info.releaseNotes}`;
 
   dialog.showMessageBox(mainWindow, {

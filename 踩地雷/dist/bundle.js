@@ -4397,14 +4397,14 @@ webpackJsonp([0], [function(t, e, n) {
 					}, this);
 					var x = new p.default(u({}, m, {
 						icon: v.Icons.expert,
-						text: "專家 30x16",
+						text: "專家 30x30",
 						style: "danger"
 					}));
 					x.onClick.add(function(e) {
 						t.state.start("Game", !0, !1, u({}, h.default, {
 							boardWidth: 30,
-							boardHeight: 16,
-							mineTotal: 99
+							boardHeight: 30,
+							mineTotal: 120
 						}))
 					}, this), s.align(1, -1, r, i, f.default.CENTER), s.x = this.game.world.centerX - s.centerX, s.y = this.game.world.centerY - s.centerY;
 					var S = this.loadingY || -i;

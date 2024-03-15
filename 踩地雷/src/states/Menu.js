@@ -69,11 +69,11 @@ export default class Menu extends Phaser.State {
     let expertButton = new Button({
       ...buttonProps,
       icon: Icons.expert,
-      text: '專家 30x16',
+      text: '專家 30x30',
       style: 'danger'
     });
     expertButton.onClick.add(rightClick => {
-      this.state.start('Game', true, false, {...config, boardWidth: 30, boardHeight: 16, mineTotal: 99});
+      this.state.start('Game', true, false, {...config, boardWidth: 30, boardHeight: 30, mineTotal: 120});
     }, this);
 
     // 布局UI
