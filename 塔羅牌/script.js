@@ -15,20 +15,23 @@ const questionForm = document.getElementById('questionForm');
 
       // 塔羅牌清單
       const tarotCards = [
-        '00-0愚者.jpg', '01-I魔術師.jpg', '02-II女祭司.jpg', '03-III女皇.jpg', '04-IV皇帝.jpg',
-        '05-V教皇.jpg', '06-VI戀人.jpg', '07-VII戰車.jpg', '08-VIII力量.jpg', '09-IX隱士.jpg',
-        '10-X命運之輪.jpg', '11-XI正義.jpg', '12-XII吊人.jpg', '13-XIII死神.jpg', '14-XIV節制.jpg',
-        '15-XV惡魔.jpg', '16-XVI高塔.jpg', '17-XVII星星.jpg', '18-XVIII月亮.jpg', '19-XIX太陽.jpg',
-        '20-XX審判.jpg', '21-XXI世界.jpg', '寶劍一.jpg', '寶劍七.jpg', '寶劍三.jpg', '寶劍九.jpg',
-        '寶劍二.jpg', '寶劍五.jpg', '寶劍侍從.jpg', '寶劍八.jpg', '寶劍六.jpg', '寶劍十.jpg',
-        '寶劍四.jpg', '寶劍國王.jpg', '寶劍王后.jpg', '寶劍騎士.jpg', '權杖一.jpg', '權杖七.jpg',
-        '權杖三.jpg', '權杖九.jpg', '權杖二.jpg', '權杖五.jpg', '權杖侍從.jpg', '權杖八.jpg',
-        '權杖六.jpg', '權杖十.jpg', '權杖四.jpg', '權杖國王.jpg', '權杖王后.jpg', '權杖騎士.jpg',
-        '聖杯一.jpg', '聖杯七.jpg', '聖杯三.jpg', '聖杯九.jpg', '聖杯二.jpg', '聖杯五.jpg',
-        '聖杯侍從.jpg', '聖杯八.jpg', '聖杯六.jpg', '聖杯十.jpg', '聖杯四.jpg', '聖杯國王.jpg',
-        '聖杯王后.jpg', '聖杯騎士.jpg', '錢幣一.jpg', '錢幣七.jpg', '錢幣三.jpg', '錢幣九.jpg',
-        '錢幣二.jpg', '錢幣五.jpg', '錢幣侍從.jpg', '錢幣八.jpg', '錢幣六.jpg', '錢幣十.jpg',
-        '錢幣四.jpg', '錢幣國王.jpg', '錢幣王后.jpg', '錢幣騎士.jpg'
+        '0愚者.jpg', 'I魔術師.jpg', 'II女祭司.jpg', 'III女皇.jpg', 'IV皇帝.jpg',
+        'V教皇.jpg', 'VI戀人.jpg', 'VII戰車.jpg', 'VIII力量.jpg', 'IX隱士.jpg',
+        'X命運之輪.jpg', 'XI正義.jpg', 'XII吊人.jpg', 'XIII死神.jpg', 'XIV節制.jpg',
+        'XV惡魔.jpg', 'XVI高塔.jpg', 'XVII星星.jpg', 'XVIII月亮.jpg', 'XIX太陽.jpg',
+        'XX審判.jpg', 'XXI世界.jpg', 
+        '權杖一.jpg','權杖二.jpg','權杖三.jpg','權杖四.jpg','權杖五.jpg',
+        '權杖六.jpg','權杖七.jpg','權杖八.jpg','權杖九.jpg','權杖十.jpg',
+        '權杖騎士.jpg','權杖侍從.jpg','權杖王后.jpg','權杖國王.jpg',
+        '星幣一.jpg','星幣二.jpg','星幣三.jpg','星幣四.jpg','星幣五.jpg',
+        '星幣六.jpg','星幣七.jpg','星幣八.jpg','星幣九.jpg','星幣十.jpg',
+        '星幣侍從.jpg','星幣騎士.jpg','星幣王后.jpg','星幣國王.jpg',
+        '寶劍一.jpg','寶劍二.jpg','寶劍三.jpg','寶劍四.jpg','寶劍五.jpg',
+        '寶劍六.jpg','寶劍七.jpg','寶劍八.jpg','寶劍九.jpg','寶劍十.jpg',
+        '寶劍侍從.jpg','寶劍騎士.jpg','寶劍王后.jpg','寶劍國王.jpg',
+        '聖杯一.jpg','聖杯二.jpg','聖杯三.jpg','聖杯四.jpg','聖杯五.jpg',
+        '聖杯六.jpg','聖杯七.jpg','聖杯八.jpg','聖杯九.jpg','聖杯十.jpg',
+        '聖杯侍從.jpg','聖杯騎士.jpg','聖杯王后.jpg','聖杯國王.jpg'
       ];
 
       // 抽取隨機的三張塔羅牌，每張有 50% 機率逆位
