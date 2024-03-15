@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Sudoku library
     initializeSudokuLib();
     // Execute startGame function when start button is clicked
-    id("start-btn").addEventListener("click", startGame);
+    document.getElementById("start-btn").addEventListener("click", function() {
+        startGame(); // 執行startGame函數
+        refresh_puzzle(); // 在startGame運行完後執行refresh_puzzle
+    });
     // Add event listener to theme toggle button
     id("theme-btn").addEventListener("change", function() {
         if (this.checked) {
