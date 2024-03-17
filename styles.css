@@ -129,10 +129,12 @@ h2{
   padding: 10px 20px;
   transition: background-color 0.3s ease;
   animation: scaleAnimation 0.5s ease-in-out;
+  -webkit-animation: scaleAnimation 0.5s ease-in-out;
 }
 
 .btn:hover {
-  background-color: #5a3e8c;
+  background-color: transparent;
+  color: #7952b3;
 }
 
 .footer {
@@ -203,4 +205,8 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+.animate {
+  animation: fadeInAnimation 0.5s ease-in-out;
 }

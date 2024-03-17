@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
     }
+    
     // Add event listener to "Tips" button
     id("tips-btn").addEventListener("click", display_tips);
     // Add event listener to "Show solution" button
