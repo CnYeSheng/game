@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .clock {
+    text-align: center;
+  }
+  
+  #time {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  #date {
+    font-size: 1.5em;
+  }
+  
+  #weekday {
+    font-size: 1.1em;
+  }
+
+  #lunar {
+    font-size: 1.45em;
+    margin-top: 10px;
+    color: #777;
+  }
+  
