@@ -17,11 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Sudoku library
     initializeSudokuLib();
     // Execute startGame function when start button is clicked
-    document.getElementById("start-btn").addEventListener("click", function() {
-        startGame(); // 執行startGame函數
-        refresh_puzzle(); // 在startGame運行完後執行refresh_puzzle
-    });
-    // Add event listener to theme toggle button
+    id("start-btn").addEventListener("click", startGame);
+    id("start-btn").addEventListener("click", refresh_puzzle);
     id("theme-btn").addEventListener("change", function() {
         if (this.checked) {
             // dark mode
@@ -65,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
     }
-    
     // Add event listener to "Tips" button
     id("tips-btn").addEventListener("click", display_tips);
     // Add event listener to "Show solution" button
@@ -82,14 +78,14 @@ document.addEventListener('DOMContentLoaded', function() {
     id("resume-btn").addEventListener("click", resume);
     // Add event listener to components of social media panel
     const floating_btn = qs(".floating-btn");
-    const close_btn = qs(".close-btn");
+    /*const close_btn = qs(".close-btn");
     const social_panel_container = qs(".social-panel-container");
     floating_btn.addEventListener("click", () => {
         social_panel_container.classList.toggle("visible");
     });
     close_btn.addEventListener("click", () => {
         social_panel_container.classList.remove("visible");
-    });
+    });*/
 });
 
 function resetGame() {
@@ -98,7 +94,7 @@ function resetGame() {
     // Close alert if it exists
     if (id("alert-pause")) { $("#alert-pause").slideUp("200"); }
     // Initialize variables
-    lives = 3;
+    lives = 15;
     disableSelect = false;
     // Display number of lives remaining/left
     displayLives(lives);
@@ -409,7 +405,7 @@ function displayLives(lives) {
     if (lives == 0) {
         id("lives").textContent = "Lives: 0";
     } else {
-        id("lives").textContent = "Lives: " + "🖤".repeat(lives);
+        id("lives").textContent = "Lives: " + "❤️".repeat(lives);
     }
 }
 
