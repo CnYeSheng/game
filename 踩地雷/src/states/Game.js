@@ -27,7 +27,7 @@ export default class Game extends Phaser.State {
     this.game.input.maxPointers = 2;
 
     // 載入客戶端本地遊戲數據
-    this.gameData = this.loadGameData();
+    //this.gameData = this.loadGameData();
   }
 
   create () {
@@ -56,8 +56,20 @@ export default class Game extends Phaser.State {
       text: '',
       style: 'circleAction'
     };
-    let menuButton = new Button(buttonProps);
+
+    let replayButton = {
+      game: this.game,
+      x: this.game.width - 28 * DPR,
+      y: this.game.height - 28 * DPR,
+      width: 48 * DPR,
+      height: 48 * DPR,
+      icon: Icons.replay,
+      text: '',
+      style: 'circleAction'
+    };
+    let menuButton = new Button(buttonProps, replayButton);
     menuButton.onClick.add(this.backMenu, this);
+    replayButton.onClick.add(this.replay, this);
 
     // 布局UI
     this.mineCounter.alignTo(this.timer.text);
@@ -141,7 +153,7 @@ export default class Game extends Phaser.State {
 
     // 等比例鋪滿可用空間
     let width = availWidth;
-    let height = width / aspectRatio;
+    let height = width / aspectRatio;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
     if ( height > availHeight ) {
       height = availHeight;
       width = height * aspectRatio;
@@ -230,6 +242,10 @@ export default class Game extends Phaser.State {
   backMenu () {
     this.game.state.start('Menu');
   }
+  replay () {
+    this.game.state.start('Game', this.gameData.gameProps);
+  }
+
 
   // 平移遊戲面板事件處理器
   handlePan(event) {

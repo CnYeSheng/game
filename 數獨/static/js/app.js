@@ -82,18 +82,18 @@ const initSudoku = () => {
 
     saveGameInfo();
 
-    // show sudoku to div
-    for (let i = 0; i < Math.pow(CONSTANT.GRID_SIZE, 2); i++) {
-        let row = Math.floor(i / CONSTANT.GRID_SIZE);
-        let col = i % CONSTANT.GRID_SIZE;
-        
-        cells[i].setAttribute('data-value', su.question[row][col]);
+// show sudoku to div
+for (let i = 0; i < Math.pow(CONSTANT.GRID_SIZE, 2); i++) {
+    let row = Math.floor(i / CONSTANT.GRID_SIZE);
+    let col = i % CONSTANT.GRID_SIZE;
+    
+    cells[i].setAttribute('data-value', su.question[row][col]);
 
-        if (su.question[row][col] !== 0) {
-            cells[i].classList.add('filled');
-            cells[i].innerHTML = su.question[row][col];
-        }
+    if (su.question[row][col] !== 0) {
+        cells[i].classList.add('filled');
+        cells[i].innerHTML = su.question[row][col];
     }
+}
 }
 
 const loadSudoku = () => {

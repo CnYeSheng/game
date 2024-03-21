@@ -31,15 +31,15 @@ export default class Splash extends Phaser.State {
     this.load.audio('soundExplosion', 'assets/sounds/explosion.mp3');
 
     // 加载动态生成的方块图像资源
-    // const tileSize = Math.max(this.game.width / 9, this.game.height / 9);
-    // const tileAssets = Tile.generateTileAssets(tileSize, tileSize);
-    // this.load.imageFromBitmapData(Tile.assets.cover, tileAssets.cover);
-    // this.load.imageFromBitmapData(Tile.assets.coverDown, tileAssets.coverDown);
-    // this.load.imageFromBitmapData(Tile.assets.ground, tileAssets.ground);
-    // this.load.imageFromBitmapData(Tile.assets.flag, tileAssets.flag);
-    // this.load.imageFromBitmapData(Tile.assets.flagDown, tileAssets.flagDown);
-    // this.load.imageFromBitmapData(Tile.assets.flagDown, tileAssets.unknown);
-    // this.load.imageFromBitmapData(Tile.assets.unknownDown, tileAssets.unknownDown);
+    const tileSize = Math.max(this.game.width / 9, this.game.height / 9);
+    const tileAssets = Tile.generateTileAssets(tileSize, tileSize);
+    this.load.imageFromBitmapData(Tile.assets.cover, tileAssets.cover);
+    this.load.imageFromBitmapData(Tile.assets.coverDown, tileAssets.coverDown);
+    this.load.imageFromBitmapData(Tile.assets.ground, tileAssets.ground);
+    this.load.imageFromBitmapData(Tile.assets.flag, tileAssets.flag);
+    this.load.imageFromBitmapData(Tile.assets.flagDown, tileAssets.flagDown);
+    this.load.imageFromBitmapData(Tile.assets.flagDown, tileAssets.unknown);
+    this.load.imageFromBitmapData(Tile.assets.unknownDown, tileAssets.unknownDown);
   }
 
   async create () {
@@ -62,5 +62,8 @@ export default class Splash extends Phaser.State {
     // 延迟半秒后切换至菜单场景
     await delay(this.game, 500);
     this.state.start('Menu', true, false, this.loading.y);
+    // 延迟半秒后切换至刷新场景
+    await delay(this.game, 800);
+    this.state.start('Game', true, false);
   }
 }

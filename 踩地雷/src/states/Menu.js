@@ -69,10 +69,21 @@ export default class Menu extends Phaser.State {
     let expertButton = new Button({
       ...buttonProps,
       icon: Icons.expert,
-      text: '專家 30x30',
+      text: '專家 30x16',
       style: 'danger'
     });
     expertButton.onClick.add(rightClick => {
+      this.state.start('Game', true, false, {...config, boardWidth: 30, boardHeight: 16, mineTotal: 100});
+    }, this);
+
+    // 困難難度按鈕
+    let expertsButton = new Button({
+      ...buttonProps,
+      icon: Icons.expert,
+      text: '困難 30x30',
+      style: 'danger'
+    });
+    expertsButton.onClick.add(rightClick => {
       this.state.start('Game', true, false, {...config, boardWidth: 30, boardHeight: 30, mineTotal: 120});
     }, this);
 
@@ -88,5 +99,6 @@ export default class Menu extends Phaser.State {
     this.game.add.tween(easyButton.button).from({x: -buttonWidth, alpha: 0}, 1000, 'Expo.easeInOut', true, 200);
     this.game.add.tween(mediumButtom.button).from({x: -buttonWidth, alpha: 0}, 1000, 'Expo.easeInOut', true, 300);
     this.game.add.tween(expertButton.button).from({x: -buttonWidth, alpha: 0}, 1000, 'Expo.easeInOut', true, 400);
+    this.game.add.tween(expertsButton.button).from({x: -buttonWidth, alpha: 0}, 1000, 'Expo.easeInOut', true, 500);
   }
 }

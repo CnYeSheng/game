@@ -4397,10 +4397,22 @@ webpackJsonp([0], [function(t, e, n) {
 					}, this);
 					var x = new p.default(u({}, m, {
 						icon: v.Icons.expert,
-						text: "專家 30x30",
+						text: "專家 30x16",
 						style: "danger"
 					}));
 					x.onClick.add(function(e) {
+						t.state.start("Game", !0, !1, u({}, h.default, {
+							boardWidth: 30,
+							boardHeight: 16,
+							mineTotal: 100
+						}))
+					}, this);
+					var y = new p.default(u({}, m, {
+						icon: v.Icons.expert,
+						text: "困難 30x30",
+						style: "danger"
+					}));
+					y.onClick.add(function(e) {
 						t.state.start("Game", !0, !1, u({}, h.default, {
 							boardWidth: 30,
 							boardHeight: 30,
@@ -4422,7 +4434,10 @@ webpackJsonp([0], [function(t, e, n) {
 					}, 1e3, "Expo.easeInOut", !0, 300), this.game.add.tween(x.button).from({
 						x: -a,
 						alpha: 0
-					}, 1e3, "Expo.easeInOut", !0, 400)
+					}, 1e3, "Expo.easeInOut", !0, 400), this.game.add.tween(y.button).from({
+						x: -a,
+						alpha: 0
+					}, 1e3, "Expo.easeInOut", !0 ,500)
 				}
 			}]), e
 		}(f.default.State);
