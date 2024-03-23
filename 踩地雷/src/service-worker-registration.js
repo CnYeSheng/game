@@ -3,6 +3,7 @@
  */
 
 // 检查应用是否运行在应用环境中(Electron)
+/*
 const isApp = () => {
   if (typeof window !== 'undefined' && window.process && window.process.type === 'renderer') {
     return true;
@@ -40,3 +41,4 @@ if (!isApp() && 'serviceWorker' in navigator) {
     console.error('Error during service worker registration:', e);
   });
 }
+*/

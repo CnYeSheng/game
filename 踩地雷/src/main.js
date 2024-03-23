@@ -1,3 +1,4 @@
+/*
 import './service-worker-registration';   // PWA注册
 import 'pixi';
 import 'p2';
@@ -13,8 +14,8 @@ import config from './config';
 
 export default class Game extends Phaser.Game {
   constructor () {
-    const width = Math.max(0/*280*/, document.documentElement.clientWidth);
-    const height = Math.max(0/*280*/, document.documentElement.clientHeight);
+    const width = Math.max(0, document.documentElement.clientWidth);
+    const height = Math.max(0, document.documentElement.clientHeight);
     const gameConfig = {
       width: width * window.devicePixelRatio,
       height: height * window.devicePixelRatio,
@@ -42,3 +43,4 @@ window.game = new Game();
 
 // 禁用右键菜单
 window.oncontextmenu = e => e.preventDefault();
+*/
