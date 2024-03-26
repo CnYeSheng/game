@@ -29,6 +29,7 @@ export default class Splash extends Phaser.State {
     this.load.audio('soundWin', 'assets/sounds/win.mp3');
     this.load.audio('soundLose', 'assets/sounds/lose.mp3');
     this.load.audio('soundExplosion', 'assets/sounds/explosion.mp3');
+    this.load.audio('soundStart', 'assets/sounds/Start.mp3')
 
     // 加载动态生成的方块图像资源
     const tileSize = Math.max(this.game.width / 9, this.game.height / 9);
@@ -44,6 +45,8 @@ export default class Splash extends Phaser.State {
 
   async create () {
     // 初始化游戏音效静态资源
+    //開始
+    Board.soundStart = Board.soundStart || this.game.add.audio('soundStart');
     // 游戏初始化音效
     Board.soundInit = Board.soundInit || this.game.add.audio('soundInit');
     // 揭开方块音效

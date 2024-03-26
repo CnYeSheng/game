@@ -297,6 +297,7 @@ export default class Board {
     if (!this.gameStarted) {
       this.gameStarted = true;
       this.onGameStarted.dispatch();
+      Board.soundStart.play();
     }
 
     // 播放标记方块音效
@@ -495,3 +496,5 @@ Board.soundReveal = null;
 Board.soundMark = null;
 // 揭开空方块音效
 Board.soundEmpty = null;
+//開始
+Board.soundStart = null;

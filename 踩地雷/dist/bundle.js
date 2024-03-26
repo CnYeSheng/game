@@ -4533,7 +4533,7 @@ webpackJsonp([0], [function(t, e, n) {
 						};
 					this.progressText = this.game.add.text(game.world.centerX, game.world.centerY, "0%", y.default.defaultTextStyle), this.progressText.anchor.set(.5), this.loading = this.game.add.text(0, 0, v.Icons.mine, n), this.loading.anchor.set(.5), this.loading.setShadow(0, -3, "rgba(0,0,0,0.5)", 3), this.loading.alignTo(this.progressText, f.default.TOP_CENTER, 0, 10 * window.devicePixelRatio), this.load.onFileComplete.add(function(e) {
 						t.progressText.setText(e + "%")
-					}), this.load.spritesheet("explosion", "assets/images/explosion.png", 256, 256), this.load.audio("soundInit", "assets/sounds/init.mp3"), this.load.audio("soundReveal", "assets/sounds/reveal.mp3"), this.load.audio("soundMark", "assets/sounds/mark.mp3"), this.load.audio("soundEmpty", "assets/sounds/empty.mp3"), this.load.audio("soundWin", "assets/sounds/win.mp3"), this.load.audio("soundLose", "assets/sounds/lose.mp3"), this.load.audio("soundExplosion", "assets/sounds/explosion.mp3")
+					}), this.load.spritesheet("explosion", "assets/images/explosion.png", 256, 256), this.load.audio("soundInit", "assets/sounds/init.mp3"), this.load.audio("soundReveal", "assets/sounds/reveal.mp3"), this.load.audio("soundMark", "assets/sounds/mark.mp3"), this.load.audio("soundEmpty", "assets/sounds/empty.mp3"), this.load.audio("soundWin", "assets/sounds/win.mp3"), this.load.audio("soundLose", "assets/sounds/lose.mp3"), this.load.audio("soundExplosion", "assets/sounds/explosion.mp3"), this.load.audio("soundInit", "assets/sounds/start.mp3")
 				}
 			}, {
 				key: "create",
