@@ -41,3 +41,12 @@ window.addEventListener('load', function() {
       });
   });
 });
+
+window.onload = function() {
+    Swal.fire({
+        icon: 'info',
+        title: '公告',
+        html: '4/4後網站網址將會全數改成英文',
+        confirmButtonText: '確定',
+    });
+}
