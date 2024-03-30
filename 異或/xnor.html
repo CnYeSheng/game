@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html manifest="cache.appcache">
+    <head>
+        <!-- Google AdSense -->
+        <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-8867295535145885",
+                enable_page_level_ads: true
+            });
+        </script> -->
+
+        <meta charset="UTF-8">
+
+        <meta name="author" content="import-this">
+        <meta name="application-name" content="XNOR">
+        <meta name="description" content="A small collection of simple logic puzzle games - #xor">
+        <meta name="keywords" content="xor, xnor, nand, not, game, games, puzzle, puzzles,
+            2D, HTML, HTML5, import-this, github, github.io, open source">
+        <meta name="robots" content="index, follow">
+
+        <!-- Mobile devices magic. -->
+        <meta name="viewport" content="width=device-width, height=device-height, minimal-ui">
+
+        <!-- Open Graph for Facebook. -->
+        <meta property="og:url" content="https://import-this.github.io/xor/xnor.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="XOR" />
+        <meta property="og:site_name" content="XOR" />
+        <meta property="og:image" content="https://import-this.github.io/xor/img/wallpaper.png" />
+        <meta property="og:description" content="Convert all 0's to 1's - #xnor" />
+
+        <title>XNOR - Convert all 0's to 1's</title>
+
+        <link rel="stylesheet" type="text/css" href="css/xor.css">
+
+        <!-- jQuery from jQuery CDN with Subresource Integrity (SRI) checking. -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/xor.js"></script>
+
+        <!-- Google Analytics -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-87031518-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <!-- Facebook JavaScript SDK -->
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        <div id="container">
+            <header id="header">
+                <h1 id="xnor">XNOR</h1>
+                <div id="description">
+                    <div id="instructions">
+                        <p id="rules">
+                            When you <strong>click</strong> on <span class="first">1</span>,
+                            it becomes <span class="first">0</span>.<br/>
+                            When you <strong>click</strong> on <span class="first">0</span>,
+                            it becomes <span class="first">1</span> and its neighboring<br/>
+                            <span class="second">0</span>'s become <span class="second">1</span>'s and
+                            <span class="second">1</span>'s become <span class="second">0</span>'s.
+                        </p>
+                        <strong id="goal">Convert all 0's to 1's.</strong>
+                    </div>
+                </div>
+                <div id="annotation">
+                    Like this puzzle? You may also like <a href="nand.html">NAND</a>!
+                    <button class="close-button" type="button">x</button>
+                </div>
+                <div class="ad">
+                    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+                    <!-- XOR Responsive -->
+                    <!-- <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8867295535145885"
+                         data-ad-slot="4559814851"
+                         data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script> -->
+                </div>
+                <div id="options" class="options">
+                    <div class="radios">
+                        <input id="four" type="radio" name="grid-size" value="4">
+                        <label for="four"><span></span>4 x 4</label>
+                        <input id="five" type="radio" name="grid-size" value="5">
+                        <label for="five"><span></span>5 x 5</label>
+                        <input id="six" type="radio" name="grid-size" value="6" checked>
+                        <label for="six"><span></span>6 x 6</label>
+                    </div>
+                    <div class="checkboxes">
+                        <input id="circular" type="checkbox" name="neighborhood" value="circular" checked>
+                        <label for="circular"><span></span>Wrap around at the edges</label>
+                        <input id="diagonal" type="checkbox" name="neighborhood" value="diagonal">
+                        <label for="diagonal"><span></span>Include diagonal neighbors</label>
+                    </div>
+                </div>
+                <div>
+                    <div id="start-restart" class="start-restart">
+                        <button class="start-button" name="start" type="button">New Game</button>
+                        <button class="restart-button" name="restart" type="button">Restart</button>
+                    </div>
+                    <div id="stats">
+                        <div>
+                            <div id="move-count" class="buttonlike">Moves: <span>0</span></div>
+                            <div id="best-move-count" class="buttonlike">Best: <span>N/A</span></div>
+                        </div>
+                        <div>
+                            <div id="score" class="buttonlike">Points: <span>10000</span></div>
+                            <div id="high-score" class="buttonlike">Best: <span>N/A</span></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div id="game-container">
+                <div id="grid-container">
+                    <table id="grid">
+                        <tr class="row">
+                            <td id="p-0-0" class="cell"><div></div></td>
+                            <td id="p-0-1" class="cell"><div></div></td>
+                            <td id="p-0-2" class="cell"><div></div></td>
+                            <td id="p-0-3" class="cell"><div></div></td>
+                            <td id="p-0-4" class="cell five"><div></div></td>
+                            <td id="p-0-5" class="cell six"><div></div></td>
+                        </tr>
+                        <tr class="row">
+                            <td id="p-1-0" class="cell"><div></div></td>
+                            <td id="p-1-1" class="cell"><div></div></td>
+                            <td id="p-1-2" class="cell"><div></div></td>
+                            <td id="p-1-3" class="cell"><div></div></td>
+                            <td id="p-1-4" class="cell five"><div></div></td>
+                            <td id="p-1-5" class="cell six"><div></div></td>
+                        </tr>
+                        <tr class="row">
+                            <td id="p-2-0" class="cell"><div></div></td>
+                            <td id="p-2-1" class="cell"><div></div></td>
+                            <td id="p-2-2" class="cell"><div></div></td>
+                            <td id="p-2-3" class="cell"><div></div></td>
+                            <td id="p-2-4" class="cell five"><div></div></td>
+                            <td id="p-2-5" class="cell six"><div></div></td>
+                        </tr>
+                        <tr class="row">
+                            <td id="p-3-0" class="cell"><div></div></td>
+                            <td id="p-3-1" class="cell"><div></div></td>
+                            <td id="p-3-2" class="cell"><div></div></td>
+                            <td id="p-3-3" class="cell"><div></div></td>
+                            <td id="p-3-4" class="cell five"><div></div></td>
+                            <td id="p-3-5" class="cell six"><div></div></td>
+                        </tr>
+                        <tr class="row five">
+                            <td id="p-4-0" class="cell five"><div></div></td>
+                            <td id="p-4-1" class="cell five"><div></div></td>
+                            <td id="p-4-2" class="cell five"><div></div></td>
+                            <td id="p-4-3" class="cell five"><div></div></td>
+                            <td id="p-4-4" class="cell five"><div></div></td>
+                            <td id="p-4-5" class="cell six"><div></div></td>
+                        </tr>
+                        <tr class="row six">
+                            <td id="p-5-0" class="cell six"><div></div></td>
+                            <td id="p-5-1" class="cell six"><div></div></td>
+                            <td id="p-5-2" class="cell six"><div></div></td>
+                            <td id="p-5-3" class="cell six"><div></div></td>
+                            <td id="p-5-4" class="cell six"><div></div></td>
+                            <td id="p-5-5" class="cell six"><div></div></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="note">
+                    Null move
+                </div>
+                <div id="win-screen">
+                    <div class="center">
+                        <div id="win">You win!</div>
+                        <div id="win-msg-container">
+                            <div class="high-score-msg">Awesome! You have a new high score!<br/>Share it with your friends! #xnor</div>
+                            <div class="high-score-msg">Excellent! You have a new high score!<br/>Share it with your friends! #xnor</div>
+                            <div class="high-score-msg">Brilliant! You have a new high score!<br/>Share it with your friends! #xnor</div>
+                            <div class="share-msg">Do you like XNOR?<br/>Tell your friends! #xnor</div>
+                            <div class="share-msg">Do you think XNOR is cool?<br/>Tell your friends! #xnor</div>
+                            <div class="share-msg">Tell your friends! #xnor</div>
+                            <div class="share-msg">Thank you for playing!</div>
+                            <div class="share-msg">Thank you for playing! :)</div>
+                            <div class="share-msg">Want to support XNOR?<br/>Sharing is appreciated! #xnor</div>
+                            <div class="share-msg">Wanna support me?<br/>Share the game! #xnor</div>
+                            <div class="share-msg">1. Like 2. Share 3. ??? 4. Profit.</div>
+                            <div class="share-msg">Sharing is caring.</div>
+                            <div class="share-msg">You scored <span id="final-score"></span> points.<br/>Share it with your friends! #xnor</div>
+                        </div>
+                        <div class="start-restart">
+                            <button class="start-button" name="start" type="button">New Game</button>
+                            <button class="restart-button" name="restart" type="button">Restart</button>
+                        </div>
+                        <div class="social">
+                            <!-- Facebook Like and Share Buttons -->
+                            <div class="fb-like" data-href="https://www.facebook.com/xorpuzzle/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                            <div class="fb-share-button" data-href="https://import-this.github.io/xor/xnor.html" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimport-this.github.io%2Fxor%2Fxnor.html&amp;src=sdkpreparse">Share</a></div>
+                            <!-- Twitter Buttons -->
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-text="Play XNOR and convert all 0&#39;s to 1&#39;s!" data-url="https://git.io/xnorpuzzle" data-via="importthat" data-hashtags="xnor,xor" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="options">
+                <div class="radios">
+                    <input id="easy" type="radio" name="difficulty" value="0">
+                    <label for="easy"><span></span>Easy</label>
+                    <input id="normal" type="radio" name="difficulty" value="1" checked>
+                    <label for="normal"><span></span>Normal</label>
+                    <input id="hard" type="radio" name="difficulty" value="2">
+                    <label for="hard"><span></span>Hard</label>
+                </div>
+            </div>
+            <div id="info">
+                <div>
+                    If you don't get the rules right away, just click on a few
+                    <span class="first">0</span>s and <span class="first">1</span>s
+                    and the update pattern will become clear.
+                </div>
+                <div>
+                    Try to solve the puzzle in as few moves and as quickly as possible.<br/>
+                    You may also like its sibling puzzles:
+                    <a href="nand.html" title="NAND puzzle">NAND</a>,
+                    <a href="not.html" title="NOT puzzle">NOT</a>,
+                    <a href="index.html" title="XOR puzzle">XOR</a>.
+                </div>
+            </div>
+            <div class="ad">
+                <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+                <!-- XOR Responsive -->
+                <!-- <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8867295535145885"
+                     data-ad-slot="4559814851"
+                     data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script> -->
+            </div>
+            <hr>
+            <div id="footer">
+                <div id="profile">
+                    Created by <a href="https://import-this.github.io/" title="GitHub profile">import-this</a>
+                </div>
+                <div id="social" class="social">
+                    <!-- Facebook Like, Share and Send Buttons -->
+                    <div class="fb-like" data-href="https://www.facebook.com/xorpuzzle/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                    <div class="fb-share-button" data-href="https://import-this.github.io/xor/xnor.html" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimport-this.github.io%2Fxor%2Fxnor.html&amp;src=sdkpreparse">Share</a></div>
+                    <div class="fb-send" data-href="https://import-this.github.io/xor/xnor.html"></div>
+                    <!-- Twitter Buttons -->
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-text="Play XNOR and convert all 0&#39;s to 1&#39;s!" data-url="https://git.io/xnorpuzzle" data-via="importthat" data-hashtags="xnor,xor" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <a href="https://twitter.com/importthat" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @importthat</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <!-- GitHub Star Button (https://ghbtns.com/ with modifications) -->
+                    <iframe src="https://ghbtns.com/github-btn.html?user=import-this&repo=xor&type=star" scrolling="0" width="50" height="20"></iframe>
+                </div>
+                <hr>
+                <div id="about">
+                    <a href="about.html" title="About the game">About</a> -
+                    <a href="terms.html" title="About usage rules">Terms of Use</a> -
+                    <a href="privacy.html" title="About collected info">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            (function() {
+                op.setup({
+                    operator: function xnor(val, otherVal) {
+                        return Number(!(val ^ otherVal));
+                    },
+                    prefix: 'xnor',
+                    invertSelf: true
+                });
+            }());
+        </script>
+
+        <!-- Adblock detection -->
+        <script type="text/javascript" src="js/ads.js"></script>
+        <script type="text/javascript">
+            (function() {
+                if (!window.noAdblock) {
+                    // Adblock detected!
+
+                } else {
+
+                }
+            }());
+        </script>
+    </body>
+</html>

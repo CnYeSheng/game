@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content=" A mixed game between Sudoku and Tetris were you have to fill the tiles and Match the rows, columns and squares"
+    />
+    <meta name="keywords" content="Puzzle, Tetris, Sudoku" />
+    <meta name="author" content="Erikas-Ramanauskas" />
+    <title>Tedoku- Easy to pick up puzzle game</title>
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+    <!-- Botstrap link -->
+    <link
+      rel="stylesheet"
+      href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css"
+    />
+
+    <!-- Font Awesome link -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/be71380b34.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- standart Css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="loader">
+      <img src="assets/images/preloader.gif" alt="" />
+    </div>
+    <div id="full-screen">
+      <!-- <div id="game-screen-body"> -->
+      <div id="game-screen-container">
+        <div id="game-screen">
+          <!-- Button trigger modal -->
+          <div id="game-controls">
+            <button
+              id="menu-button"
+              type="button"
+              class="game-buttons"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              <p>菜單</p>
+            </button>
+            <!-- Button trigger modal -->
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <a class="nav-link" href="index.html">主頁</a>
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="index.html"
+                      >遊玩</a
+                    >
+                    <a class="nav-link" href="highscores.html">高分</a>
+                  </div>
+
+                  <div class="modal-body">
+                    <button
+                      id="btn-resume-game"
+                      type="button"
+                      class="btn dificulity-choice btn-resume-game"
+                      data-bs-dismiss="modal"
+                    >
+                      繼續
+                    </button>
+                    <div id="game-over-message">
+                      <p>不好了！ 你用完了空間</p>
+                      <p>
+                        你的最終成績: <span id="game-over-score">0</span>
+                      </p>
+                    </div>
+
+                    <button
+                      type="button"
+                      onclick="gameStart(1)"
+                      class="btn dificulity-choice btn-select-dificulity"
+                      data-bs-dismiss="modal"
+                    >
+                      簡單
+                    </button>
+                    <button
+                      type="button"
+                      onclick="gameStart(2)"
+                      class="btn dificulity-choice btn-select-dificulity"
+                      data-bs-dismiss="modal"
+                    >
+                      中等
+                    </button>
+                    <button
+                      type="button"
+                      onclick="gameStart(3)"
+                      class="btn dificulity-choice btn-select-dificulity"
+                      data-bs-dismiss="modal"
+                    >
+                      困難
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <div class="current-mode-container">
+                      <p>難度: <span id="current-game-mode"></span></p>
+                    </div>
+                    <div>
+                      <label for="volume"
+                        ><i class="fa-solid fa-volume-high"></i>
+                      </label>
+                      <input
+                        type="range"
+                        id="volume"
+                        name="volume"
+                        min="0"
+                        max="100"
+                        value="0"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              id="game-current-score"
+              class="game-buttons highlighted-square2"
+            >
+              <p>分數:</p>
+              <p id="current-score-count">0</p>
+            </div>
+            <div id="game-high-score" class="game-buttons highlighted-square2">
+              <p id="high-score-text">最高分:</p>
+              <p id="high-score-count">0</p>
+            </div>
+            <div id="rotation-count" class="game-buttons highlighted-square2">
+              <p>次數:</p>
+              <p id="rotation-count-number">0</p>
+            </div>
+            <div id="rotation-buttons">
+              <button
+                onclick="rotateGameShapes(3)"
+                class="rotation-button highlighted-square"
+                id="rotate-left"
+                aria-label="rotation anti-clockwise"
+              >
+                <svg
+                  version="1.1"
+                  viewBox="0.0 0.0 447.76115485564304 449.3963254593176"
+                  fill="none"
+                  stroke="none"
+                  stroke-linecap="square"
+                  stroke-miterlimit="10"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <clipPath id="p.0">
+                    <path
+                      d="m0 0l447.76117 0l0 449.39633l-447.76117 0l0 -449.39633z"
+                      clip-rule="nonzero"
+                    />
+                  </clipPath>
+                  <g clip-path="url(#p.0)">
+                    <path
+                      fill="#000000"
+                      fill-opacity="0.0"
+                      d="m0 0l447.76117 0l0 449.39633l-447.76117 0z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      fill="#000000"
+                      fill-opacity="0.0"
+                      d="m448.8714 0.30446196l-449.48032 0l0 449.48032l449.48032 0z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      fill="#661a11"
+                      d="m252.851 422.1407l0 0c108.87068 -0.8701477 196.4922 -89.703 195.86754 -198.57538c-0.6246643 -108.87236 -89.259735 -196.69395 -198.13324 -196.31476c-108.873505 0.37918663 -196.89471 88.81604 -196.761 197.69012l43.59272 -0.05354309l0 0c-0.10419464 -84.83685 68.483696 -153.74863 153.3201 -154.0441c84.836395 -0.2954712 153.90262 68.13688 154.38937 152.97238c0.48675537 84.835526 -67.7897 154.0559 -152.6239 154.7339z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      stroke="#661a11"
+                      stroke-width="1.0"
+                      stroke-linejoin="round"
+                      stroke-linecap="butt"
+                      d="m252.851 422.1407l0 0c108.87068 -0.8701477 196.4922 -89.703 195.86754 -198.57538c-0.6246643 -108.87236 -89.259735 -196.69395 -198.13324 -196.31476c-108.873505 0.37918663 -196.89471 88.81604 -196.761 197.69012l43.59272 -0.05354309l0 0c-0.10419464 -84.83685 68.483696 -153.74863 153.3201 -154.0441c84.836395 -0.2954712 153.90262 68.13688 154.38937 152.97238c0.48675537 84.835526 -67.7897 154.0559 -152.6239 154.7339z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      fill="#661a11"
+                      d="m-0.4566929 172.75853l89.039375 154.01576l89.03936 -154.01576z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      stroke="#661a11"
+                      stroke-width="1.0"
+                      stroke-linejoin="round"
+                      stroke-linecap="butt"
+                      d="m-0.4566929 172.75853l89.039375 154.01576l89.03936 -154.01576z"
+                      fill-rule="evenodd"
+                    />
+                  </g>
+                </svg>
+              </button>
+              <button
+                onclick="rotateGameShapes(1)"
+                class="rotation-button highlighted-square"
+                id="rotate-right"
+                aria-label="rotation clockwise"
+              >
+                <svg
+                  version="1.1"
+                  viewBox="0.0 0.0 447.76115485564304 449.3963254593176"
+                  fill="none"
+                  stroke="none"
+                  stroke-linecap="square"
+                  stroke-miterlimit="10"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <clipPath id="p.1">
+                    <path
+                      d="m0 0l447.76117 0l0 449.39633l-447.76117 0l0 -449.39633z"
+                      clip-rule="nonzero"
+                    />
+                  </clipPath>
+                  <g clip-path="url(#p.1)">
+                    <path
+                      fill="#000000"
+                      fill-opacity="0.0"
+                      d="m0 0l447.76117 0l0 449.39633l-447.76117 0z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      fill="#000000"
+                      fill-opacity="0.0"
+                      d="m-0.6089239 0.30446196l449.48032 0l0 449.48032l-449.48032 0z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      fill="#661a11"
+                      d="m195.41148 422.1407l0 0c-108.87069 -0.8701477 -196.49222 -89.703 -195.86755 -198.57538c0.6246598 -108.87236 89.25975 -196.69395 198.13324 -196.31476c108.87349 0.37918663 196.8947 88.81604 196.761 197.69012l-43.592712 -0.05354309l0 0c0.10418701 -84.83685 -68.4837 -153.74863 -153.32011 -154.0441c-84.8364 -0.2954712 -153.90263 68.13688 -154.38937 152.97238c-0.48674393 84.835526 67.789696 154.0559 152.6239 154.7339z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      stroke="#661a11"
+                      stroke-width="1.0"
+                      stroke-linejoin="round"
+                      stroke-linecap="butt"
+                      d="m195.41148 422.1407l0 0c-108.87069 -0.8701477 -196.49222 -89.703 -195.86755 -198.57538c0.6246598 -108.87236 89.25975 -196.69395 198.13324 -196.31476c108.87349 0.37918663 196.8947 88.81604 196.761 197.69012l-43.592712 -0.05354309l0 0c0.10418701 -84.83685 -68.4837 -153.74863 -153.32011 -154.0441c-84.8364 -0.2954712 -153.90263 68.13688 -154.38937 152.97238c-0.48674393 84.835526 67.789696 154.0559 152.6239 154.7339z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      fill="#661a11"
+                      d="m448.71915 172.75853l-89.03937 154.01576l-89.03937 -154.01576z"
+                      fill-rule="evenodd"
+                    />
+                    <path
+                      stroke="#661a11"
+                      stroke-width="1.0"
+                      stroke-linejoin="round"
+                      stroke-linecap="butt"
+                      d="m448.71915 172.75853l-89.03937 154.01576l-89.03937 -154.01576z"
+                      fill-rule="evenodd"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="game-board"></div>
+          <div id="game-shapes">
+            <div class="shape-window"></div>
+            <div class="shape-window"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- game audios -->
+    <audio id="drop-audio">
+      <source src="assets/audio/drop-audio.mp3" type="audio/mpeg" />
+      您的瀏覽器不支持音頻元素
+    </audio>
+    <audio id="destroy-audio">
+      <source src="assets/audio/destroy-audio.mp3" type="audio/mpeg" />
+      您的瀏覽器不支持音頻元素
+    </audio>
+
+    <script
+      src="assets/Jquery/jquery-3.6.4.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.min.js"></script>
+
+    <script defer src="assets/scripts/game-setup.js"></script>
+    <script defer src="assets/scripts/game-shapes.js"></script>
+    <script defer src="assets/scripts/game-drag.js"></script>
+    <script defer src="assets/scripts/game-score.js"></script>
+    <script defer src="assets/scripts/local-storage.js"></script>
+  </body>
+</html>

@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #505050;
+    background-color: #f2f0f5;
+    line-height: 1.25;
+}
+a {
+    color: #505050;
+    font-weight: bold;
+}
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+li {
+    list-style-position: inside;
+}
+
+/* Fancy checkboxes */
+/* http://stackoverflow.com/questions/4148499/how-to-style-checkbox-using-css */
+input[type='checkbox'] {
+    display: none;
+}
+input[type='checkbox'] + label {
+    position: relative;
+    cursor: pointer;
+}
+input[type='checkbox'] + label > span {
+    display: inline-block;
+    /* The text is not aligned exactly with the checkbox. */
+    vertical-align: -1px;
+    width: 17px;
+    height: 17px;
+    margin-right: 4px;
+    color: #3998d6;
+    background-color: #505050;
+    text-align: center;
+    cursor: pointer;
+
+    border: 4px solid #353535;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+input[type='checkbox'] + label > span::before {
+    content: '\2714';       /* Tick sign. */
+    opacity: 0;
+    /* The tick sign is not placed exactly in the center. */
+    position: relative;
+    top: -2px;
+}
+input[type='checkbox'] + label:hover > span::before {
+    opacity: 0.55;
+}
+input[type='checkbox']:checked + label > span::before {
+    opacity: 1;
+}
+
+/* Fancy radio buttons */
+input[type='radio'] {
+    display: none;
+}
+input[type='radio'] + label {
+    position: relative;
+    cursor: pointer;
+}
+input[type='radio'] + label > span {
+    display: inline-block;
+    /* The text is not aligned exactly with the radio button. */
+    vertical-align: -5px;
+    width: 17px;
+    height: 17px;
+    margin-right: 4px;
+    color: #3998d6;
+    background-color: #505050;
+    text-align: center;
+    cursor: pointer;
+
+    border: 4px solid #353535;
+    -webkit-border-radius: 100%;
+       -moz-border-radius: 100%;
+            border-radius: 100%;
+}
+input[type='radio'] + label:hover > span {
+    background-color: rgb(35, 115, 169);
+}
+input[type='radio']:checked + label > span{
+    background-color: #3998d6;
+}
+
+.start-button, .restart-button, .buttonlike {
+    min-width: 144px;
+    line-height: 38px;
+
+    font-weight: bold;
+    text-align: center;
+
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+
+    -webkit-transition-duration: 0.2s;
+       -moz-transition-duration: 0.2s;
+         -o-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+}
+.start-button, .restart-button {
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #46a6ea;
+    background-color: #282828;
+    border: 1px solid #3f3f3f;
+}
+.start-button:hover, .restart-button:hover {
+    color: #fcf8fa;
+    background-color: #3998d6;
+    border: 1px solid #3998d6;
+}
+.buttonlike {
+    cursor: default;
+    font-size: 1em;
+    color: #fcf8fa;
+    background-color: #3998d6;
+    border: 1px solid #3998d6;
+    display: inline-block;
+}
+
+#container {
+    min-width: 488px;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+}
+#game-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+/* Insert pseudo-element to clear the area. */
+#header::after {
+    content: '';
+    display: block;
+    clear: both;
+    margin-bottom: 10px;
+}
+#grid-container {
+    background-color: #282828;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+}
+#grid {
+    position: relative;         /* For shaking. */
+    table-layout: fixed;        /* For fast comp of the correct column width. */
+    width: 100%;                /* Tables fit their content by default. */
+    border-spacing: 15px;
+}
+#win-screen {
+    display: none;
+    /* Above all else. */
+    z-index: 100;
+    /* Stretch it. */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    /* background-color: #edc22e */
+    background-color: rgba(255, 226, 36, 0.8375);
+    -webkit-box-shadow: 0 0 25px 8px rgba(255, 226, 36, 0.75);
+       -moz-box-shadow: 0 0 25px 8px rgba(255, 226, 36, 0.75);
+            box-shadow: 0 0 25px 8px rgba(255, 226, 36, 0.75);
+}
+#win-screen > .center {
+    /* Center it. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+#win-screen .start-restart button {
+    margin: 15px 0 20px;
+}
+#win-screen .social > iframe {
+    /* Fix Twitter button. */
+    vertical-align: bottom;
+}
+#win {
+    min-width: 450px;
+    color: #f2f0f5;
+    font-size: 75px;
+    font-weight: bold;
+}
+#win-msg-container > div {
+    display: none;
+    font-size: 1.18em;
+    font-weight: bold;
+}
+#note {
+    display: none;
+    z-index: 20;
+
+    position: absolute;
+    top: -35px;
+    left: 0;
+    right: 0;
+
+    padding: 6px 14px;
+    font-weight: bold;
+    /* background-color: #edc22e */
+    background-color: rgba(255, 226, 36, 0.95);
+    -webkit-box-shadow: 0 0 1px 0 rgba(255, 226, 36, 0.75);
+       -moz-box-shadow: 0 0 1px 0 rgba(255, 226, 36, 0.75);
+            box-shadow: 0 0 1px 0 rgba(255, 226, 36, 0.75);
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+}
+
+#xor, #xnor, #nand, #not {
+    font-size: 85px;
+    font-weight: bold;
+}
+#description, .radios {
+    margin-bottom: 5px;
+}
+.first, .second, .third {
+    padding: 0 5px;
+    border: 1px solid rgba(40, 40, 40, 0.25);
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-box-shadow: 0 0 1px 0 rgba(40, 40, 40, 0.25);
+       -moz-box-shadow: 0 0 1px 0 rgba(40, 40, 40, 0.25);
+            box-shadow: 0 0 1px 0 rgba(40, 40, 40, 0.25);
+}
+.first {
+    color: #3998d6;
+    /* Midpoint between #f2f0f5 and #fefdfd */
+    background-color: #f8f7f9;
+}
+.second, .third {
+    color: #3a3a3a;
+    background-color: rgba(255, 226, 36, 0.6);
+}
+#annotation {
+    display: none;                  /* Initially hidden. */
+
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    line-height: 30px;
+
+    font-size: 1.02em;
+    /* background-color: #edc22e */
+    background-color: rgba(255, 226, 36, 0.95);
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+}
+#annotation > .close-button {
+    float: right;
+    width: 28px;
+    cursor: pointer;
+
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgba(50, 50, 50, 0.95);
+    /* background-color: #edc22e */
+    background-color: rgba(255, 226, 36, 0.95);
+    border: 2px solid rgba(50, 50, 50, 0.85);
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+
+    -webkit-transition-duration: 0.2s;
+       -moz-transition-duration: 0.2s;
+         -o-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+}
+.ad {
+    margin-bottom: 10px;
+}
+.options {
+    margin-bottom: 10px;
+}
+.options label {
+    margin: 0 10px 0 4px;
+}
+#start-restart {
+    float: left;
+    margin-left: 14px;
+}
+#start-restart button {
+    display: block;
+}
+#stats {
+    position: relative;         /* For the score modifier effect. */
+    float: right;
+    margin-right: 14px;
+}
+.score-modifier {
+    position: absolute;
+    z-index: 10;
+
+    color: rgba(50, 50, 50, 0.9);
+    font-size: 1.25em;
+    font-weight: bold;
+}
+#start-restart button:first-child, #stats > div:first-child {
+    margin-bottom: 5px;
+}
+#info {
+    margin-bottom: 15px;
+}
+#info > div {
+    margin-bottom: 10px;
+}
+#profile {
+    margin-top: 20px;
+}
+#social {
+    margin: 3px 0 20px;
+}
+#social a {
+    /* Hide text of FB share and Twitter buttons until the plugins have loaded. */
+    color: #f2f0f5;
+}
+#social > div {
+    vertical-align: top;
+    /* Override default FB display style for mobile. */
+    display: inline-block;
+}
+#social > iframe {
+    /* Use this instead of frameborder=0. */
+    border: none;
+    margin-top: 2px;
+}
+#about {
+    margin: 20px 0 20px;
+}
+
+.cell {
+    position: relative;     /* For text inside the cell. */
+
+    cursor: pointer;
+    color: #3998d6;
+    background-color: #505050;
+    font-size: 52px;        /* Higher values don't fit the cell. */
+    font-weight: bold;
+    text-align: center;
+
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-transition-duration: 0.1s;
+       -moz-transition-duration: 0.1s;
+         -o-transition-duration: 0.1s;
+            transition-duration: 0.1s;
+}
+
+/* Equal width and height + Vertical centering! */
+/* http://stackoverflow.com/a/6615994/1751037 */
+/* http://www.w3schools.com/howto/howto_css_aspect_ratio.asp */
+/* https://css-tricks.com/centering-in-the-unknown/ */
+.cell::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 100%;
+}
+.cell > div {
+    display: inline-block;
+    vertical-align: middle;
+
+    /* Prevent the element from being the target of pointer events. */
+    /* Let its parent '.cell' element handle the event instead. */
+    pointer-events: none;
+}
+
+/* Place the '.one' rule first, so that the '.active' rule overrides it. */
+.one {
+    color: #fefdfd;
+    background-color: #3998d6;
+}
+/* Use .active for mobile. */
+.cell:hover, .active {
+    color: #3998d6;
+    background-color: #fefdfd;
+}
+.neighbor {
+    color: #3a3a3a;
+    background-color: rgba(255, 226, 36, 0.9);
+}
+.hidden {
+    display: none;
+}
+
+/* Custom styling for small screens. */
+@media (max-width: 580px) {
+    #container {
+        min-width: 420px;
+        padding: 0 2.5%;
+    }
+    .start-button, .restart-button, .buttonlike {
+        min-width: 122px;
+        line-height: 35px;
+    }
+    .start-button, .restart-button {
+        font-size: 1em;
+    }
+    .buttonlike {
+        font-size: 0.88em;
+    }
+    .cell {
+        font-size: 38px;
+    }
+}
