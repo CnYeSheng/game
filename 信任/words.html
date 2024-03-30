@@ -1,0 +1,1072 @@
+<!--
+
+THIS FILE HAS ABOUT 3,300 WORDS TO TRANSLATE
+
+TRANSLATION NOTES:
+
+When translating this thing, only edit the stuff that's BETWEEN the <tags>, like so:
+
+    <p id="still_english">hello</p>
+    =>
+    <p id="still_english">bonjour</p>
+
+Also, DON'T change anything between the [square brackets], like so:
+
+    Number #[N]
+    =>
+    Numero #[N]
+
+Exception to the "don't change tags" rule:
+Feel free to move around the italics & bold tags, so that the emphasis
+on the right phrases/words still makes sense!
+
+    <i>italics</i>
+    <b>bold</b>
+
+Also, some HTML weirdness you might want to know:
+
+    &amp; is an ampersand "&" sign
+    &#8226; is a dot
+    &rarr; is a rightward-facing arrow
+    &lt; is a "<" sign
+
+ALSO! I'd love for you to credit yourself as a translator!
+You can add your own name in the <p id="subtitle"> section
+
+Thanks again!
+~ Nicky Case
+
+-->
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - META STUFF - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="meta_title">
+信任的演化
+</p>
+<p id="meta_desc">
+合作博弈論的互動講解手冊——為什麼達成信任，以及我們怎樣達成信任
+</p>
+<p id="meta_loading">
+載入中...
+</p>
+<p id="meta_on">
+聲音開
+</p>
+<p id="meta_off">
+聲音關
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - TITLE! - - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="title">
+<br>信任的演化<br>
+</p>
+<p id="subtitle">
+
+遊戲時間：30 分鐘 &#8226; 原作：nicky case &#8226; 2017年7月
+
+<br>
+翻譯：吳桐、唐鳳
+&#8226;
+<a style="text-decoration: none" href="http://ncase.me/trust/">原文版（English）</a>
+
+</p>
+
+<p id="loading">
+載入中...
+</p>
+<p id="loading_done">
+開始 &rarr;
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - INTRO! - - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="intro">
+一戰期間，戰爭被和平打破。
+<br><br>
+
+那是在 1914 年「西方戰線」的聖誕節，<br>
+儘管有著嚴格的軍令，不准與敵方士兵談笑風生，<br>
+英國和德國的軍人卻都離開了他們的戰壕，穿過了無人地帶，<br>
+聚集在了一起，來埋葬他們的戰友、交換禮物、有的還玩起了遊戲。
+<br><br>
+
+相比之下，現在已經是 2017 年，西方世界已經保持了好幾十年的和平，<br>
+我們呢？我們信任彼此的能力簡直太差了。有調查表明，過去的 40 年當中<br>
+越來越少的人說他們「信任彼此」。所以，我們難免會有這樣的疑問：
+<br><br>
+
+<b>為什麼朋友會變成敵人，即使在和平年代也不例外？<br>
+為什麼敵人也會變成朋友，而且這種事居然在戰爭年代也會發生？</b>
+<br><br>
+
+我個人覺得<b>博弈論</b>可以幫助我們解釋為什麼「不信任」會像病毒一般<br>
+蔓延開來，以及我們怎樣改變它！好了，如果你想了解這些...
+</p>
+<p id="intro_button">
+...我們來玩個遊戲吧 &rarr;
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - ONE OFF! - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="label_you_cooperate">
+己方<br>合作
+</p>
+
+<p id="label_you_cheat">
+己方<br>欺騙
+</p>
+
+<p id="label_they_cooperate">
+對方<br>合作
+</p>
+
+<p id="label_they_cheat">
+對方<br>欺騙
+</p>
+
+<p id="label_you">
+這是你<br>↙
+</p>
+<p id="label_them">
+這是別人<br>↘
+</p>
+
+<p id="oneoff_0_top">
+
+<b>信任遊戲</b>
+<br>
+你面前有臺機器：當你放進去 1 枚硬幣，<b>對方</b>會得到 3 枚硬幣，反之亦然。你們兩位都可以選擇「合作」（放 1 枚硬幣）或者「欺騙」（不放硬幣）。
+</p>
+
+<p id="oneoff_0_btm">
+<b>好，如果我現在告訴你，右邊的玩家會選「欺騙」：不放硬幣進去</b><br>
+左邊的你，該怎麼做呢？
+</p>
+
+<p id="oneoff_1_cheated">
+就是這樣！憑什麼要便宜他？
+</p>
+
+<p id="oneoff_1_cooperated">
+把左臉也伸過去，只會多挨一下打，沒有好處呀！
+</p>
+
+<p id="oneoff_1_top">
+如果你合作，但是對方選擇欺騙，你將失去 1 枚硬幣，但是對方可以得到 3 枚（-1:+3）。但是，如果你們兩位都選擇欺騙，那兩人都既得不到什麼，也不會失去什麼（0：0）。
+<b>所以：你應該選擇「欺騙」。</b>
+</p>
+
+<p id="oneoff_1_btm">
+<b>但是，如果我告訴你，對方將選擇合作：他會投 1 枚硬幣。</b><br>
+你現在又該怎麼做呢？
+</p>
+
+<p id="oneoff_2_cheated">
+哇……有點缺德啊～不過，這是正確的答案！
+</p>
+
+<p id="oneoff_2_cooperated">
+沒錯，看起來確實應該這樣……<b>但是，仔細想想，是嗎？</b>
+</p>
+
+<p id="oneoff_2_top">
+如果你們兩枚都選擇了合作，你們各付出了 1 枚硬幣後，得到了 3 枚（+2:+2）。但是，如果你選擇欺騙，但是對方卻合作，你將賺到 3 枚硬幣，但對方會失去 1 枚（+3:-1）。
+<b>所以，你還是「應該」選擇欺騙，對自己最有利。</b>
+</p>
+
+<p id="oneoff_2_btm">
+你看，這就是我們的窘境了。信任固然好，但會讓別人佔你的便宜，從戰壕裡攻擊手無寸鐵的你。有些時候，選擇「不信任」是理性的！然而，如果這場遊戲不是一次就結束，而是重複玩很多次...
+</p>
+
+<p id="oneoff_button_next">
+...答案會有所不同嗎？ &rarr;
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - ITERATED - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="iterated_intro_top">
+<b>這次，我們來玩真的！</b>
+接下來，你將與 5 名不同的玩家進行遊戲，每個人都有他們自己的「遊戲策略」。每位玩家會與你對局 3 到 7 步，你並不知道哪一步是這局的最後一步。你可以相信他們嗎？或者說……他們可以相信你嗎？
+</p>
+
+<p id="iterated_intro_btm">
+來，告訴我你的第一個<i>真正</i>的選擇。<b>要想清楚喔</b>
+</p>
+
+<p id="iterated_info_1">
+第[X]/[Y]位對手
+</p>
+</p>
+<p id="iterated_info_2">
+你的總分：
+</p>
+
+<p id="iterated_score_start">
+你最終的得分是...
+</p>
+<p id="iterated_score_1">
+我的老天鵝啊，恕我直言，這個分數簡直是新的下限。
+</p>
+<p id="iterated_score_2">
+還好，也有比你更低的啦～
+</p>
+<p id="iterated_score_3">
+還不錯嘛～
+</p>
+<p id="iterated_score_4">
+行家啊，已經快滿分啦～
+</p>
+<p id="iterated_score_5">
+滿分！恭喜你有太多空閒時間啦，相信你一定試了很多遍吧。哈哈～開玩笑的
+</p>
+<p id="iterated_score_x">
+...你到底動了什麼手腳 -.-
+</p>
+<p id="iterated_score_end">
+（最低和最高分，分別是：7 和 49 分）
+</p>
+
+<p id="who_were">
+所以，你剛剛對戰的這些奇怪角色是誰呢？
+</p>
+
+<p id="character_tft">
+<b>模仿貓：</b>
+哈囉！我第一次會出「合作」。之後，我會選和你前一步一模一樣的選擇喔喵～
+</p>
+
+<p id="character_all_d">
+<b>黑到底：</b>
+<i>絕不合作，這是弱肉強食的世界</i>
+</p>
+
+<p id="character_all_c">
+<b>紅嬰仔：</b>
+我們大家做朋友吧！ &lt;3
+</p>
+
+<p id="character_grudge">
+<b>牛文聰：</b>我哞佮意輸的感覺。我會先給你面子「合作」，但是最好不要用「欺騙」惹我生氣，我袂爽就會想要報仇！</p>
+
+<p id="character_prober">
+<b>福爾摩星兒：</b>
+分析人是我的特長。遊戲開始我會「合作」、「欺騙」、「合作」、「合作」。如果你反過來欺騙我，我就會像<span class="tft">模仿貓</span>那樣跟著你出牌。如果你一直不騙回來，那我就會像<span class="all_d">黑到底</span>那樣榨乾你。這是常識啊，我親愛的花生兒～
+</p>
+
+<p id="characters_teaser">
+那麼，讓這些角色用自己的規則，相互展開博弈...
+</p>
+<p id="characters_button">
+...會發生什麼呢？ &rarr;
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - TOURNAMENT! - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="place_your_bets">
+上賽場啦！各個角色會相互之間會兩兩配對，進行 10 局比賽，每局比賽走 10 步。
+<br><br>
+你覺得哪個角色總分會最高，能夠笑到最後呢？
+<b>仔細想清楚，然後...請做出你的選擇：</b>
+</p>
+
+<p id="tournament_intro">
+好，你的選擇是[CHAR]！
+我們一個一個來，先看看第一局比賽的戰況如何...
+</p>
+
+<p id="first_match">
+第一局 &rarr;
+</p>
+
+<p id="next_match">
+下一局 &rarr;
+</p>
+
+<p id="match_header_1">
+<b>第[N]局：</b> [A] 對陣 [B]
+</p>
+<p id="match_header_2">
+<b>每步戰況:</b>
+</p>
+<p id="match_header_3">
+<b>總分：</b> [A] 比 [B]
+</p>
+
+<p id="tournament_1">
+喔，對了...
+</p>
+<p id="tournament_2">
+...你可能有點懷疑我開頭講的，戰壕裡聖誕節休戰的故事。那只是碰巧吧？
+</p>
+<p id="tournament_3">
+沒錯，休戰看起來還是挺戲劇化的，但是既不能說是獨一無二，也不能說是不尋常。
+</p>
+<p id="tournament_4">
+並不是每個戰壕都會達成和平，然而這種現象還是相當普遍。再次強調，雖然有明確、嚴格的軍令禁止，但是許多前線部隊，都會不約而同地達成和平。
+</p>
+<p id="tournament_5">
+而且事實上，即使在聖誕節之前，有些前線部隊就<b>已經</b>悄悄地達成了非官方的和平。
+</p>
+<p id="tournament_6">
+他們把這個叫做：<b>「互惠寬容（live and let live）」</b>。簡單來說，就是你不打我，我也就不打你。而且這種情況在很多地方都適用。
+</p>
+<p id="tournament_7">
+你可能還會有疑惑。一般士兵並不會自發地與敵人達成和平，為什麼在戰壕裡的<b>陣地戰</b>時就格外不同呢？
+</p>
+<p id="tournament_8">
+那是因為，陣地戰跟其他形式的戰役不同：在陣地戰中，你每天都會面對的是<b>同一批</b>軍人。
+</p>
+<p id="tournament_9">
+<b>這是一場重複遊戲。</b>這一點，讓陣地戰與其他的戰爭<i>完全</i>不同。
+</p>
+<p id="tournament_10">
+好，我們先回到比賽裡。這次的贏家就是...
+</p>
+
+<p id="the_winner_is">
+（鼓聲請下...） &rarr;
+</p>
+
+<p id="tournament_winner_1">
+<b class="tft">模仿貓！</b>
+</p>
+<p id="tournament_winner_2_yay">
+恭喜你答對了，是不是有種賭贏了的感覺啊，哈哈。
+</p>
+<p id="tournament_winner_2_nay">
+（對不起啦，[CHAR]。）
+</p>
+<p id="tournament_winner_3">
+<span class="tft">模仿貓</span>也有很多別名，像是黃金定律、互惠利他主義、以牙還牙，或者說<b>互惠寬容</b>。這就是為什麼「和平」會如雨後春筍一般，在一戰的戰壕中蔓延開來：當你被迫每天與同一批人——不僅僅是普遍意義上的「敵人」，而是同樣的一批人——進行同樣的遊戲（例如戰爭）時，<span class="tft">模仿貓</span>這樣的人不單單會贏得一場戰役，他們會贏得整場戰爭。<br><br>
+但是，如果讓同樣的遊戲每玩一場，情況都有所改變呢？設想一下，假如我們進行許多場這樣的賽局...
+</p>
+<p id="tournament_teaser">
+...會發生什麼事呢？ &rarr;
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - EVOLUTION! - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="evolution_intro">
+來，現在我們讓玩家人口的組成<b>隨著時間</b>演化，把這個過程分成「演化三部曲」：
+</p>
+<p id="evolution_intro_1">
+<b>1. 玩遊戲</b><br>
+讓每位玩家之間進行比賽，然後記錄分數。
+</p>
+<p id="evolution_intro_2">
+<b>2. 淘汰輸家</b><br>
+去掉 5 位最差的玩家。（如果分數相同，就隨機抽取）
+</p>
+<p id="evolution_intro_3">
+<b>3. 繁衍贏家</b><br>
+把最好的玩家複製 5 次。（如果有並列，就隨機抽取）
+</p>
+<p id="evolution_intro_footer">
+...然後一直重複，要多久就多久。附註：文明的演化，其實不需要等到人們死亡、繁衍——只需要「失敗」的行為走向消亡，而「成功」的行為得到模仿。好，現在...
+</p>
+<p id="evolution_intro_button">
+...我們來試試吧 &rarr;
+</p>
+
+<p id="evo_1">
+我們開始先用這些玩家來進行比賽：
+<span class="all_c">15 隻紅嬰仔</span>，
+<span class="all_d">5 隻黑到底</span>，還有
+<span class="tft">5 隻模仿貓</span>。
+（我們現在暫時先把<span class="grudge">牛文聰</span>和<span class="prober">福爾摩星兒</span>放一邊）
+<br><br>
+我們馬上開始「比賽—淘汰—繁衍」三部曲，然後重複差不多十幾場吧。好，現在我們再來猜一個！你覺得第一場下來，誰會贏呢？
+<b>請再次做出你的選擇：</b>
+</p>
+
+<p id="evo_2_all_c">
+有道理，<span class="all_c">紅嬰仔</span>人多力量大嘛...
+</p>
+<p id="evo_2_all_d">
+有道理，<span class="all_d">黑到底</span> 有這麼多<span class="all_c">紅嬰仔</span>可以剝削...
+</p>
+<p id="evo_2_tft">
+有道理，<span class="tft">模仿貓</span>剛剛就贏了嘛，這次怎麼會輸呢？...
+</p>
+<p id="evo_2">
+好，現在看看你選的對不對：
+</p>
+
+<p id="label_play_tournament">
+1）進行比賽
+</p>
+<p id="label_eliminate_bottom_5">
+2）淘汰 5 位最低分
+</p>
+<p id="label_reproduce_top_5">
+3）繁衍 5 位最高分
+</p>
+
+<p id="evo_3_all_c">
+哎呀，<span class="all_c">紅嬰仔</span>被
+<span class="all_d">黑到底</span>消滅了 5 隻，現在場上還剩 10 隻。
+</p>
+<p id="evo_3_all_d">
+好吧，你贏了！這次<span class="all_d">黑到底</span>獲得了勝利，數量增加了 5 隻。
+</p>
+<p id="evo_3_tft">
+哎呀，<span class="tft">模仿貓</span>沒贏——不過至少比<span class="all_c">紅嬰仔</span>強一點，他們被<span class="all_d">黑到底</span>消滅 5 隻了。
+</p>
+<p id="evo_3">
+不過，我們再多玩幾場試試...
+</p>
+
+<p id="evo_4">
+隨著<span class="all_c">紅嬰仔</span>一次 5 隻地消滅，<span class="all_d">黑到底</span>越來越多...
+</p>
+
+<p id="evo_5">
+現在，<span class="all_c">紅嬰仔</span>們全部消滅了。不過，等等...
+</p>
+
+<p id="evo_6">
+對啦：<span class="all_d">黑到底</span>作繭自縛，變成了受害者！他們剝削完了天真無邪的<span class="all_c">紅嬰仔</span>之後，不得不獨自面對<span class="tft">模仿貓</span>了。<span class="tft">模仿貓</span>們雖然人很好，但是他們並不傻。
+</p>
+
+<p id="evo_7">
+僅僅重複別人動作的<span class="tft">模仿貓</span>可以與他人良好相處，而自私的<span class="all_d">黑到底</span>們只能騙他們自己！不光如此，當他們需要對陣<span class="tft">模仿貓</span>這種只會以其人之道還治其人之身的人的時候，一定會讓<span class="all_d">黑到底</span>嚐到作繭自縛的滋味。
+</p>
+
+<p id="evo_8">
+所以，結果顯然就是...
+</p>
+
+<p id="evo_9">
+...<span class="tft">模仿貓</span>繼承了地球。
+</p>
+<p id="evo_9_all_c">
+好吧，儘管你猜錯了——天真善良的<span class="all_c">紅嬰仔</span>被從一開始就註定在劫難逃——最終，一種聰明的善良蔓延到了整個地球，<span class="all_d">黑到底</span>也灰飛煙滅了。
+</p>
+<p id="evo_9_all_d">
+雖然短期內，你是對的——<span class="all_d">黑到底</span>確實贏了前幾場，但最終我們看到，當他殘酷剝削的本質暴露無遺的同時，也不可避免地跌入了深淵。
+</p>
+<p id="evo_9_tft">
+所以，長期來看，你是對的——<span class="tft">模仿貓</span>贏了！<span class="all_d">黑到底</span>在短期內確實可能獲得勝利，但最終我們看到，當他殘酷剝削的本質暴露無遺的同時，也不可避免地跌入了深淵。
+</p>
+<p id="evo_9_end">
+這讓我想到了一句話：
+<br><br>
+<i>「我們並不因罪惡而受罰，而是罪惡本身會懲罰我們。」</i><br>
+——阿爾伯特・哈伯德
+</p>
+<p id="evo_9_btn">
+（喔，對了...）
+</p>
+
+<p id="evo_10">
+（...如果把
+<span class="grudge">牛文聰</span>和<span class="prober">福爾摩星兒</span>都放進來，結果其實也差不多:）
+</p>
+
+<p id="evo_autoplay">
+開始演化流程！
+</p>
+<p id="evo_autoplay_stop">
+停止演化流程
+</p>
+
+<p id="evo_10_followup">
+（附註：有些時候，少數<span class="grudge">牛文聰</span>可能會留下來，因為如果除了<span class="grudge">牛文聰</span>和<span class="tft">模仿貓</span>之外都被消滅了，他們兩位會達成平局。）
+<br><br>
+所以，博弈論的道理，好像在告訴我們這些事情：像<span class="tft">模仿貓</span>這樣「己所不欲勿施於人」的人生哲學，不僅僅是道德層面上的真理，同時也是科學上的真理。然而...
+</p>
+<p id="evo_10_btn">
+...這裡有個問題： &rarr;
+</p>
+
+<p id="evo_11">
+看看現在的地球，上面的無賴還真不少。
+<br><br>
+如果在這個重複的信任遊戲中，<span class="tft">模仿貓</span>使用的，是這種甚至連一戰戰壕裡的士兵都能獨立「演化」出來的，這種被稱作「互惠寬容」的強大策略，那麼，為什麼，這個世界上有那麼多不信任別人，以及不值得信任的人？是什麼讓「不信任」這種病毒，得以如此廣泛地傳播呢？
+<br><br>
+有一條線索其實就藏在這句話裡：「在這場重複的信任遊戲中」。到目前為止，我們都只在討論<b>玩家的變化</b>：但是，如果我們討論一下這個<b>博弈遊戲本身的變化</b>呢？有沒有想過，導致不信任的...
+</p>
+<p id="evo_11_btn">
+...是什麼呢？</i>
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - DISTRUST - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="distrust_1">
+在一切變得糟糕之前，我們先來看看好的一面！這是一個充滿了<span class="all_c">紅嬰仔</span>的世界，裡面只有一隻<span class="all_d">黑到底</span>和一隻<span class="tft">模仿貓</span>。
+<br><br>
+用右邊的這些按鈕來<b>開始</b>快速模擬，或者<b>一步一步</b>來，以及<b>重新</b>開始。 &rarr;
+</p>
+
+<p id="distrust_2">
+你已經知道，<span class="tft">模仿貓</span>在現在的規則下可以輕而易舉地贏得比賽！
+<br><br>
+但是我們現在的規則是，玩家之間對陣每一局有 10 步，如果把「10 步」換成 7 步、5 步，甚至 3、2、1 步，<span class="tft">模仿貓</span>還會繼續贏下去嗎？
+<br><br>
+用下面的滑動條來<b>調整每一局有多少輪</b>，然後按下<b>開始</b>進行模擬，看看會發生什麼。來，選個數字試試！
+</p>
+
+<p id="distrust_2_end">
+怎麼樣，發現什麼了嗎～點這兒繼續：
+</p>
+
+<p id="distrust_3">
+你看到了，比賽如果不走足夠多步，（這裡是 5 步或者更少）<span class="all_d">黑到底</span>就會處於絕對的優勢。
+<br><br>
+美國在 1985 年的調查顯示，當人們被問到他們親密朋友有幾個的時候，最常見的回答是「3」。而在 2014 年，這個數字是「0」。現在，我們擁有越來越少不同階級，不同種族，不同經濟狀況，不同政治理念的朋友，但原因只是因為我們所擁有的朋友數量變少了，僅此而已。而且，剛剛你自己也發現了一個道理，<b>人與人之間越來越少的「重複互動」，所帶來的影響就是不信任的加劇擴散</b>。
+<br><br>
+（不不，大眾媒體不算是重複互動：必須是<b>個人與個人</b>之間進行的<b>雙向</b>互動才行。）
+</p>
+<p id="distrust_3_btn">
+而且，嗯，情況會更糟糕... &rarr;
+</p>
+
+<p id="distrust_4">
+讓「不信任」蔓延的方式不只一種。這裡是信任遊戲的「報酬」：
+</p>
+<p id="distrust_4_2">
+在正常的收益情況下，<span class="tft">模仿貓</span>勝利。但是現在，<b>請把「雙贏」的獎勵從 +2 降到 +1</b>，然後點擊<b>開始</b>。儘管 +1 還是比兩人都欺騙的懲罰（也就是 0）要好...會發生什麼事呢？
+</p>
+<p id="distrust_4_note">
+你可以試試看不同的報酬會帶來什麼變化<br>
+好了嗎？點這兒：
+</p>
+<p id="distrust_4_note_2">
+（模擬：每一局 10 步）
+</p>
+
+<p id="distrust_5">
+同樣的事情發生了：當「雙贏」的報酬被降低，<span class="all_d">黑到底</span>開始處於優勢地位。對於這種現象，博弈論裡面有兩個很恰當的概念可以參考：
+<br><br>
+<b>「零和遊戲」，</b> 指的是博弈雙方都悲觀地相信，自己得到的東西<b>必然</b>來自於對方的失去，反之亦然。
+<br><br>
+<b>「非零和遊戲」，</b>指的是博弈雙方都努力創造雙贏的局面（或者至少防止雙輸的出現）！如果沒有「非零和遊戲」，人與人之間的信任便<b>不可能</b>得到傳播。
+<br><br>
+說到這裡，來看一下第三個，也是最後一個障礙，讓信任難以演化...
+</p>
+<p id="distrust_5_btn">
+<s>飯錯</s> 犯錯 &rarr;
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - NOISE! - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="noise_1">
+金無足赤，人無完人。<span class="tft">模仿貓</span>雖然厲害，但它也有一個巨大、致命的弱點，我一直沒有提到。要了解這個弱點，我們來讓兩隻<span class="tft">模仿貓</span>進行遊戲：
+</p>
+<p id="noise_1_end">
+禮尚往來，他們第一步都會選擇：
+</p>
+
+<p id="noise_2">
+理論上，他們只會回報彼此的好意，一唱一和，直到時間的盡頭。
+</p>
+<p id="noise_2_end">
+但是如果，途中出了點小意外...
+</p>
+
+<p id="noise_3">
+<b>啊不好！</b>
+<br>
+人會犯錯，訊息會誤傳、曲解，真相又常常解釋不清——現實生活裡，就是會發生各種各樣的事故。
+</p>
+<p id="noise_3_end">
+但是，如果對方並不知道，或者並不認為這只是一個小錯誤，這時我如果選擇...
+</p>
+
+<p id="noise_4">
+<b>啊不好 X2</b>
+<br>
+由於對方是<span class="tft">模仿貓</span>，他除了反擊別無選擇...
+</p>
+<p id="noise_4_end">
+...而對你而言，同樣身為<span class="tft">模仿貓</span>，你下一步也會進行反擊...
+</p>
+
+<p id="noise_5">
+「冤冤相報，何時方了？」這兩隻<span class="tft">模仿貓</span>就一步步陷入復仇裡，不可自拔...而這只是源於很久很久以前的一個小小的錯誤。
+</p>
+<p id="noise_5_end">
+悲劇啊！要改善這種情況，我們應該引進一些能處理意外的...
+</p>
+<p id="noise_5_btn">
+...新玩家 &rarr;
+</p>
+
+<p id="noise_characters">
+認識一下這些新面孔！（或者說，新帽子，不管啦）
+</p>
+
+<p id="character_tf2t">
+<b>模仿咪</b><br>
+雷吼啊！我跟<span class="tft">模仿貓</span>幾乎一樣，不過，我只會在你「連續欺騙我兩次」的情況下，才選擇反擊回去，畢竟人生總有意外嘛！
+</p>
+
+<p id="character_pavlov">
+<b>少根筋：</b><br>
+啊我先合作。你如果也合作，我會重複自己上一步的選擇，即使是意外也一樣。如果你欺騙，我會做出跟上一步相反的選擇，犯錯了也一樣。
+</p>
+
+<p id="character_random">
+<b>胡亂來：</b><br>
+<i>䑄啕晦睷袈，牧遙昍楥闇。呵呵呵我這人說話從不過腦子</i><br>
+（就是用同樣的機率隨機選擇「合作」或「欺騙」）
+</p>
+
+<p id="noise_characters_end">
+好啦，還記得之前的大賽形式嗎，我們把新角色加進來...
+</p>
+<p id="noise_characters_btn">
+...看看會發生什麼呢？ &rarr;
+</p>
+
+<p id="noise_evo_1">
+現在場上有十幾隻<span class="all_c">紅嬰仔</span>，對陣我們的老冠軍，公平的<span class="tft">模仿貓</span>，以及 3 位新的角色：寬容的<span class="tf2t">模仿咪</span>、遲鈍的<span class="pavlov">少根筋</span>、還有傻傻的<span class="random">胡亂來</span>。
+<br><br>
+每走一步，玩家們都會有一個很小的機率會犯錯誤（假設是 5% 吧）。你覺得這次誰又會笑到最後呢？
+<b>仔細想想，然後做出你的選擇：</b>
+</p>
+
+<p id="noise_evo_2">
+好的，你賭的是[CHAR]會贏。我們來看看你猜對了沒！用左邊的按鈕來<b>開始</b>快速模擬，或者<b>一步一步</b>地來。
+</p>
+<p id="noise_evo_2_2_correct">
+你答對啦 ——
+</p>
+<p id="noise_evo_2_2_incorrect">
+你與大獎擦身而過，不過很接近啦 ——
+</p>
+<p id="noise_evo_2_2">
+<span class="pavlov">少根筋</span>取得了勝利！
+這是因為<span class="pavlov">少根筋</span>實際上具備剝削<span class="all_c">紅嬰仔</span>的能力。他們都以「合作」開局，但是一旦<span class="pavlov">少根筋</span>犯了錯，欺騙了對方，就會一直欺騙下去，因為<span class="all_c">紅嬰仔</span><b>永遠不會反擊</b>。
+</p>
+<p id="noise_evo_2_2_btn">
+現在我們來試著...
+</p>
+
+<p id="noise_evo_3">
+...把占人數一半的<span class="all_c">紅嬰仔</span>用<span class="all_d">黑到底</span>替換掉，其他的都不變。這是一個一點兒也不寬容，充滿了惡意的環境。
+<br><br>
+現在你覺得誰會贏呢？<b>想清楚，然後做出選擇：</b>
+</p>
+
+<p id="noise_evo_4">
+你選的是[CHAR]。好，我們來再模擬一次...
+</p>
+<p id="noise_evo_4_2_correct">
+這局你可沒錯過獎金 ——
+</p>
+<p id="noise_evo_4_2_incorrect">
+猜的不賴，但是獎金還是別人的 ——
+</p>
+<p id="noise_evo_4_2">
+<span class="tf2t">模仿咪</span>贏啦！而且意想不到的是，即使在初始環境如此惡劣的情況下，<span class="tf2t">模仿咪</span>這個更加寬容版本的<span class="tft">模仿貓</span>，居然最後被證明是最成功的！（注意：<span class="tf2t">模仿咪</span>十分寬容，以至於它有時候甚至並沒有完全消除<span class="tft">模仿貓</span>，他們可以和睦相處）<br><br>
+在這種情況下，一點點的「誤解」（每一步的機率是 5%）可以帶來更多的<b>寬容</b>。但是如果「誤解」發生的機率產生變化的話，結果...
+</p>
+<p id="noise_evo_4_2_btn">
+...還會一樣嗎？
+</p>
+
+<p id="noise_evo_5">
+<b>用下面的滑動條來調整「誤解」的機率，然後點擊開始按鈕。</b>在 5% 的時候，<span class="tf2t">模仿咪</span>贏，如果換成 0%，20%，50% 呢？（最高只能到 50% 了，因為這個時候，<b>每一次</b>選擇其實都是在拋硬幣）
+</p>
+<p id="noise_evo_5_continue">
+怎麼樣，想直接看答案的話，點這兒：
+</p>
+
+<p id="noise_evo_6">
+結果大概是這個樣子：<br>
+<b>在 0% 的時候：</b>公平的<span class="tft">模仿貓</span> 獲勝！<b>在 1% 到 9% 之間：</b>寬容的<span class="tf2t">模仿咪</span>獲勝！<b>在 10% 到 49% 之間:</b>不公平也不寬容的<span class="all_d">黑到底</span> 獲勝。<b>到了 50%，</b> <i>沒有人會一直贏</i>。<br><br>
+這就是為什麼我們說「誤解」是達成信任的一個有趣的壁壘：一個<b>小</b>誤解可以帶來更多的寬容，但是<b>太多</b>的誤解帶來的卻是大範圍的不信任！我個人認為，現代科技進步讓媒體越來越發達，雖然一定程度上幫助了人們增加了交流機會，卻也帶給人們更多的<b>誤解</b>。
+<br><br>
+終於，咱們一起來試試<b>所有</b>的數字組合吧。<br>
+歡迎來到...
+</p>
+<p id="noise_evo_6_btn">
+...沙盒模式！
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - SANDBOX! - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="sandbox_population">
+開局玩家組成如下：
+</p>
+
+<p id="sandbox_payoffs">
+一對一博弈的報酬收益表顯示如下：
+</p>
+<p id="sandbox_reset_payoffs">
+恢復預設
+</p>
+
+<!--
+When translating the following, keep the "[N]", with square brackets,
+as a placeholder for the number. Some of these need double-translations,
+one for the plural version, one for the singular version.
+-->
+
+<p id="sandbox_rules_1">
+每一局走 [N] 步：
+</p>
+<p id="sandbox_rules_1_single">
+每一局走 [N] 步：
+</p>
+
+<p id="sandbox_rules_2">
+每次大賽之後，淘汰最低分的 [N] 位玩家，繁衍最高分的 [N] 位玩家：
+</p>
+<p id="sandbox_rules_2_single">
+每次大賽之後，淘汰最低分的 [N] 位玩家，繁衍最高分的 [N] 位玩家：
+</p>
+
+<p id="sandbox_rules_3">
+每一步有 [N]% 的機率會犯錯：
+</p>
+
+<p id="sandbox_end">
+<b>注意：沙盒模式是完全自願參與</b>，要跳過還是玩耍都隨你！完成之後，我們來複習一下...
+</p>
+<p id="sandbox_end_btn">
+看看今天學到了什麼！ &rarr;
+</p>
+
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - CONCLUSION! - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="conclusion_0">
+博弈論告訴我們，要發展信任，需要掌握的三件事：
+</p>
+<p id="conclusion_1_a">
+1. 重複的互動
+</p>
+<p id="conclusion_1_a2">
+信任是保持人際關係長久的基石，但建立信任的<b>前提</b>，是知道彼此將會有重複的互動。
+</p>
+<p id="conclusion_2_a">
+2. 「雙贏」並非不可能
+</p>
+<p id="conclusion_2_a2">
+你必須進行非零和遊戲，這樣的博弈並不保證兩個玩家都會變得更好、達到雙贏，但至少必須要有達成雙贏的可能性。
+</p>
+<p id="conclusion_3_a">
+3. 低機率的誤解
+</p>
+<p id="conclusion_3_a2">
+如果誤解發生得<b>過多</b>，信任就會瓦解。但是，如果有一點點誤會的時候，它將使寬容<b>蔓延</b>開來。
+</p>
+<p id="conclusion_4">
+當然，現實世界裡的信任會受到更多因素的影響。比如，名譽、共同的價值觀、合約、文化傳統等等。不過，別忘了...
+</p>
+<p id="conclusion_btn">
+...最<b>重要</b>的教訓。 &rarr;
+</p>
+
+<p id="outro_1">
+如果要從博弈論浩瀚的海洋裡面<br>
+選出一枚最閃亮的珍寶為我們所用，那就是這個：
+<br><br>
+<b>遊戲是什麼，直接決定了玩家做什麼。</b><br>
+我們今天的問題，不僅是人們正在失去信任，而是我們的<b>環境</b>正在違背信任演化的規律。
+<br><br>
+「我們僅僅是我們周遭環境的產物」，這個觀念看起來可能有點犬儒或者天真無邪，但是博弈論也在提醒著，我們<b>就是</b>彼此的環境啊。<b>短期來講，遊戲決定玩家，但是長期來說，決定遊戲的正是我們這些玩家。</b>
+<br><br>
+所以，我們每個人都行動起來，做<b>你</b>力所能及的，去創造一個可以讓信任演化的條件。建立人際關係、努力尋求雙贏、溝通儘量清晰。或許到了那個時候，我們能夠停止向對方開火，走出各自的戰壕，穿過戰爭的無人地帶來到彼此面前...
+</p>
+
+<p id="outro_1_btn">
+所有人發現了...
+</p>
+
+<p id="outro_2">
+...互惠寬容、與人相處之美
+</p>
+
+<p id="outro_2_credits">
+〈敵對戰壕的聖誕休戰〉
+插圖由 AC Michael 提供，出版於《倫敦新聞畫報》1915 年 1 月 9 日
+</p>
+
+<p id="outro_2_btn">
+&#9829;
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - - CREDITS! - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="credits">
+<span class="credits">
+
+製作者：<br>
+<span class="big">NICKY CASE</span><br>
+<a href="http://ncase.me/" target="_blank">玩玩我的其他作品</a>
+•
+<a href="https://twitter.com/ncasenmare" target="_blank">關注我的推特</a>
+•
+<a href="https://github.com/ncase/trust/#play-it-here-httpncasemetrust" target="_blank">下載音樂和源碼</a>
+
+<span class="divider"></span>
+
+翻譯：
+<a href="mailto:hello@sekai.co" target="_blank">吳桐</a>、唐鳳
+•
+<a href="https://github.com/audreyt/trust-zh-TW" target="_blank">查看源碼</a>
+
+<span class="divider"></span>
+
+改編自羅伯特．艾瑟羅德 1984 年的著作：<br>
+<span class="big">《合作的競化》</span><br>
+<a href="notes" target="_blank">閱讀我給這個遊戲的註解</a>
+
+<span class="divider"></span>
+
+十分感謝<br>
+<span class="big">我的 PATREON 支持者們</span><br>
+<a href="peeps" target="_blank">看我給他們畫的畫兒</a>
+•
+<a href="https://www.patreon.com/ncase" target="_blank">在 patreon 上面拿硬幣砸我 &lt;3</a>
+
+<span class="divider"></span>
+
+p.s: 想要更多的邊玩邊學小遊戲嗎？<br>
+請看 <span class="big"><a href="https://audreyt.github.io/polygons/" target="_blank">別讓圖形不開心</a></span>，還有更多的 <a href="http://explorabl.es/" target="_blank">explorable explanations</a>！
+
+</span>
+</p>
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - THE PLAYERS - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="label_tft">模仿貓</p>
+<p id="label_short_tft">
+模仿貓
+</p>
+<p id="icon_tft">
+<span class="tft">
+	<span class="icon"></span>
+	<span class="icon_label">模仿貓</span>
+</span>
+</p>
+
+<p id="label_all_d">黑到底</p>
+<p id="label_short_all_d">
+黑到底
+</p>
+<p id="icon_all_d">
+<span class="all_d">
+	<span class="icon"></span>
+	<span class="icon_label">黑到底</span>
+</span>
+</p>
+
+<p id="label_all_c">紅嬰仔</p>
+<p id="label_short_all_c">
+紅嬰仔
+</p>
+<p id="icon_all_c">
+<span class="all_c">
+	<span class="icon"></span>
+	<span class="icon_label">紅嬰仔</span>
+</span>
+</p>
+
+<p id="label_grudge">牛文聰</p>
+<p id="label_short_grudge">
+牛文聰
+</p>
+<p id="icon_grudge">
+<span class="grudge">
+	<span class="icon"></span>
+	<span class="icon_label">牛文聰</span>
+</span>
+</p>
+
+<p id="label_prober">福爾摩星兒</p>
+<p id="label_short_prober">
+福爾摩星兒
+</p>
+<p id="icon_prober">
+<span class="prober">
+	<span class="icon"></span>
+	<span class="icon_label">福爾摩星兒</span>
+</span>
+</p>
+
+<p id="label_tf2t">模仿咪</p>
+<p id="label_short_tf2t">
+模仿咪
+</p>
+<p id="icon_tf2t">
+<span class="tf2t">
+	<span class="icon"></span>
+	<span class="icon_label">模仿咪</span>
+</span>
+</p>
+
+<p id="label_pavlov">少根筋</p>
+<p id="label_short_pavlov">
+少根筋
+</p>
+<p id="icon_pavlov">
+<span class="pavlov">
+	<span class="icon"></span>
+	<span class="icon_label">少根筋</span>
+</span>
+</p>
+
+<p id="label_random">胡亂來</p>
+<p id="label_short_random">
+胡亂來
+</p>
+<p id="icon_random">
+<span class="random">
+	<span class="icon"></span>
+	<span class="icon_label">胡亂來</span>
+</span>
+</p>
+
+<p id="forgot_whos_who">
+（忘了誰是誰了嗎？把游標移到按鈕上，就可以看到每個人的介紹）
+</p>
+<p id="who_tft">
+第一步「合作」，然後一直模仿對方上一步的舉動
+</p>
+<p id="who_all_d">
+總是欺騙
+</p>
+<p id="who_all_c">
+總是合作
+</p>
+<p id="who_grudge">
+先合作，直到被欺騙一次，之後就欺騙到底
+</p>
+<p id="who_prober">
+合作、欺騙、合作、合作。再往後，如果你反擊，我就變成「模仿貓」，如果你不反擊，我就變成「黑到底」
+</p>
+<p id="who_tf2t">
+先合作，只有被連續欺騙兩次才會反擊
+</p>
+<p id="who_pavlov">
+先合作，然後，如果你合作，我就繼續前一步的選擇（即使是意外）。如果你欺騙，我就做跟前一步相反的選擇（即使是意外）
+</p>
+<p id="who_random">
+扔硬幣來決定選擇，正面「合作」、反面「欺騙」（50-50）
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - - SMALL LABELS! - - - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="label_cooperate">
+合作
+</p>
+
+<p id="label_cheat">
+欺騙
+</p>
+
+<p id="label_play">
+開始遊戲
+</p>
+
+<p id="label_start">
+開始
+</p>
+
+<p id="label_stop">
+停止
+</p>
+
+<p id="label_step">
+步進
+</p>
+
+<p id="label_reset">
+重置
+</p>
+
+<p id="label_population">
+玩家成分
+</p>
+
+<p id="label_payoffs">
+報酬
+</p>
+
+<p id="label_rules">
+規則
+</p>
+
+<p id="label_next">
+下一個 &rarr;
+</p>
+
+<p id="label_continue">
+繼續
+</p>
+
+
+<!-- - - - - - - - - - - - - - - - - -->
+<!-- - - - NAVIGATING CHAPTERS - - - -->
+<!-- - - - - - - - - - - - - - - - - -->
+
+<p id="chapter_intro">
+0. 介紹
+</p>
+<p id="chapter_oneoff">
+1. 單次遊戲
+</p>
+<p id="chapter_iterated">
+2. 多次遊戲
+</p>
+<p id="chapter_tournament">
+3. 一次大賽
+</p>
+<p id="chapter_evolution">
+4. 多次大賽
+</p>
+<p id="chapter_distrust">
+5. 「不信任」的演變
+</p>
+<!-- 「飯錯」原文是 `6. Making Mistaeks` -->
+<p id="chapter_noise">
+6. 人人都會飯錯
+</p>
+<p id="chapter_sandbox">
+7. 沙盒模式
+</p>
+<p id="chapter_conclusion">
+8. 結論
+</p>
+<p id="chapter_credits">
+9. 致謝
+</p>

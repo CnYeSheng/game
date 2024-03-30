@@ -3,6 +3,14 @@ window.onload = function(){
 	// Start Preloading!
 	publish("prepreload");
 
+	Swal.fire({
+		icon: 'info',
+		title: '主旨',
+		html: '現今社會不管是社交、假新聞都很流通，藉此透過人與人之間的關係，來瞭解這些是如何傳播的',
+		confirmButtonText: '確定',
+		footer: '製作：<a href="https://wmcc.jp.eu.org" target="_blank">YeSheng</a>'
+	});
+
 }
 
 subscribe("prepreload/done", function(){
