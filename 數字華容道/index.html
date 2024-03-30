@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/favicon.0a12fb06.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  <script type="module" crossorigin src="./assets/index.54188775.js"></script>
-  <link rel="stylesheet" href="./assets/index.1f732eb1.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js"></script>    
+  <title>Number Puzzle Game</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-  <body>
-    <div id="app"></div>
-    
-  </body>
-
-  <style>
-    body,
-    html {
-      padding: 0;
-      margin: 0;
-    }
-    #app {
-      padding-top: 5vh;
-      box-sizing: border-box;
-      height: 100vh;
-      max-width: 600px;
-      margin: 0 auto;
-      background: #8300e2;
-    }
-  </style>
+<body>
+  <div class="container">
+    <h1>Number Puzzle Game</h1>
+    <div class="controls">
+      <label for="level">Choose Level:</label>
+      <select id="level">
+        <option value="3">3x3</option>
+        <option value="4">4x4</option>
+        <option value="5">5x5</option>
+        <option value="6">6x6</option>
+        <option value="7">7x7</option>
+        <option value="8">8x8</option>
+        <option value="9">9x9</option>
+        <option value="10">10x10</option>
+      </select>
+      <label for="difficulty">Choose Difficulty:</label>
+      <select id="difficulty">
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
+      </select>
+      <button id="startBtn">Start Game</button>
+    </div>
+    <div id="gameBoard"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>

@@ -48,5 +48,6 @@ window.onload = function() {
         title: '公告',
         html: '4/4後網站網址將會全數改成英文',
         confirmButtonText: '確定',
+        footer: '製作：<a href="https://wmcc.jp.eu.org" target="_blank">YeSheng</a>'
     });
 }
