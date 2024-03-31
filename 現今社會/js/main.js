@@ -1,8 +1,5 @@
 window.onload = function(){
 
-	// Start Preloading!
-	publish("prepreload");
-
 	Swal.fire({
 		icon: 'info',
 		title: '主旨',
@@ -11,6 +8,8 @@ window.onload = function(){
 		footer: '製作：<a href="https://wmcc.jp.eu.org" target="_blank">YeSheng</a>'
 	});
 
+	// Start Preloading!
+	publish("prepreload");
 }
 
 subscribe("prepreload/done", function(){
