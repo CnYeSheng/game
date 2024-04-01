@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #9b59b6, #71b7e6);
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: 600;
+  font-size: 28px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.option input[type="checkbox"],
+.option input[type="number"] {
+  margin-right: 10px;
+}
+
+.option input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#password {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+#password:focus {
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
+}
+
+#copy-btn {
+  margin-left: 20px;
+  padding: 15px 20px;
+  background-color: #9b59b6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#copy-btn:hover {
+  background-color: #8e44ad;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+#generate-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 30px;
+  background-color: #71b7e6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#generate-btn:hover {
+  background-color: #5aa7e3;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.fas {
+  font-size: 18px;
+}
