@@ -238,7 +238,7 @@ const result = (status, totalTime = 0) => {
     ? window.time
     : window.word;
   document.getElementById("resultBottom").textContent = status
-    ? "猜這個單字!"
+    ? "答案:"+window.word
     : "";
   document.getElementById("black-overlay").classList.remove("hide");
   document.getElementById("result").classList.remove("hide");
@@ -292,3 +292,11 @@ const reset = async () => {
   dispose();
   console.log("遊戲的答案是：", window.word);
 };
+
+window.onload = function() {
+  Swal.fire({
+    title: "更新",
+    text: "已更新國中2000單(含過去式、過去分詞、現在進行式、單三)",
+    icon: "info"
+  });
+}
