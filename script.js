@@ -44,9 +44,9 @@ window.addEventListener('load', function() {
 
 window.onload = function() {
     Swal.fire({
-        icon: 'info',
+        icon: 'error',
         title: '公告',
-        html: '4/4後網站網址將會全數改成英文',
+        html: '因4/4需更改網站，故4/4~4/6不開放使用',
         confirmButtonText: '確定',
         footer: '製作：<a href="https://wmcc.jp.eu.org" target="_blank">YeSheng</a>'
     });
