@@ -225,8 +225,8 @@ const result = (status, totalTime = 0) => {
     const seconds = Math.floor(totalTime / 1000);
     const minutes = Math.floor(seconds / 60);
     window.time = `${
-      minutes !== 0 ? minutes + ` 分${minutes == 1 ? "" : "s"} ` : ""
-    } ${seconds % 60} 秒${seconds % 60 == 1 ? "" : "s"}`;
+      minutes !== 0 ? minutes + ` 分${minutes == 1 ? "" : ""} ` : ""
+    } ${seconds % 60} 秒${seconds % 60 == 1 ? "" : ""}`;
   }
   document.getElementById("result").querySelector("h1").textContent = status
     ? "你贏了！"
