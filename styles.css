@@ -102,8 +102,8 @@ h2 {
 
 h3 {
   font-size: 1.4rem;
-  animation: sfadeInAnimation 0.5s ease-in-out  ;
-  -webkit-animation: sfadeInAnimation 0.5s ease-in-out  ;
+  animation: sfadeInAnimation 0.5s ease-in-out;
+  -webkit-animation: sfadeInAnimation 0.5s ease-in-out;
 }
 
 h1,
@@ -167,11 +167,11 @@ h2{
 }
 
 .warning {
-  background-color: #fdf2e9; /* 橘黃色背景 */
-  border-left: 5px solid #f2711c; /* 深橘黃色邊框 */
-  color: #dc3545; /* 深橘黃色文字 */
-  padding: 15px; /* 更大的內邊距 */
-  margin-bottom: 15px; /* 更大的下邊距 */
+  background-color: #fdf2e9;
+  border-left: 5px solid #f2711c;
+  color: #dc3545;
+  padding: 15px;
+  margin-bottom: 15px;
 }
 
 .update-section {
@@ -192,21 +192,80 @@ h2{
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #dc3545;
+  background-color: #333333;
   color: white;
   animation: slideOutAnimation 0.5s ease-in-out;
   -webkit-animation: slideOutAnimation 0.5s ease-in-out;
 }
 
-footer a {
-  color: white;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
 .animate {
   animation: fadeInAnimation 0.5s ease-in-out;
+}
+
+.btn {
+  position: relative;
+}
+
+.info-icon {
+  position: absolute;
+  top: -21px;
+  right: -9px;
+  font-size: 28px;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.custom-button {
+  display: inline-flex; /* 改成 inline-flex */
+  align-items: center;
+  background-color: #00C7ED;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  white-space: nowrap; /* 文字不換行 */
+}
+
+.icon {
+  background-color: lightturquoise;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  order: -1; /* 讓 icon 先顯示 */
+}
+
+.text {
+  order: 0; /* 讓文字顯示順序在 icon 之後 */
+}
+
+.fixed-text-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.fixed-text {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 12px;
+  animation: slideOutAnimation 0.5s ease-in-out;
+}
+
+.fixed-text:hover {
+  background-color: #0056b3;
 }

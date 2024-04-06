@@ -290,13 +290,12 @@ const reset = async () => {
     key.classList.add("light-grey");
   }
   dispose();
-  console.log("遊戲的答案是：", window.word);
 };
 
 window.onload = function() {
   Swal.fire({
-    title: "更新",
-    text: "已更新國中2000單(含過去式、過去分詞、現在進行式、單三)",
-    icon: "info"
+    title: '更新',
+    html: '單字題庫為<b>110年版</b>並非最新<b>113年</b><br>故部分單字可能尚未出現過',
+    icon: 'info',
   });
 }

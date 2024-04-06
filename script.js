@@ -1,22 +1,9 @@
-// 這段程式碼會在網頁加載後立即執行
-window.addEventListener('load', function() {
-    // 檢查目前的網址
-    const currentPath = window.location.pathname;
-    const invalidPaths = ['./404.html', '/index.html']; // 如果有其他不需跳轉的頁面，可以在這裡添加
-
-    if (!invalidPaths.includes(currentPath)) {
-        // 如果網址不是404.html或其他指定的頁面，則跳轉到404.html
-        window.location.href = './404.html';
-    }
-});
-
 window.addEventListener('load', function() {
     const header = document.querySelector('header');
     const nav = document.querySelector('nav');
     const section = document.querySelector('section');
     const footer = document.querySelector('footer');
 
-    header.style.opacity = '0';
     nav.style.opacity = '0';
     section.style.opacity = '0';
     footer.style.opacity = '0';
@@ -54,12 +41,60 @@ window.addEventListener('load', function() {
     });
 });
 
-window.onload = function() {
+
+window.onload = function () {
     Swal.fire({
-        icon: 'error',
         title: '公告',
-        html: '因4/4需更改網站，故4/4~4/6不開放使用',
-        confirmButtonText: '確定',
-        footer: '製作：<a href="https://wmcc.jp.eu.org" target="_blank">YeSheng</a>'
+        html: '已完成更新',
+        icon: 'success',
+        footer: '製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>'
+    })
+};
+
+// 在網頁加載後綁定點擊事件
+window.addEventListener('load', function() {
+    // 獲取所有的 info icon 元素
+    const infoIcons = document.querySelectorAll('.info-icon');
+
+    // 遍歷每個 info icon 元素，為其添加點擊事件
+    infoIcons.forEach((icon, index) => {
+        icon.addEventListener('click', function(e) {
+            e.preventDefault(); // 防止點擊後跳轉
+
+            // 獲取點擊的 info icon 的父級 .btn 元素
+            const parentBtn = this.closest('.btn');
+            if (parentBtn) {
+                // 獲取父級 .btn 元素的 title 屬性值作為遊戲的標題
+                const title = parentBtn.getAttribute('title');
+
+                // 獲取點擊的 info icon 的 gamePlay 屬性值
+                const gamePlay = this.getAttribute('gamePlay');
+
+                // 獲取父級 .btn 元素的 href 屬性值作為遊戲的連結
+                const gameLink = parentBtn.getAttribute('href');
+
+                // 使用 SweetAlert 顯示遊戲玩法和開始遊玩按鈕
+                Swal.fire({
+                    title: `${title} 說明`,
+                    html: `<p>${gamePlay}</p>`,
+                    icon: 'info',
+                    footer: '製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
+                    showCancelButton: true,
+                    cancelButtonText: '返回',
+                    confirmButtonText: '進入',
+                    cancelButtonColor: '#d33',
+                    confirmButtonColor: '#3085d6',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // 如果點擊了「開始遊玩」按鈕，跳轉到遊戲連結
+                        window.open(gameLink, '_blank');
+                    }
+                });
+            }
+        });
     });
-}
+});
+
+
+
