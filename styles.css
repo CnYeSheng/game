@@ -208,12 +208,19 @@ footer {
 
 .info-icon {
   position: absolute;
-  top: -21px;
-  right: -9px;
-  font-size: 28px;
-  padding: 5px;
-  border-radius: 50%;
+  top: -2px;
+  right: -2px;
+  font-size: 16px;
+  border-radius: 100%;
   cursor: pointer;
+  background-color: #00C7ED;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+}
+
+.info-icon:hover {
+  background-color: #007bff;
 }
 
 
