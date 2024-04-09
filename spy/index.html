@@ -1,0 +1,108 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html ng-app="MyApp">
+  <head>
+  <title>誰是臥底分題器 v1.2</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loading-bar.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+  <script src="http://code.angularjs.org/1.2.8/angular-animate.min.js"></script>
+  <script src="app.js"></script>
+  <script src="loading-bar.js"></script>
+  </head>
+  <body  ng-controller="MyCtrl">
+  <div  class="container">
+    <ul class="nav nav-tabs" id="menu">
+      <li class="animate-show" id="reset" ng-show="setuped"><a href="#game" ng-click="reset()" class="btn btn-danger btn-lg">重新出題</a></li>
+      <li  class="active"><a href="#game">開始出題</a></li>
+      <li><a href="#answer">查看答案</a></li>
+      <li><a href="#about">說明</a></li>
+    </ul>
+    <div class="tab-content">
+      <div  class="col-md-12 tab-pane fade in active" id="game">
+        <form class="form-horizontal animate-show"  ng-hide="setuped" role="form">
+          <div class="form-group">
+            <div class="col-sm-5 input-group input-group-lg">
+              <span class="input-group-addon">詞語 1</span>
+              <input type="text" class="form-control input-lg" id="word1" ng-model="word1" placeholder="詞語 1">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-5 input-group input-group-lg">
+              <span class="input-group-addon">詞語 2</span>
+              <input type="text" class="form-control input-lg" id="word2" ng-model="word2" placeholder="詞語 2">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-2 input-group input-group-lg">
+              <span class="input-group-addon">人數</span>
+              <input type="number" class="form-control input-lg" id="max" ng-model="max" placeholder="人數">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-8">
+              <button ng-click="setup()" class="btn btn-primary btn-lg">确定</button>
+            </div>
+          </div>
+        </form>
+        <div class="row col-sm-8 animate-show" ng-show="setuped">
+            <div class="col-sm-8">
+              <progressbar max="maxP" value="numberP" class="progress-striped active"><span style="color:black; white-space:nowrap;">分發進度 {{number}} / {{max}}</span></progressbar>
+            </div>
+            <div class="col-sm-offset-3 col-sm-8">
+              <button ng-click="assign()" class="btn btn-success btn-lg">{{prompt}}</button>
+              <!-- <button ng-click="status = list[number-1];prompt = '了解';" ng-hide="assigned" class="btn btn-warning btn-lg">再看一眼</button> -->
+            </div>
+        </div>
+              <hr>
+        <div class="row col-sm-12 animate-show" ng-show="assigning">
+            <div class="jumbotron">
+              <h1>{{status}}</h1>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-12 tab-pane fade" id="answer">
+        <p ng-repeat="i in list track by $index">No.{{$index+1}} {{i}}</p>
+      </div>
+
+      <div class="jumbotron tab-pane fade" id="about">
+        <h1>誰是臥底 </h1><h2>出題器<span class="label label-info">v1.2</span></h2>
+        <a href="https://github.com/sevensmall/wodi"><i class="fa fa-github fa-2x"></i>GitHub</a>
+        <p><span class="glyphicon glyphicon-book"></span>遊戲規則</p>
+          <ol  class="list-group">
+            <li  class="list-group-item">每次需要N個人，其中1個裁判</li>
+            <li class="list-group-item">裁判輸入2個相近的詞語</li>
+            <li class="list-group-item">將輸入好的詞語分發給參賽者，參賽者之間不知道對方的卡片寫的是什麼詞。拿到那張與眾不同的卡片的參賽者就是臥底。</li>
+            <li class="list-group-item">每人每一輪說出對這個詞語不同的理解描述，不能直接說出那個詞。臥底需要搶先明白自己是臥底，並且想辦法不讓其它參賽者猜到，而其他參賽者要盡可能的貼近地描述自己卡片上的詞，以此來找到臥底。</li>
+            <li class="list-group-item">每輪結束後，參賽者自己給其他參賽者投票。投給他們認為是臥底的人。得票最多的人出局，若是兩個人同樣多那麼此輪作廢，繼續下一輪</li>
+            <li class="list-group-item">最後若臥底撐到只剩下W個人（W可事先根據參賽人數自行約定），則臥底獲勝，反之，則大部隊獲勝。</li>
+          </ol>
+          <p><a class="btn btn-primary btn-lg" id="start" role="button">開始出題!</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51915597-3', 'auto');
+  ga('send', 'pageview');
+    $('#menu a').click(function (e) {
+      $(this).tab('show')
+    });
+    $('#start').click(function(e){
+      e.preventDefault()
+      $('#menu a[href="#game"]').tab('show');
+    })
+</script>
+  </body>
+</html>

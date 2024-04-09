@@ -1,0 +1,59 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+@import url(http://fonts.googleapis.com/css?family=Lato);
+body{
+  font-family: 'Lato', Helvetica, Microsoft Yahei, Arial, sans-serif;
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+@media (max-width: 200px) {
+  body{
+    padding-top: 150px;
+  }
+}
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+#reset {
+  width: 70%
+}
+#menu {
+  bottom: 0;
+  border-width: 0 0 1px;
+  border-radius: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: white;
+  font-size: 1.2em;
+}
+
+#menu a{
+  height: 2em;
+}
+.animate-show {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+  line-height:20px;
+  opacity:1;
+  background:white;
+}
+
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+  display:block!important;
+}
+
+.animate-show.ng-hide {
+  line-height:0;
+  opacity:0;
+  padding:0 10px;
+}
+
+.check-element {
+  padding:10px;
+  border:1px solid black;
+  background:white;
+}
