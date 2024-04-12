@@ -45,10 +45,18 @@ window.addEventListener('load', function() {
 window.onload = function () {
     Swal.fire({
         title: '公告',
-        html: '已完成更新',
-        icon: 'success',
-        footer: '製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>'
-    })
+        icon: 'info',
+        html: '當點擊同意後視為已閱覽並同意<a href="./Privacy.html" target="_blank">《隱私權政策》</a>',
+        footer: '<a href="./Privacy.html" target="_blank">隱私權政策</a> <a href="./遊戲開源碼.txt" target="_blank">遊戲開源</a> <br>製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
+        showDenyButton: true,
+        denyButtonText: '不同意',
+        confirmButtonText: '同意',
+        allowOutsideClick: false,
+    }).then((result) => {
+        if (result.isDenied) {
+            history.back()
+        }
+    });
 };
 
 // 在網頁加載後綁定點擊事件
@@ -80,6 +88,7 @@ window.addEventListener('load', function() {
                     icon: 'info',
                     footer: '製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
                     showCancelButton: true,
+                    allowOutsideClick: false,
                     cancelButtonText: '返回',
                     confirmButtonText: '進入',
                     cancelButtonColor: '#d33',
