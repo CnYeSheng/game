@@ -44,9 +44,7 @@ window.addEventListener('load', function() {
 
 window.onload = function () {
     Swal.fire({
-        title: '公告',
-        icon: 'info',
-        html: '當點擊同意後視為已閱覽並同意<a href="./Privacy.html" target="_blank">《隱私權政策》</a>',
+        html: '正常使用或點擊同意將視為同意 <a href="./Privacy.html" target="_blank">《隱私權政策》</a> 所有內容',
         footer: '<a href="./Privacy.html" target="_blank">隱私權政策</a> <a href="./遊戲開源碼.txt" target="_blank">遊戲開源</a> <br>製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
         showDenyButton: true,
         denyButtonText: '不同意',
