@@ -5,23 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小遊戲</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./timer.css">
+    <script src="./timer.js"></script>
+    <script src="./script.js"></script>
     <link rel="icon" href="./logo.ico" sizes='500x500' type="image/x-icon"/>
     <link rel="manifest" href="manifest.json">
-    <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.min.css">   
-    <link rel="stylesheet" href="styles.css">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HJWM4CR1C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1HJWM4CR1C');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2097040852936601" crossorigin="anonymous"></script>
-</head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HJWM4CR1C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1HJWM4CR1C');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2097040852936601" crossorigin="anonymous"></script>
+    </head>
 
 <div class="fixed-text-container">
 <a href="https://www.paypal.me/CnYeSheng0329" class="fixed-text" target="_blank">
@@ -50,11 +51,35 @@
         <h2>這裡擁有許多好玩的遊戲</h2>
         <div class="custom-button">
             <span class="icon">i</span>
-            <p>遊戲說明</p>
+            <p>說明</p>
         </div>
     </div>
 
     <details open>
+        <summary style="text-align: center; font-size: 1.5rem; font-weight: bold;">考試複習</summary>
+
+        <div id="countdown">
+            <span id="days">00</span>天
+            <span id="hours">00</span>時
+            <span id="minutes">00</span>分
+            <span id="seconds">00</span>秒
+          </div>
+
+        <div id="games-chose">
+            <a href="https://qt.hle.com.tw/97891967" class="btn" target="_blank">翰林國文1~6冊(42題)</a>
+            
+            <a href="https://qt.hle.com.tw/63013246" class="btn" target="_blank">翰林英文1~6冊(43題閱讀+21題聽力)</a>
+ 
+            <a href="https://qt.hle.com.tw/08207147" class="btn" target="_blank">翰林數學1~6冊(25題選擇+2題非選)</a>
+ 
+            <a href="https://qt.hle.com.tw/98909339" class="btn" target="_blank">翰林自然1~6冊(50題)</a>
+ 
+            <a href="https://qt.hle.com.tw/12200631" class="btn" target="_blank">翰林社會1~6冊(54題)</a>
+        </div>
+    </details>
+
+
+    <details>
     <summary style="text-align: center; font-size: 1.5rem; font-weight: bold;">小遊戲</summary>
     <div id="games-chose">
 
@@ -228,7 +253,7 @@
     </details>-->
 
     <br>
-    <details open>
+    <details>
         <summary style="text-align: center; font-size: 1.5rem; font-weight: bold;">小工具</summary>
         <div id="games-chose">
             <a href="./Calculator/" class="btn" target="_blank" title="計算機">計算機
@@ -250,10 +275,19 @@
         </div>
     </details>
 
-    <!--<a href=".//" class="btn" target="_blank" title=""> </a>-->
+    <!--
+        <a href="" class="btn" target="_blank" title="">
+                <span class="info-icon" title="說明" gamePlay="">i</span>
+            </a>
+        -->
 
     <h1>New Update:</h1>
     <h5>MM/DD/YY</h5>
+
+    <div class="update-section">
+        <h3>04/17/24</h3>
+        <p class="add">新增：考試複習、主頁日期倒計時</p>
+    </div>
 
     <div class="update-section">
         <h3>04/13/24</h3><span style="size: 10px; color: red;">*校正</span>
