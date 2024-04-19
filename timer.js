@@ -6,6 +6,9 @@ function updateCountdown() {
   const currentDate = new Date();
   const timeDiff = targetDate.getTime() - currentDate.getTime();
 
+  const day = Math.floor(timeDiff / (1000 * 60 * 60 * 24) + 1);
+  document.getElementById('day').innerHTML = String(day).padStart(2, "0");
+
   if (timeDiff <= 0) {
     // 倒計時結束
     document.getElementById("countdown").innerHTML = "考試加油！";
@@ -16,6 +19,8 @@ function updateCountdown() {
   const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+  document.getElementById('all').innerHTML = "( " + String(days).padStart(2, "0") + " 天 " + String(hours).padStart(2, "0") + " 時 " + String(minutes).padStart(2, "0") + " 分 " + String(seconds).padStart(2, "0") + " 秒 " + ")";
 
   document.getElementById("days").textContent = String(days).padStart(2, "0");
   document.getElementById("hours").textContent = String(hours).padStart(2, "0");
