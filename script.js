@@ -69,32 +69,58 @@ window.onload = function () {
                     var updates = data[0].updates;
 
                     // 构建更新信息的 HTML 格式
-                    var updateHTML = "<h1>" + latestDate + "</h1>";
+                    var updateHTML = "";
                     updates.forEach(update => {
                         // 处理更新文本，添加空格来停顿
-                        var gamesText = update.games.join(", ").replace(/,/g, ", ");
+                        var gamesText = update.games.join("、");
                         updateHTML += "<p>" + update.type + "：" + gamesText + "</p>";
-
-                        // 设置语音合成器的语言为中文
-                        var utterance = new SpeechSynthesisUtterance();
-                        utterance.lang = 'zh-CN';
-
-                        // 使用文本到语音功能读出更新信息
-                        utterance.text = "最新更新：" + latestDate;
-                        speechSynthesis.speak(utterance);
-
-                        // 使用文本到语音功能读出更新信息
-                        utterance.text = update.type + "，" + gamesText; // 插入停顿的文字
-                        speechSynthesis.speak(utterance);
                     });
 
                     // 使用 SweetAlert 展示最新更新信息
                     Swal.fire({
-                        title: "最新更新",
+                        title: latestDate,
                         html: updateHTML,
                         icon: "info",
                         allowOutsideClick: false,
+                        footer: '製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
                     });
+
+                    // 设置语音合成器的语言为中文
+                    var utterance = new SpeechSynthesisUtterance();
+                    utterance.lang = 'zh-TW';
+
+                    // 定義需要語音合成的內容
+                    var contents = [
+                        "最新更新：" + latestDate,
+                    ];
+
+                    // 將新增和修改分開
+                    updates.forEach(update => {
+                        contents.push(update.type); // 添加新增或修改
+                        contents.push(update.games.join("，")); // 添加遊戲名稱，使用逗號隔開
+                    });
+
+                    contents.push("製作：YeSheng"); // 添加製作信息
+
+                    // 語音合成的索引
+                    var index = 0;
+
+                    // 語音合成函數
+                    function speakNext() {
+                        if (index < contents.length) {
+                            utterance.text = contents[index];
+                            speechSynthesis.speak(utterance);
+                            index++;
+                        }
+                    }
+
+                    // 監聽語音合成結束事件，然後調用下一段語音合成
+                    utterance.onend = function(event) {
+                        speakNext();
+                    };
+
+                    // 調用第一段語音合成
+                    speakNext();
                 })
                 .catch(error => {
                     console.error('获取更新信息失败：', error);
