@@ -1,30 +1,32 @@
-<h1>Snake-Game Using HTML,CSS,JS</h1>
+# **Game_Name** 
 
-This is a simple implementation of the classic Snake game using HTML, CSS, and JavaScript. The game is played on a canvas element and controlled using the arrow keys on the keyboard.
+3D Snake Game
 
-<h2>Getting Started</h2>
+## **Description 📃**
+Frontend game developed using HTML, CSS, JavaScript. Points will be gained by maximum number of eating.
 
-To play the game, simply open the link <a href="https://mohdriyaan.github.io/snake-game/">Snake-Game</a> in your web browser. The game will start automatically, and you can control the snake using the arrow keys on your keyboard.
+## **functionalities 🎮**
+- There will be snake in the game area
+- Player can move the snake by using the arrow keys
+- Once the snake eats the eating object points will be gained
+- The more the snake eats more points will be gained accordingly
 
-<h2>How To Play</h2>
+## **How to play? 🕹️**
+- Player can move the snake by using arrow keys
+- Once the snake eats the food the player will get points
 
-The objective of the game is to eat as many apples as possible without colliding with the walls or the snake's own body. As the snake eats more apples, it will grow in length and move faster.
+## **Screenshots 📸**
 
-You can control the direction of the snake using the arrow keys on your keyboard:
-<ul>
-  <li>Up: Press the up arrow key to move the snake upwards.</li>
-  <li>Down: Press the down arrow key to move the snake downwards.</li>
-  <li>Left: Press the left arrow key to move the snake to the left.</li>
-  <li>Right: Press the right arrow key to move the snake to the right.</li>
-</ul>
+![3d_Snake](https://github.com/sujanrupu/GameZone/assets/103595490/ec94bc6c-74c7-4745-b787-6abc9a1b17b4)
 
-<h2>Built With</h2>
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-</ul>
 
-<h2>Acknowledgements</h2>
+## **Working video 📹**
 
-This game was inspired by the classic Snake game that was popular in the late 1990s. Thanks to the developers of that game for providing the inspiration for this project.
+
+
+https://github.com/sujanrupu/GameZone/assets/103595490/1729301b-e85c-4fe7-848d-437da9a8a3b5
+
+
+
+
+

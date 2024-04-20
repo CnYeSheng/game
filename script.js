@@ -43,6 +43,8 @@ window.addEventListener('load', function() {
 
 
 window.onload = function () {
+    console.log("页面加载完成");
+    // 显示同意选项
     Swal.fire({
         html: '繼續使用將視為同意 <a href="./Privacy.html" target="_blank">《隱私權政策》</a> 內容',
         footer: '<a href="./Privacy.html" target="_blank">隱私權政策</a> <a href="./遊戲開源碼.txt" target="_blank">遊戲開源</a> <br>製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
@@ -51,8 +53,55 @@ window.onload = function () {
         confirmButtonText: '同意',
         allowOutsideClick: false,
     }).then((result) => {
-        if (result.isDenied) {
-            history.back()
+        console.log("用户选择了：" + result);
+        if (result.isConfirmed) {
+            // 如果用户同意，则使用 Fetch API 获取更新信息并显示最新更新
+            fetch('updates.json')
+                .then(response => {
+                    console.log("网络请求成功");
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("成功获取更新数据");
+                    // 获取最新更新的日期
+                    var latestDate = data[0].date;
+                    // 获取最新更新的内容
+                    var updates = data[0].updates;
+
+                    // 构建更新信息的 HTML 格式
+                    var updateHTML = "<h1>" + latestDate + "</h1>";
+                    updates.forEach(update => {
+                        // 处理更新文本，添加空格来停顿
+                        var gamesText = update.games.join(", ").replace(/,/g, ", ");
+                        updateHTML += "<p>" + update.type + "：" + gamesText + "</p>";
+
+                        // 设置语音合成器的语言为中文
+                        var utterance = new SpeechSynthesisUtterance();
+                        utterance.lang = 'zh-CN';
+
+                        // 使用文本到语音功能读出更新信息
+                        utterance.text = "最新更新：" + latestDate;
+                        speechSynthesis.speak(utterance);
+
+                        // 使用文本到语音功能读出更新信息
+                        utterance.text = update.type + "，" + gamesText; // 插入停顿的文字
+                        speechSynthesis.speak(utterance);
+                    });
+
+                    // 使用 SweetAlert 展示最新更新信息
+                    Swal.fire({
+                        title: "最新更新",
+                        html: updateHTML,
+                        icon: "info",
+                        allowOutsideClick: false,
+                    });
+                })
+                .catch(error => {
+                    console.error('获取更新信息失败：', error);
+                });
+        } else if (result.isDenied) {
+            // 如果用户不同意，则返回上一页
+            history.back();
         }
     });
 };
@@ -102,6 +151,3 @@ window.addEventListener('load', function() {
         });
     });
 });
-
-
-

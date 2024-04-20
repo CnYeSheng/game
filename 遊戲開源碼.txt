@@ -36,3 +36,4 @@
 像素鳥 - https://github.com/noowxela/phaser-examples?tab=readme-ov-file
 Hextris - https://github.com/Hextris/hextris
 見縫插針 - https://github.com/acorn13/acorn13.github.io
+磚塊消除, 躲避方塊, 瞄準測驗, 魔方陣, 乒乓球, 貪吃蛇, 西洋棋 - https://github.com/kunjgit/GameZone
