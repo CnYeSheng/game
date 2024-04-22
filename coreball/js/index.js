@@ -781,3 +781,7 @@ if (match) {
     $AJB.page.index();
 
 GlobalLevel = $AJB.general.Game().shareLevel;
+
+window.onload = function() {
+    console.log("localStorage.setItem('core-ball-level', 等級);")
+}
