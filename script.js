@@ -1,3 +1,4 @@
+//動畫
 window.addEventListener('load', function() {
     const header = document.querySelector('header');
     const nav = document.querySelector('nav');
@@ -41,7 +42,7 @@ window.addEventListener('load', function() {
     });
 });
 
-
+//同意畫面
 window.onload = function () {
     console.log("页面加载完成");
     // 显示同意选项
@@ -132,6 +133,7 @@ window.onload = function () {
     });
 };
 
+//遊戲選擇
 // 在網頁加載後綁定點擊事件
 window.addEventListener('load', function() {
     // 獲取所有的 info icon 元素

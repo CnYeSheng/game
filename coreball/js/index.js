@@ -724,6 +724,13 @@ if (match) {
                             h.run(D)
                         })
                 })
+        
+                // 新增監聽空白鍵事件
+                document.addEventListener("keydown", function(event) {
+                    if (event.code === "Space") {
+                        h.shot();
+                    }
+                });
         }
 
         function f() {
@@ -785,3 +792,33 @@ GlobalLevel = $AJB.general.Game().shareLevel;
 window.onload = function() {
     console.log("localStorage.setItem('core-ball-level', 等級);")
 }
+
+var increaseButton = document.getElementById('increaseButton');
+
+        // 監聽按鈕點擊事件
+        increaseButton.addEventListener('click', function() {
+            // 獲取當前 localStorage 值，如果不存在則設置為 0
+            var currentValue = parseInt(localStorage.getItem('core-ball-level')) || 0;
+            
+            // 增加值並更新到 localStorage
+            localStorage.setItem('core-ball-level', currentValue + 1);
+
+            // 在控制台上顯示新的值
+            console.log("等級更新為:", currentValue + 1);
+
+            Swal.fire({
+                icon: 'success',
+                title: `完成`,
+                html: `請重整網頁<br>等級:${currentValue + 1}`,
+                footer: '製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
+                allowOutsideClick: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    history.go(0)
+                }
+            });
+        });
+
+        document.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+         });
