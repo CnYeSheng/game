@@ -329,7 +329,7 @@ if (match) {
                 97: ["14", 14, "A2"],
                 98: ["3", 3, "A2"],
                 99: ["14", 14, "A2"],
-                100: ["12", 12, "A2"],                
+                100: ["12", 12, "A2"],
             };
         for (g in l) f(g, l[g][0], l[g][1], l[g][2]);
         return i
@@ -826,7 +826,7 @@ if (match) {
             v = document.getElementById("btnReset"),
             w = document.getElementById("wxArrow"),
             x = r.getContext("2d"),
-            y = 100,
+            y = 60,
             z = "core-ball-level",
             A = "Core Ball，Level #{level}",
             B = "Core Ball，Level #{level} http://funclubmedia.com/m9game/game/73/",
