@@ -289,7 +289,47 @@ if (match) {
                 57: ["4", 24, "C1"],
                 58: ["4", 26, "D1"],
                 59: ["4", 25, "E2"],
-                60: ["13", 19, "E2"]
+                60: ["13", 19, "E2"],
+                61: ["16", 16, "A2"],
+                62: ["10", 10, "A2"],
+                63: ["3", 3, "A2"],
+                64: ["16", 16, "A2"],
+                65: ["11", 11, "A2"],
+                66: ["10", 10, "A2"],
+                67: ["11", 11, "A2"],
+                68: ["9", 9, "A2"],
+                69: ["14", 14, "A2"],
+                70: ["7", 7, "A2"],
+                71: ["5", 5, "A2"],
+                72: ["9", 9, "A2"],
+                73: ["15", 15, "A2"],
+                74: ["13", 13, "A2"],
+                75: ["15", 15, "A2"],
+                76: ["7", 7, "A2"],
+                77: ["5", 5, "A2"],
+                78: ["3", 3, "A2"],
+                79: ["5", 5, "A2"],
+                80: ["11", 11, "A2"],
+                81: ["15", 15, "A2"],
+                82: ["2", 2, "A2"],
+                83: ["13", 13, "A2"],
+                84: ["14", 14, "A2"],
+                85: ["7", 7, "A2"],
+                86: ["7", 7, "A2"],
+                87: ["8", 8, "A2"],
+                88: ["12", 12, "A2"],
+                89: ["8", 8, "A2"],
+                90: ["5", 5, "A2"],
+                91: ["13", 13, "A2"],
+                92: ["5", 5, "A2"],
+                93: ["9", 9, "A2"],
+                94: ["16", 16, "A2"],
+                95: ["7", 7, "A2"],
+                96: ["2", 2, "A2"],
+                97: ["14", 14, "A2"],
+                98: ["3", 3, "A2"],
+                99: ["14", 14, "A2"],
+                100: ["12", 12, "A2"],                
             };
         for (g in l) f(g, l[g][0], l[g][1], l[g][2]);
         return i
@@ -673,7 +713,28 @@ if (match) {
         function c() {
             p.isWeixin ? n(u, "mousedown", function() {
                 w.style.display = ""
-            }) : p.isMobile && b()
+            }) : p.isMobile && b();
+        
+            // 監聽 btnFW 連結點擊事件開始遊戲
+            var btnFW = document.getElementById("btnFW");
+            n(btnFW, "click", function() {
+                r.style.display = "";
+                C.hide();
+                i.switchStage(1, function() {
+                    h.run(D)
+                });
+            });
+        
+            // 監聽空白鍵開始遊戲（只在遊戲未開始時生效）
+            document.addEventListener("keydown", function(event) {
+                if (event.code === "Space" && !h.enabled) {
+                    r.style.display = "";
+                    C.hide();
+                    i.switchStage(1, function() {
+                        h.run(D)
+                    });
+                }
+            });
         }
 
         function d(a) {
@@ -765,7 +826,7 @@ if (match) {
             v = document.getElementById("btnReset"),
             w = document.getElementById("wxArrow"),
             x = r.getContext("2d"),
-            y = 60,
+            y = 100,
             z = "core-ball-level",
             A = "Core Ball，Level #{level}",
             B = "Core Ball，Level #{level} http://funclubmedia.com/m9game/game/73/",
@@ -795,30 +856,48 @@ window.onload = function() {
 
 var increaseButton = document.getElementById('increaseButton');
 
-        // 監聽按鈕點擊事件
-        increaseButton.addEventListener('click', function() {
-            // 獲取當前 localStorage 值，如果不存在則設置為 0
-            var currentValue = parseInt(localStorage.getItem('core-ball-level')) || 0;
-            
-            // 增加值並更新到 localStorage
-            localStorage.setItem('core-ball-level', currentValue + 1);
+// 監聽按鈕點擊事件
+increaseButton.addEventListener('click', function() {
+    Swal.fire({
+        title: '請輸入關卡',
+        input: 'number',
+        inputAttributes: {
+            min: 1,
+            max: 100, // 假設最高關卡是 60
+            step: 1
+        },
+        showCancelButton: true,
+        confirmButtonText: '確定',
+        cancelButtonText: '取消',
+        allowOutsideClick: false,
+        footer: '製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
+        inputValidator: (value) => {
+            if (!value) {
+                return '請輸入關卡數字';
+            }
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // 獲取使用者輸入的關卡值
+            var newLevel = parseInt(result.value);
 
-            // 在控制台上顯示新的值
-            console.log("等級更新為:", currentValue + 1);
+            // 更新 localStorage 中的關卡值
+            localStorage.setItem('core-ball-level', newLevel);
 
+            // 顯示確認訊息並重新整理頁面
             Swal.fire({
                 icon: 'success',
-                title: `完成`,
-                html: `請重整網頁<br>等級:${currentValue + 1}`,
+                title: `已跳到第 ${newLevel} 關`,
+                html: `請重整網頁`,
                 footer: '製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
                 allowOutsideClick: false,
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    history.go(0)
-                }
+            }).then(() => {
+                history.go(0);
             });
-        });
+        }
+    });
+});
 
-        document.addEventListener("contextmenu", (event) => {
-            event.preventDefault();
-         });
+document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+});
