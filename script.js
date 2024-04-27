@@ -190,34 +190,106 @@ window.addEventListener('load', function() {
     });
 });
 
-const correctPasswordHash = "9e3142551c65cb9d3c2d5653c652bece4850c7c96b88c00ef81036e5d28edd29dc9118ed0efb601a38d9adc6458878c50fb92c49ba1ff93b0ae66ac4dc0599b1";
+const correctPasswordHash = "5144439bbab67dfb1f8c153a350eea1b338fd10e087c45261eff1ec68487dced33869962019212cba361b871ef5d202b27cd0d26f588145768570a38434cdb89";
+
+let loginAttempts = 0;
+let lockoutTime = 0;
 
 window.addEventListener('load', function() {
-    // 獲取所有的 info icon 元素
     const pws = document.querySelectorAll('#pw');
 
-    // 遍歷每個 info icon 元素，為其添加點擊事件
     pws.forEach((icon, index) => {
         icon.addEventListener('click', function(e) {
-            e.preventDefault(); // 防止點擊後跳轉
-                // 使用 SweetAlert 顯示遊戲玩法和開始遊玩按鈕
-                Swal.fire({
-                    title: '請輸入密碼',
-                    input: 'text',
-                    inputAttributes: { autocapitalize: 'off' },
-                    showCancelButton: true,
-                    confirmButtonText: '確認',
-                    showLoaderOnConfirm: true,
-                    preConfirm: (password) => {
-                    const passwordHash = sha512(password);
-                    if (passwordHash === correctPasswordHash) {
-                        window.open(this.href, '_blank'); // 密碼正確則跳轉
-                    } else {
-                        Swal.showValidationMessage(`密碼錯誤`)
-                    }},
-                    allowOutsideClick: () => !Swal.isLoading()
-                })
-             });
-            }
-        );
-    })
+            e.preventDefault();
+            checkLockout(this.href);
+        });
+    });
+});
+
+function checkLockout(href) {
+    const currentTime = new Date().getTime();
+    const timeLeft = lockoutTime - currentTime;
+
+    if (timeLeft > 0) {
+        showCountdown(timeLeft, href);
+    } else {
+        showPasswordPrompt(href);
+    }
+}
+
+function showPasswordPrompt(href) {
+    Swal.fire({
+        title: '請輸入密碼',
+        input: 'text',
+        inputAttributes: { autocapitalize: 'off' },
+        showCancelButton: true,
+        confirmButtonText: '確認',
+        showLoaderOnConfirm: true,
+        preConfirm: (password) => validatePassword(password, href),
+        allowOutsideClick: () => !Swal.isLoading()
+    });
+}
+
+function validatePassword(password, href) {
+    const passwordHash = sha512(sha384(sha256(sha1(md5(btoa(password))))));
+    if (passwordHash === correctPasswordHash) {
+        window.open(href, '_blank');
+    } else {
+        loginAttempts++;
+        if (loginAttempts >= 5) {
+            const lockoutPeriod = 60000 + (Math.floor((loginAttempts - 5) / 3) * 20000);
+            lockoutTime = new Date().getTime() + lockoutPeriod;
+            localStorage.setItem('lockoutTime', lockoutTime);
+            showCountdown(lockoutPeriod, href);
+        }
+        Swal.showValidationMessage(`密碼錯誤`);
+    }
+}
+
+function showCountdown(duration, href) {
+    let initialSeconds = Math.round(duration / 1000);
+    let timerInterval;
+
+    Swal.fire({
+        title: '輸入錯誤太多次',
+        html: '請等待 <b>' + initialSeconds + '</b> 秒後重新嘗試。',
+        timer: duration,
+        timerProgressBar: true,
+        didOpen: () => {
+            const b = Swal.getHtmlContainer().querySelector('b');
+            timerInterval = setInterval(() => {
+                initialSeconds -= 1; // 每次減少一秒
+                if(initialSeconds >= 0) {
+                    b.textContent = initialSeconds;
+                }
+
+                if(initialSeconds < 0) {
+                    clearInterval(timerInterval);
+                    Swal.clickConfirm(); // 自動確認當倒數結束
+                }
+            }, 1000);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.timer) {
+            showPasswordPrompt(href); // 倒數結束後或被手動關閉，則執行顯示密碼提示框的函數
+        }
+    });
+}
+
+// Saves lockout time on browser close or page refresh
+window.onbeforeunload = function() {
+    if (lockoutTime) {
+        localStorage.setItem('lockoutTime', lockoutTime);
+    }
+};
+
+// Recovers lockout time on page load
+window.onload = function() {
+    const savedLockoutTime = localStorage.getItem('lockoutTime');
+    if (savedLockoutTime) {
+        lockoutTime = parseInt(savedLockoutTime);
+    }
+};
