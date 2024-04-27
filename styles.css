@@ -277,3 +277,106 @@ footer {
 .fixed-text:hover {
   background-color: #0056b3;
 }
+
+@keyframes darkModeAnimation {
+  0% {
+    background-color: #f8f9fa;
+  }
+  100% {
+    background-color: #222;
+  }
+}
+
+@keyframes lightModeAnimation {
+  0% {
+    background-color: #222;
+  }
+  100% {
+    background-color: #f8f9fa;
+  }
+}
+
+body {
+  animation: lightModeAnimation 0.5s ease-in-out forwards;
+  background-color: #f8f9fa;
+  color: #333333;
+}
+
+body.dark-mode {
+  animation: darkModeAnimation 0.5s ease-in-out forwards;
+  background-color: #222;
+  color: #ddd;
+}
+
+#darkModeToggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  border-radius: 50%;
+  left: 32px;
+  bottom: 32px;
+}
+
+body.dark-mode #darkModeToggle {
+  background-color: #fff;
+  color: #333;
+  animation: lightModeAnimation 0.5s ease-in-out forwards;
+}
+
+#darkModeToggle:hover {
+  background-color: #444;
+}
+
+body.dark-mode #darkModeToggle:hover {
+  background-color: #bbb;
+}
+
+body.dark-mode .update-section {
+  background-color: #333;
+  color: #ddd;
+  animation: darkModeAnimation 0.5s ease-in-out forwards;
+}
+
+body.dark-mode .add {
+  background-color: #333;
+  border-left-color: green;
+  color: #ddd;
+  animation: darkModeAnimation 0.5s ease-in-out forwards;
+}
+
+body.dark-mode .remove {
+  background-color: #333;
+  border-left-color: red;
+  color: #ddd;
+  animation: darkModeAnimation 0.5s ease-in-out forwards;
+}
+
+body.dark-mode .other {
+  background-color: #333;
+  border-left-color: #f1c232;
+  color: #ddd;
+  animation: darkModeAnimation 0.5s ease-in-out forwards;
+}
+
+body.dark-mode .warning {
+  background-color: #333;
+  border-left-color: #f2711c;
+  color: #ddd;
+  animation: darkModeAnimation 0.5s ease-in-out forwards;
+}
+
+body.dark-mode footer {
+  background-color: #666;
+  color: white; /* 可選擇性地設置文本顏色 */
+  animation: darkModeAnimation 0.5s ease-in-out forwards;
+}

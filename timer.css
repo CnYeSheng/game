@@ -11,3 +11,8 @@
     border-radius: 5px;
     margin: 0 5px;
   }
+
+  body.dark-mode #countdown span {
+    background-color: black;
+    animation: darkModeAnimation 0.5s ease-in-out forwards;
+  }
