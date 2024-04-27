@@ -1,46 +1,56 @@
 //動畫
-window.addEventListener('load', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('header');
     const nav = document.querySelector('nav');
     const section = document.querySelector('section');
     const footer = document.querySelector('footer');
-
-    nav.style.opacity = '0';
-    section.style.opacity = '0';
-    footer.style.opacity = '0';
-
-    setTimeout(function() {
+  
+    if (nav && section && footer) {
+      nav.style.opacity = '0';
+      section.style.opacity = '0';
+      footer.style.opacity = '0';
+  
+      if (header) {
         header.style.opacity = '1';
-        nav.style.opacity = '1';
-        section.style.opacity = '1';
-        footer.style.opacity = '1';
-    }, 500);
-
+      }
+  
+      setTimeout(function() {
+        if (nav && section && footer) {
+          nav.style.opacity = '1';
+          section.style.opacity = '1';
+          footer.style.opacity = '1';
+        }
+      }, 500);
+    }
+  
     const customDetails = document.getElementById('custom-details');
     const gamesChose = document.getElementById('games-chose');
     const btns = document.querySelectorAll('.btn');
-
-    customDetails.addEventListener('toggle', function() {
+  
+    if (customDetails && gamesChose && btns.length > 0) {
+      customDetails.addEventListener('toggle', function() {
         if (this.open) {
-            gamesChose.classList.remove('animate');
-            void gamesChose.offsetWidth;
-            gamesChose.classList.add('animate');
-            btns.forEach(btn => {
-                btn.classList.remove('animate');
-                void btn.offsetWidth;
-                btn.classList.add('animate');
-            });
+          gamesChose.classList.remove('animate');
+          void gamesChose.offsetWidth;
+          gamesChose.classList.add('animate');
+  
+          btns.forEach(btn => {
+            btn.classList.remove('animate');
+            void btn.offsetWidth;
+            btn.classList.add('animate');
+          });
         }
-    });
-
-    btns.forEach(btn => {
+      });
+  
+      btns.forEach(btn => {
         btn.addEventListener('click', function() {
-            this.classList.remove('animate');
-            void this.offsetWidth;
-            this.classList.add('animate');
+          this.classList.remove('animate');
+          void this.offsetWidth;
+          this.classList.add('animate');
         });
-    });
-});
+      });
+    }
+  });
 
 //同意畫面
 window.onload = function () {
@@ -179,3 +189,35 @@ window.addEventListener('load', function() {
         });
     });
 });
+
+const correctPasswordHash = "9e3142551c65cb9d3c2d5653c652bece4850c7c96b88c00ef81036e5d28edd29dc9118ed0efb601a38d9adc6458878c50fb92c49ba1ff93b0ae66ac4dc0599b1";
+
+window.addEventListener('load', function() {
+    // 獲取所有的 info icon 元素
+    const pws = document.querySelectorAll('#pw');
+
+    // 遍歷每個 info icon 元素，為其添加點擊事件
+    pws.forEach((icon, index) => {
+        icon.addEventListener('click', function(e) {
+            e.preventDefault(); // 防止點擊後跳轉
+                // 使用 SweetAlert 顯示遊戲玩法和開始遊玩按鈕
+                Swal.fire({
+                    title: '請輸入密碼',
+                    input: 'text',
+                    inputAttributes: { autocapitalize: 'off' },
+                    showCancelButton: true,
+                    confirmButtonText: '確認',
+                    showLoaderOnConfirm: true,
+                    preConfirm: (password) => {
+                    const passwordHash = sha512(password);
+                    if (passwordHash === correctPasswordHash) {
+                        window.open(this.href, '_blank'); // 密碼正確則跳轉
+                    } else {
+                        Swal.showValidationMessage(`密碼錯誤`)
+                    }},
+                    allowOutsideClick: () => !Swal.isLoading()
+                })
+             });
+            }
+        );
+    })

@@ -22,10 +22,10 @@ function updateCountdown() {
 
   document.getElementById('all').innerHTML = "( " + String(days).padStart(2, "0") + " 天 " + String(hours).padStart(2, "0") + " 時 " + String(minutes).padStart(2, "0") + " 分 " + String(seconds).padStart(2, "0") + " 秒 " + ")";
 
-  document.getElementById("days").textContent = String(days).padStart(2, "0");
+  /*document.getElementById("days").textContent = String(days).padStart(2, "0");
   document.getElementById("hours").textContent = String(hours).padStart(2, "0");
   document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");*/
 }
 
 // 每秒鐘更新一次倒數計時器
