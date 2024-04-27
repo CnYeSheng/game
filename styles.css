@@ -310,7 +310,6 @@ body.dark-mode {
 
 #darkModeToggle {
   position: fixed;
-  bottom: 20px;
   left: 20px;
   background-color: #333;
   color: #fff;
@@ -321,9 +320,6 @@ body.dark-mode {
   z-index: 1;
   width: 3rem;
   height: 3rem;
-  position: fixed;
-  border-radius: 50%;
-  left: 32px;
   bottom: 32px;
 }
 
