@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>加权抽奖系统</title>
+<link rel="stylesheet" href="style.css">
+<!-- 在你的HTML文件的<head>部分添加以下链接 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>新增奖品</h2>
+  <input type="text" id="prizeName" placeholder="奖品名称" />
+  <button onclick="addPrize()">新增奖品</button>
+  
+  <h2>新增人员</h2>
+  <input type="text" id="personName" placeholder="人员名称" />
+  <input type="number" id="personWeight" placeholder="加权百分比" min="0" />
+  <button onclick="addPerson()">新增人员</button>
+  
+  <h3>奖品列表：</h3>
+  <ul id="prizesList" class="list-group"></ul>
+
+  <h3>人员列表：</h3>
+  <ul id="personsList" class="list-group"></ul>
+  
+  <button onclick="drawLottery()">开始抽奖</button>
+  
+  <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

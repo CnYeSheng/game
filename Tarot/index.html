@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,8 @@
 
   gtag('config', 'G-B3RBNSE9JZ');
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js"></script>
+
 </head>
 <body>
   <header>
@@ -26,7 +28,7 @@
       <h2>歡迎來到塔羅牌占卜</h2>
       <form id="questionForm">
         <label for="question">輸入您的問題：</label>
-        <input type="text" id="question" name="question" required>
+        <input type="text" id="question" name="question" required oninvalid="showError(this); this.setCustomValidity();" oninput="this.setCustomValidity();">
         <input type="submit" value="抽牌">
       </form>
     </div>
@@ -38,6 +40,8 @@
       <div class="cards" id="cardResults">
         <!-- 這裡將顯示牌組圖片 -->
       </div>
+
+      <div id="chatWindow"></div>
 
       <div id="downloadLink" style="display: none;">
         <a id="downloadButton" href="#">下載占卜結果</a>

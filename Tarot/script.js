@@ -4,12 +4,22 @@ const questionForm = document.getElementById('questionForm');
     const downloadLink = document.getElementById('downloadLink');
     const downloadButton = document.getElementById('downloadButton');
 
+
+    function showError(input) {
+      Swal.fire({
+        icon: 'error',
+        title: '錯誤',
+        text: '請輸入您的問題'
+      });
+      input.reportValidity(); // This will prevent form from submitting
+    }
+
     questionForm.addEventListener('submit', function(event) {
       event.preventDefault();
       readingSection.style.display = 'block';
       const question = document.getElementById('question').value;
       console.log('問題：', question);
-
+      
       // 清空上一次的結果
       cardResults.innerHTML = '';
 
@@ -70,6 +80,7 @@ cardResults.appendChild(cardContainer);
         // 從清單中移除已經抽取的牌，避免重複抽取
         tarotCards.splice(randomIndex, 1);
       }
+      console.log('抽到的牌:', selectedCards);
 
       // 顯示下載鏈接
       downloadLink.style.display = 'block';
@@ -78,6 +89,66 @@ cardResults.appendChild(cardContainer);
       downloadButton.onclick = function() {
         downloadImage(question, selectedCards);
       };
+
+      sendMessage(question, selectedCards);
+      function sendMessage(question, selectedCards) {
+         // 清空之前的 AI 回答結果
+        const aiMessages = chatWindow.querySelectorAll('.ai-message');
+        aiMessages.forEach(message => message.remove());
+
+        var userInput = question;
+        
+        // 創建並顯示正在等待的提示消息
+        var loadingMessageDiv = document.createElement('div');
+        loadingMessageDiv.textContent = '生成中....';
+        loadingMessageDiv.classList.add('message', 'ai-message');
+        chatWindow.appendChild(loadingMessageDiv);
+      
+        // 將選中的牌組合成字符串
+        var selectedCardsString = selectedCards.join(', ');
+      
+        const headers = {
+          'Authorization': 'Bearer pat_mNi9dnONoHYlZueEM82dn3N7X2NQHRNPYYCwlTfDFX02weNRMOsCPEihx8Kqjrhf',
+          'Content-Type': 'application/json',
+          'Accept': '*/*',
+          'Host': 'api.coze.com',
+          'Connection': 'keep-alive'
+        };
+      
+        const body = {
+          "conversation_id": "123",
+          "bot_id": "7360978745429671954", 
+          "user": "29032201862555",
+          "query": "問題：" + ' ' + userInput + ' ' + selectedCardsString + "請幫我解析每張牌對這個問題的關係再做總結,並用中文回答", // 將問題和選中的牌組合在一起
+          "stream": false
+        };
+      
+        fetch('https://api.coze.com/open_api/v2/chat', {
+          method: 'POST',
+          headers: headers,
+          body: JSON.stringify(body)
+        })
+        .then(response => response.json())
+        .then(data => {
+          // 移除"生成中,請稍候...."的提示信息
+          chatWindow.removeChild(loadingMessageDiv);
+      
+          if (data.code === 0 && data.messages && data.messages.length > 0) {
+            data.messages.forEach(message => {
+              if (message.type === "answer") {
+                var messageDiv = document.createElement('div');
+                messageDiv.textContent = message.content;
+                messageDiv.classList.add('message', 'ai-message');
+                chatWindow.appendChild(messageDiv);
+              }
+            });
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          loadingMessageDiv.textContent = '無法獲取回答,請稍後再試。';
+        });
+      }
     });
 
     function downloadImage(question, selectedCards) {
