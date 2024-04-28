@@ -141,6 +141,11 @@ window.onload = function () {
             history.back();
         }
     });
+
+    const savedLockoutTime = localStorage.getItem('lockoutTime');
+    if (savedLockoutTime) {
+        lockoutTime = parseInt(savedLockoutTime);
+    }
 };
 
 //遊戲選擇
@@ -286,13 +291,6 @@ window.onbeforeunload = function() {
     }
 };
 
-// Recovers lockout time on page load
-window.onload = function() {
-    const savedLockoutTime = localStorage.getItem('lockoutTime');
-    if (savedLockoutTime) {
-        lockoutTime = parseInt(savedLockoutTime);
-    }
-};
 
 
 
