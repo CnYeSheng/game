@@ -376,3 +376,7 @@ body.dark-mode footer {
   color: white; /* 可選擇性地設置文本顏色 */
   animation: darkModeAnimation 0.5s ease-in-out forwards;
 }
+
+svg {
+  vertical-align: middle;
+}

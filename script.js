@@ -292,8 +292,6 @@ window.onbeforeunload = function() {
 };
 
 
-
-
 // 在網頁載入完成後執行
 window.addEventListener('DOMContentLoaded', function() {
     const darkModeToggle = document.getElementById('darkModeToggle');
