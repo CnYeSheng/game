@@ -380,3 +380,9 @@ body.dark-mode footer {
 svg {
   vertical-align: middle;
 }
+
+@media (max-width: 767px) {
+  .no-mobile {
+    display: none;
+  }
+}

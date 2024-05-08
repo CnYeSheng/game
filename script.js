@@ -322,3 +322,16 @@ window.addEventListener('DOMContentLoaded', function() {
         }
       });
   });
+
+  function detectMobile() {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const elementsToHide = document.querySelectorAll('.mobile');
+    elementsToHide.forEach(el => {
+      if (isMobile) {
+        el.style.display = 'none';
+      }
+    });
+  }
+  
+  // 在網頁載入時執行檢測
+  window.addEventListener('load', detectMobile);
