@@ -195,6 +195,8 @@ window.addEventListener('load', function() {
     });
 });
 
+
+//密碼
 const correctPasswordHash = "5144439bbab67dfb1f8c153a350eea1b338fd10e087c45261eff1ec68487dced33869962019212cba361b871ef5d202b27cd0d26f588145768570a38434cdb89";
 
 let loginAttempts = 0;
@@ -291,7 +293,7 @@ window.onbeforeunload = function() {
     }
 };
 
-
+//深色模式
 // 在網頁載入完成後執行
 window.addEventListener('DOMContentLoaded', function() {
     const darkModeToggle = document.getElementById('darkModeToggle');
@@ -316,13 +318,16 @@ window.addEventListener('DOMContentLoaded', function() {
         if (isDarkMode) {
           setTimeout(() => {
             body.style.backgroundColor = '#222';
-          }, 500); // 動畫時間為 0.5 秒
+          }, 800);
         } else {
-          body.style.backgroundColor = '#f8f9fa'; // 直接更新為淺色背景
+            setTimeout(() => {
+                body.style.backgroundColor = '#f8f9fa';
+            }, 800);
         }
       });
   });
 
+  //手機偵測
   function detectMobile() {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     const elementsToHide = document.querySelectorAll('.mobile');
@@ -332,6 +337,37 @@ window.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-  
-  // 在網頁載入時執行檢測
-  window.addEventListener('load', detectMobile);
+
+//網外遊戲
+window.addEventListener('load', function() {
+    const ogs = document.querySelectorAll('.ogs');
+
+    ogs.forEach((icon, index) => {
+        icon.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const parentogs = document.querySelector('.ogs');
+            if (parentogs) {
+                const gamesLink = parentogs.getAttribute('href');
+
+                Swal.fire({
+                    title: `通知`,
+                    html: `<p>您確定要進入該網站嗎？<br></p>`,
+                    icon: 'info',
+                    footer: '製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
+                    showCancelButton: true,
+                    allowOutsideClick: false,
+                    cancelButtonText: '返回',
+                    confirmButtonText: '進入',
+                    cancelButtonColor: '#d33',
+                    confirmButtonColor: '#3085d6',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.open(gamesLink, '_blank');
+                    }
+                });
+            }
+        });
+    });
+});
