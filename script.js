@@ -346,7 +346,7 @@ window.addEventListener('load', function() {
         icon.addEventListener('click', function(e) {
             e.preventDefault();
 
-            const parentogs = document.querySelector('.ogs');
+            const parentogs = this.closest('.ogs');
             if (parentogs) {
                 const gamesLink = parentogs.getAttribute('href');
 
