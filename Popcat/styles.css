@@ -1,11 +1,11 @@
 * {
-    -webkit-touch-callout:none;  /*系统默认菜单被禁用*/   
-    -webkit-user-select:none; /*webkit浏览器*/   
-    -khtml-user-select:none; /*早期浏览器*/   
-    -moz-user-select:none;/*火狐*/   
-    -ms-user-select:none; /*IE10*/   
+    -webkit-touch-callout:none;  /* Disable system default menu */
+    -webkit-user-select:none; /* Disable text selection on webkit browsers */
+    -khtml-user-select:none; /* Disable text selection on early browsers */
+    -moz-user-select:none;/* Disable text selection on Firefox */
+    -ms-user-select:none; /* Disable text selection on IE10 */
     user-select:none;
-    -webkit-user-select: none;
+    overflow: hidden;
 }
 
 /*body {
@@ -24,17 +24,14 @@ body {
     margin: 0;
     background-color: #bdaa90;
     user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
     position: relative;
-    font-family: Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-    margin: 0;
+    font-family: Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     height: 100%;
-    overflow: hidden
+    overflow: hidden;
 }
 
 body:before {
@@ -45,10 +42,10 @@ body:before {
     top: 50%;
     left: 50%;
     z-index: -1;
-    transform: translate(-50%,-50%) rotate(-3deg);
-    background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAOEAAEDAREAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAAAgMAAQQFBggH/8QAGgEBAQEBAQEBAAAAAAAAAAAAAgADAQQFBv/aAAwDAQACEAMQAAAA/P8A8191tHqSSYtt+Z6A50c+9Dz69DzLdTGJ1sa6a52dB29B6DXPoak6KhoqmhixiJcrNHAvRKLhLykJeWK+eq+Uz39hyX0bzX01eg0ugbURDxRpwyonKlSpRVRKxxFmA5dENVdWfbTKe1n2YlWk3QO1tHbaYsZasOvcHleajZJElyOtduiz1Z423aaxWfEvlkGZlNozEOPXX1Tlshsk8GNJPeyrDuo+1pxvZxmhO5CTiR5jNejP/8QAKxAAAQEHAgQGAwAAAAAAAAAAABIBAhARExRhFVEDIWKBBBcgMFOSUnGR/9oACAEBAAE/AECISKRTwUMFvkps2LUTFLS2c3LDpLRhYOiRMOfpT6UnIW7uw1zrPOXhfkz7Gp+P6jyte+I0Dhlr0li6U8Qn7KmZOQvJUgkmVBQppImdyngQ0ovbNP5BbMlbJVbBAmKSZ2EnLZgl0UKbkSIEQTCmJFExeRbBTScEwmJKZ2EsJCv2XeC5e+DiGteJ3c+p/8QAHREAAgMBAAMBAAAAAAAAAAAAABEBEBIgAhMhMP/aAAgBAgEBPwCkIUDrQ+FAhGRSLpCp8uByO9QO1BqaZ9/B9fRCgZqKQhRWoHJkcGpM2hCPp7fEcnrk3ApGPhjnhCilyhU6dIVf/8QAGxEAAgMBAQEAAAAAAAAAAAAAABEBECASITD/2gAIAQMBAT8Ay6QpyhnUU50x7Z6K0LLEe/FU5tQIUCH8VIxHU0xXzhHUac4VrPmXTHX/2Q==);
+    transform: translate(-50%, -50%) rotate(-3deg);
+    background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAOEAAEDAREAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAAAgMAAQQFBggH/8QAGgEBAQEBAQEBAAAAAAAAAAAAAgADAQQFBv/aAAwDAQACEAMQAAAA/P8A8191tHqSSYtt+Z6A50c+9Dz69DzLdTGJ1sa6a52dB29B6DXPoak6KhoqmhixiJcrNHAvRKLhLykJeWK+eq+Uz39hyX0bzX01eg0ugbURDxRpwyonKlSpRVRKxxFmA5dENVdWfbTKe1n2YlWk3QO1tHbaYsZasOvcHleajZJElyOtduiz1Z423aaxWfEvlkGZlNozEOPXX1Tlshsk8GNJPeyrDuo+1pxvZxmhO5CTiR5jNejP/8QAKxAAAQEHAgQGAwAAAAAAAAAAABIBAhARExRhFVEDIWKBBBcgMFOSUnGR/9oACAEBAAE/AECISKRTwUMFvkps2LUTFLS2c3LDpLRhYOiRMOfpT6UnIW7uw1zrPOXhfkz7Gp+P6jyte+I0Dhlr0li6U8Qn7KmZOQvJUgkmVBQppImdyngQ0ovbNP5BbMlbJVbBAmKSZ2EnLZgl0UKbkSIEQTCmJFExeRbBTScEwmJKZ2EsJCv2XeC5e+DiGteJ3c+p/8QAHREAAgMBAAMBAAAAAAAAAAAAABEBEBIgAhMhMP/aAAgBAgEBPwCkIUDrQ+FAhGRSLpCp8uByO9QO1BqaZ9/B9fRCgZqKQhRWoHJkcGpM2hCPp7fEcnrk3ApGPhjnhCilyhU6dIVf/8QAGxEAAgMBAQEAAAAAAAAAAAAAABEBECASITD/2gAIAQMBAT8Ay6QpyhnUU50x7Z6K0LLEe/FU5tQIUCH8VIxHU0xXzhHUac4VrPmXTHX/2Q==');
     background-repeat: repeat-x;
-    background-size: contain
+    background-size: contain;
 }
 
 .container {
@@ -65,11 +62,12 @@ body:before {
     height: 812px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
+    background-image: url('cat.png');
 }
 
 #cat.pressed,
 #cat:active {
-    content: url('pop.png');
+    background-image: url('pop.png');
 }
 
 #count {
@@ -86,4 +84,24 @@ body:before {
     width: 900px;
     height: 100px;
     display: inline-block;
+}
+
+@media (width <= 720px) {
+
+    .svg {
+        width: 80%;
+    }
+
+    #cat {
+        max-width: 375px;
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+        touch-action: manipulation;
+        display: block;
+    }
+
+    .container {
+        max-width: 400px;
+    }
 }
