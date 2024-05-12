@@ -1,104 +1,98 @@
-const catImg = document.getElementById('cat');
-const countDisplay = document.getElementById('count');
-const popSound = new Audio('pop.ogg');
-let count = getCookieValue('popcat-count') || 0;
-let isPressed = false;
-updateCountDisplay();
+/*Preloading alternate cat image*/
+preload = new Image();
+preload.src = "imgs/op.png";
 
-document.addEventListener('keydown', handleKeyDown);
-document.addEventListener('keyup', handleKeyUp);
-//document.addEventListener('click', handleClick);
-document.addEventListener('contextmenu', handleRightClick);
-
-document.addEventListener('mouseup', MouseUp);
-document.addEventListener('mousedown', MouseDown);
-
-function handleKeyDown(event) {
-    if (!isPressed) {
-        count++;
-        updateCountDisplay();
-        catImg.classList.add('pressed');
-        popSound.play();
-        isPressed = true;
+/*Cat elem*/
+let cat = null;
+window.onload = function() {
+    cat = document.getElementById("p");
+    pop_count = getCookie("pop_count")
+    if (cat) {
+        cat.innerHTML = pop_count > 0 ? pop_count : "";
     }
 }
 
-function handleKeyUp() {
-    catImg.classList.remove('pressed');
-    isPressed = false;
-}
+/*Pop mp3s*/
+pops = [
+    "pops/pop1.mp3",
+    "pops/pop2.mp3",
+    "pops/pop3.mp3",
+    "pops/pop4.mp3",
+]
+pop_i = 0
 
-function MouseDown(event) {
-    if (!isPressed) {
-        count++;
-        event.preventDefault();
-        updateCountDisplay();
-        catImg.classList.add('pressed');
-        popSound.play();
-    }
-}
-
-function MouseUp() {
-    catImg.classList.remove('pressed');
-}
-
-/*function handleClick(event) {
-    count++;
-    updateCountDisplay();
-    popSound.play();
-    setTimeout(() => {
-        catImg.classList.remove('pressed');
-    }, 100);
-}*/
-
-/*function handleClick(event) {
-    count++;
-    event.preventDefault();
-    updateCountDisplay();
-    catImg.classList.add('pressed');
-    popSound.play();
-    setTimeout(() => {
-        catImg.classList.remove('pressed');
-    }, 100);
-}*/
-
-/*function handleRightClick(event) {
-    count++;
-    event.preventDefault();
-    updateCountDisplay();
-    catImg.classList.add('pressed');
-    popSound.play();
-    setTimeout(() => {
-        catImg.classList.remove('pressed');
-    }, 100);
-}*/
-
-function handleRightClick(event) {
-    event.preventDefault();
-}
-
-function setCookie(name, value, days) {
-    let expires = '';
-    if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = '; expires=' + date.toUTCString();
-    }
-    document.cookie = name + '=' + (value || '') + expires + '; path=/';
-}
-
-function getCookieValue(name) {
-    const cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        if (cookie.startsWith(name + '=')) {
-            return cookie.substring(name.length + 1);
+/*Cookie utils*/
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
         }
     }
-    return null;
+    return "";
 }
 
-function updateCountDisplay() {
-    countDisplay.textContent = count;
-    setCookie('popcat-count', count, 365);
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+op_func = function(){
+    /*Chance cat image to op.jpg via css*/
+    if (cat) {
+        cat.id = "op"
+    }
+    /*Play pop noise*/
+    a = new Audio(pops[pop_i])
+    a.load()
+    a.play()
+    /*Increment index for next pop noise*/
+    pop_i = (pop_i+1)%pops.length
+    /*Increment pop count*/
+    pop_count++
+    if (cat) {
+        cat.innerHTML = pop_count
+    }
+    event.preventDefault();
+    setCookie("pop_count",pop_count,365)
+    /*Fire google analytics event for pop*/
+    // gtag('event', 'pop');
+}
+
+p_func = () => setTimeout(() => {
+    if (cat) {
+        cat.id = "p"
+    }
+}, 25)
+
+// 禁止右鍵選單
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// 確保在鬆開按鍵之後才會觸發事件
+let isKeyDown = false;
+document.addEventListener("keydown", function(e) {
+    if (!isKeyDown) {
+        op_func();
+    }
+    isKeyDown = true;
+});
+
+document.addEventListener("keyup", function(e) {
+    if (isKeyDown) {
+        p_func();
+    }
+    isKeyDown = false;
+});
+
+document.addEventListener("pointerdown", op_func)
+document.addEventListener("pointerup", p_func)

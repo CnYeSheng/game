@@ -1,107 +1,61 @@
-* {
-    -webkit-touch-callout:none;  /* Disable system default menu */
-    -webkit-user-select:none; /* Disable text selection on webkit browsers */
-    -khtml-user-select:none; /* Disable text selection on early browsers */
-    -moz-user-select:none;/* Disable text selection on Firefox */
-    -ms-user-select:none; /* Disable text selection on IE10 */
-    user-select:none;
-    overflow: hidden;
-}
-
-/*body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}*/
-
+html { height:100%; overflow:hidden; }
 body {
-    margin: 0;
+    height:100%;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     background-color: #bdaa90;
     user-select: none;
-    position: relative;
-    font-family: Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-    overflow: hidden;
+    -moz-user-select: none;
+    -webkit-user-select: none;    
+    position:relative;     
+    overflow:hidden;
 }
-
-body:before {
-    content: "";
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    transform: translate(-50%, -50%) rotate(-3deg);
-    background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAOEAAEDAREAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAAAgMAAQQFBggH/8QAGgEBAQEBAQEBAAAAAAAAAAAAAgADAQQFBv/aAAwDAQACEAMQAAAA/P8A8191tHqSSYtt+Z6A50c+9Dz69DzLdTGJ1sa6a52dB29B6DXPoak6KhoqmhixiJcrNHAvRKLhLykJeWK+eq+Uz39hyX0bzX01eg0ugbURDxRpwyonKlSpRVRKxxFmA5dENVdWfbTKe1n2YlWk3QO1tHbaYsZasOvcHleajZJElyOtduiz1Z423aaxWfEvlkGZlNozEOPXX1Tlshsk8GNJPeyrDuo+1pxvZxmhO5CTiR5jNejP/8QAKxAAAQEHAgQGAwAAAAAAAAAAABIBAhARExRhFVEDIWKBBBcgMFOSUnGR/9oACAEBAAE/AECISKRTwUMFvkps2LUTFLS2c3LDpLRhYOiRMOfpT6UnIW7uw1zrPOXhfkz7Gp+P6jyte+I0Dhlr0li6U8Qn7KmZOQvJUgkmVBQppImdyngQ0ovbNP5BbMlbJVbBAmKSZ2EnLZgl0UKbkSIEQTCmJFExeRbBTScEwmJKZ2EsJCv2XeC5e+DiGteJ3c+p/8QAHREAAgMBAAMBAAAAAAAAAAAAABEBEBIgAhMhMP/aAAgBAgEBPwCkIUDrQ+FAhGRSLpCp8uByO9QO1BqaZ9/B9fRCgZqKQhRWoHJkcGpM2hCPp7fEcnrk3ApGPhjnhCilyhU6dIVf/8QAGxEAAgMBAQEAAAAAAAAAAAAAABEBECASITD/2gAIAQMBAT8Ay6QpyhnUU50x7Z6K0LLEe/FU5tQIUCH8VIxHU0xXzhHUac4VrPmXTHX/2Q==');
+body::before{
+    content:"";
+    position:absolute;
+    width:120%;height:120%;
+    top:50%;left:50%;
+    z-index:-1;
+    transform:translate(-50%,-50%) rotate(-3deg);
+    background-image: url("imgs/bg.jpg");
     background-repeat: repeat-x;
     background-size: contain;
 }
 
-.container {
+.title {
+    margin:2em 0 0 0;
+    width: min(600px,80%);
+}
+
+.cat-img {
+    height:0;
+    flex-grow:1;
+    width:100%;
     max-width: 800px;
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    touch-action: manipulation;
+    text-align: center;
+    color:white;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+    font-weight:900;
+    font-size:80px;
+    font-family: Nunito, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    word-wrap: break-word;
 }
-
-.cat-container {
-    position: relative;
-    display: inline-block;
-}
-
-#cat {
-    width: 800px;
-    height: 812px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    background-image: url('cat.png');
-}
-
-#cat.pressed,
-#cat:active {
-    background-image: url('pop.png');
-}
-
-#count {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 48px;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.svg {
-    width: 900px;
-    height: 100px;
-    display: inline-block;
-}
-
-@media (width <= 720px) {
-
-    .svg {
-        width: 80%;
+@media(min-width:1000px) {
+    .title {
+        width: min(400px,80%);                    
     }
-
-    #cat {
-        max-width: 375px;
-        background-position: bottom;
-        background-size: contain;
-        background-repeat: no-repeat;
-        touch-action: manipulation;
-        display: block;
-    }
-
-    .container {
-        max-width: 400px;
+    .cat-img {
+        font-size: 40px;
+        -webkit-text-stroke-width: 1.5px;
     }
 }
+#p { background-image: url("imgs/p.png"); }
+#op { background-image: url("imgs/op.png"); }
