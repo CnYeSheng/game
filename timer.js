@@ -9,12 +9,6 @@ function updateCountdown() {
   const day = Math.floor(timeDiff / (1000 * 60 * 60 * 24) + 1);
   document.getElementById('day').innerHTML = String(day).padStart(2, "0");
 
-  if (timeDiff <= 0) {
-    // 倒計時結束
-    document.getElementById("countdown").innerHTML = "考試加油！";
-    return;
-  }
-
   const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
@@ -22,10 +16,18 @@ function updateCountdown() {
 
   document.getElementById('all').innerHTML = "( " + String(days).padStart(2, "0") + " 天 " + String(hours).padStart(2, "0") + " 時 " + String(minutes).padStart(2, "0") + " 分 " + String(seconds).padStart(2, "0") + " 秒 " + ")";
 
-  /*document.getElementById("days").textContent = String(days).padStart(2, "0");
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");*/
+  if (days === -1 || days === -2) {
+    document.getElementById("countdown").innerHTML = "考試加油！";
+  }
+  
+  if (days <= -3) {
+    document.getElementById("CAP").style.display = "none";
+    const detailsElement = document.getElementById("gamesDetails");
+    detailsElement.open = true;
+  }
+
+  console.log("剩餘:", days, "天")
+
 }
 
 // 每秒鐘更新一次倒數計時器
