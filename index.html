@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小遊戲</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="./logo.ico" sizes='500x500' type="image/x-icon"/>
+    <link rel="manifest" href="manifest.json">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.min.css">   
+    <script type="text/javascript">
+		(function(c,l,a,r,i,t,y){
+			c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+			t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+		})(window, document, "clarity", "script", "lzmialqzpk");
+	</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HJWM4CR1C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1HJWM4CR1C');
+    </script>
+	<meta name="msvalidate.01" content="8C87B5ED0587299F4E718BB1651F1C75" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha384/1.0.1/sha384.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha512/0.8.0/sha512.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
+</head>
+</head>
+
+<div class="fixed-text-container">
+<a href="https://www.paypal.me/CnYeSheng0329" class="fixed-text" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paypal" viewBox="0 0 16 16">
+      <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.35.35 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91q.57-.403.993-1.005a4.94 4.94 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.7 2.7 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.7.7 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016q.326.186.548.438c.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.87.87 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.35.35 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32z"/>
+    </svg>
+    Paypal 捐款
+  </a>
+
+<a href="https://www.buymeacoffee.com/cnyeshengg" class="fixed-text" target="_blank">
+    <svg fill="#ffffff" viewBox="0 0 24 24" width="16" height="16" role="img" xmlns="http://www.w3.org/2000/svg">
+            <path d="m20.216 6.415-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.197-.069-.42-.098-.57-.241-.152-.143-.196-.366-.231-.572-.065-.378-.125-.756-.192-1.133-.057-.325-.102-.69-.25-.987-.195-.4-.597-.634-.996-.788a5.723 5.723 0 0 0-.626-.194c-1-.263-2.05-.36-3.077-.416a25.834 25.834 0 0 0-3.7.062c-.915.083-1.88.184-2.75.5-.318.116-.646.256-.888.501-.297.302-.393.77-.177 1.146.154.267.415.456.692.58.36.162.737.284 1.123.366 1.075.238 2.189.331 3.287.37 1.218.05 2.437.01 3.65-.118.299-.033.598-.073.896-.119.352-.054.578-.513.474-.834-.124-.383-.457-.531-.834-.473-.466.074-.96.108-1.382.146-1.177.08-2.358.082-3.536.006a22.228 22.228 0 0 1-1.157-.107c-.086-.01-.18-.025-.258-.036-.243-.036-.484-.08-.724-.13-.111-.027-.111-.185 0-.212h.005c.277-.06.557-.108.838-.147h.002c.131-.009.263-.032.394-.048a25.076 25.076 0 0 1 3.426-.12c.674.019 1.347.067 2.017.144l.228.031c.267.04.533.088.798.145.392.085.895.113 1.07.542.055.137.08.288.111.431l.319 1.484a.237.237 0 0 1-.199.284h-.003c-.037.006-.075.01-.112.015a36.704 36.704 0 0 1-4.743.295 37.059 37.059 0 0 1-4.699-.304c-.14-.017-.293-.042-.417-.06-.326-.048-.649-.108-.973-.161-.393-.065-.768-.032-1.123.161-.29.16-.527.404-.675.701-.154.316-.199.66-.267 1-.069.34-.176.707-.135 1.056.087.753.613 1.365 1.37 1.502a39.69 39.69 0 0 0 11.343.376.483.483 0 0 1 .535.53l-.071.697-1.018 9.907c-.041.41-.047.832-.125 1.237-.122.637-.553 1.028-1.182 1.171-.577.131-1.165.2-1.756.205-.656.004-1.31-.025-1.966-.022-.699.004-1.556-.06-2.095-.58-.475-.458-.54-1.174-.605-1.793l-.731-7.013-.322-3.094c-.037-.351-.286-.695-.678-.678-.336.015-.718.3-.678.679l.228 2.185.949 9.112c.147 1.344 1.174 2.068 2.446 2.272.742.12 1.503.144 2.257.156.966.016 1.942.053 2.892-.122 1.408-.258 2.465-1.198 2.616-2.657.34-3.332.683-6.663 1.024-9.995l.215-2.087a.484.484 0 0 1 .39-.426c.402-.078.787-.212 1.074-.518.455-.488.546-1.124.385-1.766zm-1.478.772c-.145.137-.363.201-.578.233-2.416.359-4.866.54-7.308.46-1.748-.06-3.477-.254-5.207-.498-.17-.024-.353-.055-.47-.18-.22-.236-.111-.71-.054-.995.052-.26.152-.609.463-.646.484-.057 1.046.148 1.526.22.577.088 1.156.159 1.737.212 2.48.226 5.002.19 7.472-.14.45-.06.899-.13 1.345-.21.399-.072.84-.206 1.08.206.166.281.188.657.162.974a.544.544 0 0 1-.169.364zm-6.159 3.9c-.862.37-1.84.788-3.109.788a5.884 5.884 0 0 1-1.569-.217l.877 9.004c.065.78.717 1.38 1.5 1.38 0 0 1.243.065 1.658.065.447 0 1.786-.065 1.786-.065.783 0 1.434-.6 1.499-1.38l.94-9.95a3.996 3.996 0 0 0-1.322-.238c-.826 0-1.491.284-2.26.613z"></path></g>
+    </svg>
+    Buy Me A Coffee 捐款
+</a>
+
+</div>
+
+<button id="darkModeToggle">🌓</button>
+
+<body>
+    <div id="title">
+        <h1>小遊戲</h1>
+        <h2>這裡擁有許多好玩的遊戲</h2>
+        <div class="custom-button">
+            <span class="icon">i</span>
+            <p>說明</p>
+        </div>
+    </div>
+
+    <details open> 
+    <summary>小遊戲</summary>
+    <div id="games-chose">
+
+        <a href="./Ping_Pong_Multiplayer/" class="btn mobile" target="_blank" title="Ping_Pong">乒乓球
+            <span class="info-icon" title="說明" gamePlay="透過鍵盤來完成乒乓球<br>左邊玩家:<br>W:上, S:下<br>右邊玩家:<br>方向鍵上:上, 方向鍵下:下">i</span>
+        </a>
+
+        <a href="./Snake/" class="btn mobile" target="_blank" title="Snake">貪吃蛇
+            <span class="info-icon" title="說明" gamePlay="透過方向鍵移動走向，碰觸綠色方塊得分">i</span>
+        </a>
+
+        <a href="./Truth-or-Dare/" class="btn" target="_blank" title="Truth-or-Dare">真心話大冒險
+            <span class="info-icon" title="說明" gamePlay="真心話大冒險">i</span>
+        </a>
+
+        <a href="./coreball/" class="btn" target="_blank" title="CoreBall">見縫插針
+            <span class="info-icon" title="說明" gamePlay="點擊畫面將小球插到大球上，同時不碰到任何其他小球。">i</span>
+        </a>
+
+        <a href="./Hextris/" class="btn" target="_blank" title="六邊形">六邊形
+            <span class="info-icon" title="說明" gamePlay="它六邊形方塊會從某些邊掉顏色下來<br>湊滿3個(or 以上)它會消除">i</span>
+        </a>
+
+        <a href="./Crowds/" class="btn" target="_blank" title="群眾">群眾
+            <span class="info-icon" title="說明" gamePlay="透過提示破關">i</span>
+        </a>
+
+        <a href="./Trust/" class="btn" target="_blank" title="信任">信任
+            <span class="info-icon" title="說明" gamePlay="透過提示破關">i</span>
+        </a>
+
+        <a href="./Minesweeper/" class="btn" target="_blank" title="踩地雷">踩地雷
+            <span class="info-icon" title="說明" gamePlay="根據周圍地雷數字提示，推測地雷位置">i</span>
+        </a>
+
+        <a href="./Subway/" class="btn" target="_blank" title="地鐵跑酷">地鐵跑酷
+            <span class="info-icon" title="說明" gamePlay="在地鐵環境中奔跑、跳躍、躲避障礙物">i</span>
+        </a>
+
+        <a href="./HeadSoccer/" class="btn mobile" target="_blank" title="足球">足球
+            <span class="info-icon" title="說明" gamePlay="控制卡通風格的足球選手使用他們的頭部來踢球，進行各種有趣和瘋狂的比賽">i</span>
+        </a>
+
+        <a href="./Rubik's-Cube/" class="btn" target="_blank" title="魔術方塊">魔術方塊
+            <span class="info-icon" title="說明" gamePlay="透過旋轉、滑動來完成魔術方塊">i</span>
+        </a>
+
+        <a href="./Wood-Blocks/" class="btn" target="_blank" title="木塊拼圖">木塊拼圖
+            <span class="info-icon" title="說明" gamePlay="放置方塊使直排、橫排、九宮格放滿即可加分">i</span>
+        </a>
+
+        <a href="./Flappy-Bird/" class="btn" target="_blank" title="像素鳥">像素鳥
+            <span class="info-icon" title="說明" gamePlay="透過點擊讓小鳥在管道中上下飛行，避開障礙物獲得分數">i</span>
+        </a>
+
+        <a href="./Esviji/" class="btn" target="_blank" title="彩球消除">彩球消除
+            <span class="info-icon" title="說明" gamePlay="根據球的顏色和位置在棋盤上消除球">i</span>
+        </a>
+
+        <a href="./Wordle/" class="btn" target="_blank" title="猜單字">猜單字
+            <span class="info-icon" title="說明" gamePlay="透過提示猜單字">i</span>
+        </a>
+
+        <a href="./Crossy-Road/" class="btn" target="_blank" title="天天過馬路">天天過馬路
+            <span class="info-icon" title="說明" gamePlay="控制角色在繁忙的車流中穿越，避開障礙物，安全通過道路">i</span>
+        </a>
+
+        <a href="./1024-Moves/" class="btn mobile" target="_blank" title="1024移動">1024移動
+            <span class="info-icon" title="說明" gamePlay="通過移動方塊來通關。">i</span>
+        </a>
+
+        <a href="./Fourfold/" class="btn mobile" target="_blank" title="四倍">四倍
+            <span class="info-icon" title="說明" gamePlay="透過四個步驟的跳躍來導航缺失的平台，挑戰空間感與思考策略">i</span>
+        </a>
+
+        <a href="./Klotski/" class="btn" target="_blank" title="華容道">華容道
+            <span class="info-icon" title="說明" gamePlay="將不同形狀的方塊在限定的空間中移動，將大正方形方塊移除框外即可">i</span>
+        </a>
+
+        <a href="./N-Puzzle/" class="btn" target="_blank" title="數字華容道">數字華容道
+            <span class="info-icon" title="說明" gamePlay="移動帶有數字的方塊，讓它們按照順序排列">i</span>
+        </a>
+
+        <a href="./Sudoku/" class="btn" target="_blank" title="數獨">數獨
+            <span class="info-icon" title="說明" gamePlay="填滿9x9的方格，使每一行、每一列和每個3x3的九宮格內的數字都是1到9，且不重複">i</span>
+        </a>
+
+        <a href="./Tetris/" class="btn" target="_blank" title="俄羅斯方塊">俄羅斯方塊
+            <span class="info-icon" title="說明" gamePlay="控制不同形狀的方塊，讓它們在一個逐漸下降的方塊矩陣中進行旋轉和移動，以拼湊成完整的水平行並清除矩陣中的方塊，避免方塊堆疊到頂部">i</span>
+        </a>
+
+        <a href="./2048/" class="btn" target="_blank" title="2048">2048
+            <span class="info-icon" title="說明" gamePlay="在矩陣中滑動方塊，使相同數字的方塊合併疊加，避免填滿整個且無法移動的情況">i</span>
+        </a>
+
+        <a href="./Gomoku/" class="btn" target="_blank" title="五子棋">五子棋
+            <span class="info-icon" title="說明" gamePlay="玩家(or AI)輪流在空格中下黑白兩色的棋子，目標是先將自己的五個棋子連成一條直線（橫向、縱向、斜向皆可）即可獲勝，同時需要防止對手形成連線。">i</span>
+        </a>
+
+        <a href="./Angry-Birds/" class="btn" target="_blank" title="憤怒鳥">憤怒鳥
+            <span class="info-icon" title="說明" gamePlay="玩家需要控制彩色小鳥，利用彈弓將它們射向搭建在各種結構物上的綠色豬，目標是將所有豬都消除以過關，不同類型的鳥擁有不同的特殊技能，玩家需要巧妙利用這些技能來擊倒豬">i</span>
+        </a>
+
+        <a href="./1A2B/" class="btn" target="_blank" title="1A2B">1A2B
+            <span class="info-icon" title="說明" gamePlay="玩家需猜出由電腦隨機產生的一個數字，並根據猜測的結果獲得提示，其中'A'表示猜測的數字正確且位置也正確，'B'表示猜測的數字正確但位置不正確，通過多次猜測和分析提示，最終猜出正確的數字來獲勝">i</span>
+        </a>
+
+        <a href="./Connect-Four/" class="btn" target="_blank" title="四子棋">四子棋
+            <span class="info-icon" title="說明" gamePlay="玩家輪流下紅黃兩色的棋子到任意未被填滿的行中，目標是在水平、垂直或對角線上先將自己的四個棋子連成一線，即可獲勝。這種遊戲需要玩家考慮攻守兼顧，同時防止對手形成連線">i</span>
+        </a>
+
+        <a href="./Tic-Tac-Toe/" class="btn" target="_blank" title="井字棋">井字棋
+            <span class="info-icon" title="說明" gamePlay="在3x3(or 4x4)的方格棋盤上進行。兩位玩家(or AI)輪流在空格中下'X'或'O'兩種不同的符號，目標是先將自己的符號擺成一條直線（橫向、縱向、斜向皆可）即可獲勝。如果棋盤填滿而沒有任何一方連成一線，則為平局">i</span>
+        </a>
+
+        <a href="./Dino/" class="btn" target="_blank" title="小恐龍">小恐龍
+            <span class="info-icon" title="說明" gamePlay="按下空白鍵即可開始這款遊戲，玩家需要控制小恐龍跳躍避開障礙物，挑戰自己的反應速度和遊戲記錄">i</span>
+        </a>
+
+        <a href="./Guesses/" class="btn" target="_blank" title="猜數字">猜數字
+            <span class="info-icon" title="說明" gamePlay="由電腦設定一個隨機數字，玩家需猜出數字是多少。遊戲進行時，玩家可以提出一組數字，電腦會給出相應的提示，猜測數字的範圍。玩家通過這些提示來猜測，直到猜出正確的數字為止">i</span>
+        </a>
+
+        <a href="./Tarot/" class="btn" target="_blank" title="塔羅牌">塔羅牌
+            <span class="info-icon" title="說明" gamePlay="塔羅牌由78張卡牌組成的占卜工具，常被用來探索心靈、思想和命運等主題。這套卡牌通常分為22張大牌和56張小牌，透過輸入問題來獲取對該問題的牌型。通常以3張牌">i</span>
+        </a>
+
+        <a href="./Book-of-Answers/" class="btn" target="_blank" title="解答之書">解答之書
+            <span class="info-icon" title="說明" gamePlay="透過選擇類型來獲得相對應的解答">i</span>
+        </a>
+
+        <a href="./Solitaire/" class="btn" target="_blank" title="接龍">接龍
+            <span class="info-icon" title="說明" gamePlay="遊戲的目標是將所有的牌按照花色和數字依次由小到大堆疊在四個基地區，也就是A到K的順序。同時，玩家還可以利用庫牌堆和場上的列牌來移動牌，要求移動的牌必須是一張紅色和一張黑色交替堆疊的。當一列的最上方牌為K時，可以將該列移至空位或另一張牌底部為K的列上。">i</span>
+        </a>
+
+        <a href="./Pac-Man/" class="btn" target="_blank" title="小精靈">小精靈
+            <span class="info-icon" title="說明" gamePlay="玩家控制圓形角色Pac-Man在迷宮中吃豆子、避開鬼魂，挑戰高分">i</span>
+        </a>
+
+        <a href="./Chess/" class="btn" target="_blank" title="西洋棋">西洋棋
+            <span class="info-icon" title="說明" gamePlay="棋盤上有64個方格，玩家輪流移動各種不同類型的棋子，包括國王、皇后、城堡、主教、騎士和兵，以攻擊對方的國王並保護自己的國王，最終目標是將對方的國王逼入無法逃脫的狀況，即獲勝">i</span>
+        </a>
+
+        <a href="./Mahjong-Solitaire/" class="btn" target="_blank" title="對對碰">對對碰
+            <span class="info-icon" title="說明" gamePlay="玩家需要配對相同的牌來清除牌堆，最終的目標是清空整個牌桌">i</span>
+        </a>
+
+        <a href="./Chinese-Chess/" class="btn" target="_blank" title="象棋">象棋
+            <span class="info-icon" title="說明" gamePlay="利用不同棋子的走法和策略，將對方的帥（將）將軍，以獲得勝利">i</span>
+        </a>
+
+        <a href="./Surf/" class="btn" target="_blank" title="滑板">滑板
+            <span class="info-icon" title="說明" gamePlay="透過前後左右鍵(or 觸控)進行遊戲，遊玩時需注意避免觸碰到玩家、障礙物、章魚，否則將損失一條血，共三條血">i</span>
+        </a>
+
+    </div>
+</details>
+</div>
+
+<details open>
+    <summary>伺服器</summary>
+    <div id="games-chose">
+
+        <p class="otherbtn">Minecraft:<br><span class="copy-text">mc.cyss.us.eu.org</span> (基岩、Java)</p>
+        <div>Java版：<div id="server-status-java"></div></div>
+        <div>基岩版：<div id="server-status-bedrock"></div></div>
+
+    </div>
+</details>
+
+<details>
+    <summary>雲端服務</summary>
+    <div id="games-chose">
+
+        <a href="https://1fysyc-my.sharepoint.com/:f:/g/personal/yesheng_1fysyc_onmicrosoft_com/EvWo1cAd3ylGi3p5NNPmMBwBXEQ55mWJWd7Shs25x7Xcaw" class="btn" id="pw" target="_blank">電影</a>
+
+        <a href="https://1fysyc-my.sharepoint.com/:f:/r/personal/yesheng_1fysyc_onmicrosoft_com/Documents/%E9%B7%BA%E6%B1%9F%E5%9C%8B%E4%B8%AD-%E7%95%A2%E6%A5%AD%E7%B4%80%E5%BF%B5%E5%86%8A-904" class="btn" id="pw" target="_blank">畢冊(僅限美編帳號使用)</a>
+
+        <a href="https://1fysyc-my.sharepoint.com/:f:/r/personal/yesheng_1fysyc_onmicrosoft_com/Documents/%E5%85%AC%E7%94%A8%E6%AA%94%E6%A1%88?csf=1&web=1&e=ACt7AD" class="btn" id="pw" target="_blank">公用檔案(僅限擁有帳戶者存取)</a>
+    </div>
+</details>
+
+<details>
+    <summary>網外服務</summary>
+    <div id="games-chose">
+
+        <a href="https://gartic.io" class="btn ogs" target="_blank">你畫我猜</a>
+        <a href="https://garticphone.com" class="btn ogs" target="_blank">傳話遊戲</a>
+        <a href="https://who-is-spy.firebaseapp.com/" class="btn ogs" target="_blank">誰是臥底</a>
+        <a href="https://mcsrvstat.us/" class="btn ogs" target="_blank">Mcserver</a>
+
+    </div>
+</details>
+
+<details>
+    <summary>小工具</summary>
+    <div id="games-chose">
+
+        <a href="./Calculator/" class="btn" target="_blank" title="計算機">計算機
+            <span class="info-icon" title="說明" gamePlay="進行各種數字和數學運算的工具，包括基本運算、函數計算">i</span>
+        </a>
+
+        <a href="./Clock/" class="btn" target="_blank" title="時鐘">時鐘
+            <span class="info-icon" title="說明" gamePlay="瞭解現在時間，擁有年月日 時分秒星期外 還有農曆紀年">i</span>
+        </a>
+
+        <a href="./Password-Generate/" class="btn" target="_blank" title="密碼生成">密碼生成
+            <span class="info-icon" title="說明" gamePlay="通過隨機生成具有一定複雜度的密碼，用於保護資訊和帳戶安全。這些密碼通常包含數字、字母（大小寫）、符號等元素的組合，以增加其安全性，避免被猜測或破解">i</span>
+        </a>
+
+        <a href="./pomodoro/" class="btn" target="_blank" title="番茄鐘">番茄鐘
+            <span class="info-icon" title="說明" gamePlay="決定需要先完成的任務。<br>設定番茄工作法定時器至 n 分鐘（通常為25分鐘）。<br>持續工作直至定時器提示，記下一個番茄。<br>短暫休息3-5分鐘。<br>每四個番茄，休息15-30分。">i</span>
+        </a>
+
+        <a href="./draw/" class="btn" target="_blank" title="抽籤">抽籤
+            <span class="info-icon" title="說明" gamePlay="抽籤">i</span>
+        </a>
+
+    </div>
+</details>
+
+<details>
+    <summary>AI聊天服務</summary>
+    <div id="games-chose">
+
+        <a href="https://www.coze.com/store/bot/7360978745429671954" class="btn" target="_blank" title="Coze(官方)">
+            <img src="./coze.svg" width="30" height="30" alt="Coze" class="bi"/>
+            Coze(官方)
+        </a>
+
+        <a href="https://discord.com/oauth2/authorize?client_id=1232976566552887296" class="btn" target="_blank" title="Discord">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+              </svg>
+            Discord
+        </a>
+
+        <a href="https://t.me/cyschatai_bot" class="btn" target="_blank" title="Telegram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+              </svg>
+            Telegram
+        </a>
+
+        <a href="https://www.facebook.com/messages/t/109364775602056" class="btn" target="_blank" title="Messenger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.64.64 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.64.64 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76m5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+              </svg>
+            Messenger
+        </a>
+
+        <a href="https://line.me/R/ti/p/@122bfals" class="btn" target="_blank" title="LINE">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0M5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.15.15 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157m.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832l-.013-.015v-.001l-.01-.01-.003-.003-.011-.009h-.001L7.88 4.79l-.003-.002-.005-.003-.008-.005h-.002l-.003-.002-.01-.004-.004-.002-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.2.2 0 0 0 .039.038l.001.001.01.006.004.002.008.004.007.003.005.002.01.003h.003a.2.2 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.16.16 0 0 0-.108.044h-.001l-.001.002-.002.003a.16.16 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.16.16 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z"/>
+              </svg>
+            LINE
+        </a>
+
+    </div>
+</details>
+
+    <details>
+        <summary>回報服務</summary>
+        <div id="games-chose">
+
+            <a href="https://forms.office.com/r/qBSv1eaned" class="btn" target="_blank" title="新增建議">新增建議
+                <span class="info-icon" title="說明" gamePlay="透過表單悉知用戶心想之遊戲">i</span>
+            </a>
+    
+            <a href="https://forms.office.com/r/QZSzZx3qFz" class="btn" target="_blank" title="問題回報">問題回報
+                <span class="info-icon" title="說明" gamePlay="透過表單悉知網站問題並解決">i</span>
+            </a>
+
+            <a href="https://forms.office.com/r/cY9ECu3Zx8" class="btn" target="_blank" title="微軟問題回報">微軟問題回報
+                <span class="info-icon" title="說明" gamePlay="回報微軟企業帳號問題，登入問題/使用問題皆可回報，不接收無帳戶者填寫">i</span>
+            </a>
+    
+        </div>
+    </details>
+    
+
+
+    <!--
+        <a href="" class="btn" target="_blank" title="">
+                <span class="info-icon" title="說明" gamePlay="">i</span>
+            </a>
+        -->
+    <h1>New Update:</h1>
+    <h5>MM/DD/YY or DD MM, YYYY</h5>
+
+    <div class="update-section">
+        <h3>26 May, 2024</h3>
+        <p class="add">新增：伺服器分類(目前僅有Minecraft Server)、使用規範(05月31適用)</p>
+        <p class="other">隱私權政策(05月31適用)</p>
+    </div>
+
+    <div class="update-section">
+        <h3>24 May, 2024</h3>
+        <p class="other">New Update日期呈現更改、服務分類間隔修改</p>
+        <p class="remove">刪除：磚塊消除、躲避方塊、瞄準測驗、魔方陣、飛船射擊</p>
+    </div>
+
+    <div class="update-section">
+        <h3>05/11/24</h3>
+        <p class="add">新增：網外服務</p>
+        <p class="other">分類選項描框</p>
+    </div>
+
+    <div class="update-section">
+        <h3>05/08/24</h3>
+        <p class="other">對手機用戶隱藏無法正常使用之網站</p>
+    </div>
+
+    <div class="update-section">
+        <h3>05/02/24</h3>
+        <p class="add">新增：AI聊天服務</p>
+        <p class="remove">刪除：花蓮震災募款專案</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/28/24</h3>
+        <p class="add">新增：抽籤</p>
+        <p class="other">修改：塔羅牌接入AI解析</p>
+    </div>
+
+
+    <div class="update-section">
+        <h3>04/27/24</h3>
+        <p class="add">新增：翰林1~5冊(國英數自社)<br>雲端服務(僅限4班使用，將使用密碼保護)、深色模式</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/23/24</h3>
+        <p class="other">見縫插針空白鍵可直接開始、關卡新增至100關、可自選關卡</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/22/24</h3>
+        <p class="other">見縫插針禁止右鍵、可使用空白鍵遊玩、可增加等級</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/20/24</h3>
+        <p class="add">新增：真心話大冒險、磚塊消除、躲避方塊、瞄準測驗、魔方陣、乒乓球、貪吃蛇、彈窗(最新更新)</p>
+        <p class="other">修改：西洋棋</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/19/24</h3>
+        <p class="add">新增：見縫插針</p>
+        <p class="other">Hextris 改為 六邊形<br>時間更新</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/17/24</h3>
+        <p class="add">新增：考試複習、主頁日期倒計時</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/13/24</h3><span style="size: 10px; color: red;">*校正</span>
+        <p class="add">新增：《隱私權政策》</p>
+        <p class="other">彈窗更改</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/12/24</h3>
+        <p class="add">新增：Hextris</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/10/24</h3>
+        <p class="add">新增：番茄鐘</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/08/24</h3>
+        <p class="other">主頁說明圖示更改</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/06/24</h3>
+        <p class="other">猜單字更改題庫(703單字)<b>110 年版</b>
+        </p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/05/24</h3>
+        <p class="add">主頁新增說明、捐款按鈕(Paypal, Buy Me A Coffee, 0403 花蓮震災募款專案(4月底移除) )</p>
+        <p class="other">疊疊樂 改成 彩球消除
+        </p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/04/24</h3>
+        <p class="add">新增：地鐵跑酷、足球</p>
+        <p class="other">現今社會 改成 群眾<br>麻將配對 改成 對對碰</p>
+    </div>
+
+    <div class="update-section">
+        <h3>04/01/24</h3>
+        <p class="add">新增：密碼生成</p>
+        <p class="other">猜單字改成國中2000單(由<b>國立臺東大學附屬體育高級中學</b>提供)</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/31/24</h3>
+        <p class="add">新增：疊疊樂、猜單字、魔術方塊、像素鳥</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/30/24</h3>
+        <p class="add">新增：數字華容道、現今社會、信任、木塊拼圖</p>
+        <p class="other">數字華容道改版</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/29/24</h3>
+        <p class="add">新增：華容道</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/28/24</h3>
+        <p class="add">新增：1024移動、四倍(Fourfold)</p>
+        <p class="other">更改天天過馬路裝置顯示問題</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/27/24</h3>
+        <p class="add">新增：天天過馬路、回報專區</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/26/24</h3>
+        <p class="add">新增：憤怒鳥(尚未經過完整測試)</p>
+        <p class="other">踩地雷失敗音效改回</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/23/24</h3>
+        <p class="other">踩地雷失敗音效更改</p>
+        <p class="remove">因電腦資源有限 故移除自架服務</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/21/24</h3>
+        <p class="other">踩地雷新增模式 30*16(100地雷)</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/20/24</h3>
+        <p class="other">數獨更新</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/19/24</h3>
+        <p class="other">更改：數獨更換專案</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/18/24</h3>
+        <p class="add">新增：小工具分類、計算機、時鐘(使用AI生成;API使用GitHub開源代碼)</p>
+        <p class="other">審定五子棋提示及Undo</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/17/24</h3>
+        <p class="add">新增：主頁摺疊功能、分類、Mastodon、Alist(雲端)</p>
+        <p class="other">對遊戲遊玩率進行重新排列</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/15/24</h3>
+        <p class="other">數獨初始問題已修復(已知問題："計時"時間顯示問題)、踩地雷"專家模式"從30*16(99地雷)改成30*30(120地雷)及更新語言、塔羅牌更改順序排列顯示名稱更改</p>
+        <p class="remove">刪除：像素鳥、貪吃蛇</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/14/24</h3>
+        <p class="other">數獨提示更改(已知問題："計時"時間顯示問題、開始之後使用範本(題目相同)需手動刷新)</p>
+    </div>
+
+    <div class="update-section" style="border-left: 5px solid green;">
+        <h3>03/13/24</h3>
+        <p class="add">聊天AI、圖片生成已使用https</p>
+        <p class="add" style="border-left: 5px solid #f2711c;">開啟時間：<br>週(日)~週(六) <br><b>平日</b>：16:00後<br><b>假日</b>：12:00後</p>
+    </div>
+
+    <div class="update-section" style="border-left: 5px solid red;">
+        <h3>03/11/24</h3>
+        <p class="warning" style="background-color: red; color: white; border-left: red;"><b>注意：http(聊天AI、圖片生成)網站均有未知風險，請注意使用。於10日內將問題改善</b></p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/10/24</h3>
+        <p class="add">新增：飛船射擊、猜數字(使用AI生成)</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/09/24</h3>
+        <p class="add">新增：塔羅牌(使用AI生成)、解答之書(使用AI生成)、聊天AI、圖片生成</p>
+        <p class="warning">聊天AI、圖片生成均為使用電腦架設，無法達成24小時在線</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/08/24</h3>
+        <p class="other">更改：五子棋"Undo"按鈕刪除、1A2B(新增計時器、提交次數，更改彈窗)<br>四子棋、麻將配對、五子棋、象棋皆已翻譯完成</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/07/24</h3>
+        <p class="add">
+            更改：俄羅斯方塊(新增方塊)<br>
+            新增：四子棋、麻將配對、五子棋、象棋(皆尚未翻譯)
+        </p>
+        <p class="remove">移除"數獨破解"</p>
+        <p class="other">更改Index網頁</p>
+    </div>
+
+    <div class="update-section">
+        <h3>03/06/24</h3>
+        <p class="add">新增：接龍、西洋棋</p>
+        <p class="other">Index頁面修改(使用Claud及ChatGPT則一)</p>
+        <p class="remove">移除"國際象棋(無法遊玩)"</p>
+    </div>
+    
+    <div class="update-section">
+        <h3>03/05/24</h3>
+        <p class="add">新增：踩地雷、貪吃蛇、小精靈</p>
+    </div>
+
+    <footer>
+        Copyright &copy; 2024 <a href="https://wmcc.jp.eu.org" target="_blank">YeSheng</a></a>
+    </footer>
+
+</body>
+
+</html>
