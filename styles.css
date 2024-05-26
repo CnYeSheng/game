@@ -395,3 +395,17 @@ summary {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
+.otherbtn {
+  text-decoration: none;
+  border: 2px solid #7952b3;
+  background-color: #7952b3;
+  color: white;
+  border-radius: 12px;
+  font-size: 24px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  animation: scaleAnimation 0.5s ease-in-out;
+  -webkit-animation: scaleAnimation 0.5s ease-in-out;
+  text-align: center;
+}
