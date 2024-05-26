@@ -57,8 +57,8 @@ window.onload = function () {
     console.log("页面加载完成");
     // 显示同意选项
     Swal.fire({
-        html: '繼續使用將視為同意 <a href="./Privacy.html" target="_blank">《隱私權政策》</a> 內容',
-        footer: '<a href="./Privacy.html" target="_blank">隱私權政策</a> <a href="./遊戲開源碼.txt" target="_blank">遊戲開源</a> <br>製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
+        html: '繼續使用將視為同意 <a href="./Privacy.html" target="_blank">《隱私權政策》</a> <a href="./Terms.html" target="_blank">《使用規範》</a> 內容',
+        footer: '<a href="./Privacy.html" target="_blank">隱私權政策</a> <a href="./Terms.html" target="_blank">使用規範</a> <a href="./遊戲開源碼.txt" target="_blank">遊戲開源</a> <br>製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>',
         showDenyButton: true,
         denyButtonText: '不同意',
         confirmButtonText: '同意',
@@ -370,4 +370,86 @@ window.addEventListener('load', function() {
             }
         });
     });
+});
+
+
+window.addEventListener('load', function() {
+    const ogs = document.querySelectorAll('.otherbtn');
+
+    ogs.forEach((icon, index) => {
+        icon.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const textToCopy = this.querySelector('.copy-text').innerText;
+
+            copyTextToClipboard(textToCopy);
+
+            Swal.fire({
+                title: `完成複製！`,
+                html: `複製文本：${textToCopy}<br><p style="color:red;">基岩版和Java版僅為IP相同，不代表可一起遊玩！</p>`,
+                icon: `success`,
+                footer: `製作 <a href="https://wmcc.jp.eu.org">YeSheng</a>`,
+                allowOutsideClick: false,
+                confirmButtonText: `確定`,
+                reverseButtons: true
+            });
+        });
+    });
+
+    function copyTextToClipboard(text) {
+        // 創建一個隱藏的輸入元素
+        const tempInput = document.createElement('input');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+
+        // 選中輸入元素的內容
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999); // 對於移動設備
+
+        // 執行複製命令
+        document.execCommand('copy');
+
+        // 移除輸入元素
+        document.body.removeChild(tempInput);
+    }
+});
+
+
+//mcserver
+// 获取 Java 版服务器状态
+fetch('https://api.mcsrvstat.us/3/mc.cyss.us.eu.org')
+.then(response => response.json())
+.then(data => {
+    const serverStatusJava = document.getElementById('server-status-java');
+    if (data.online) {
+        const players = data.players.online + '/' + data.players.max;
+        const version = data.version;
+        serverStatusJava.innerHTML = `<p><span class="online">✓</span> 玩家: ${players} <br> 版本: ${version}</p>`;
+    } else {
+        serverStatusJava.innerHTML = '<p><span class="offline">✗</span></p>';
+    }
+})
+.catch(error => {
+    console.error('获取 Java 版服务器状态失败:', error);
+    const serverStatusJava = document.getElementById('server-status-java');
+    serverStatusJava.innerHTML = '<p>获取服务器状态失败</p>';
+});
+
+// 获取 Bedrock 版服务器状态
+fetch('https://api.mcsrvstat.us/bedrock/3/mc.cyss.us.eu.org')
+.then(response => response.json())
+.then(data => {
+    const serverStatusBedrock = document.getElementById('server-status-bedrock');
+    if (data.online) {
+        const players = data.players.online + '/' + data.players.max;
+        const version = data.version;
+        serverStatusBedrock.innerHTML = `<p><span class="online">✓</span> 玩家: ${players} <br> 版本: ${version}</p>`;
+    } else {
+        serverStatusBedrock.innerHTML = '<p><span class="offline">✗</span></p>';
+    }
+})
+.catch(error => {
+    console.error('获取 Bedrock 版服务器状态失败:', error);
+    const serverStatusBedrock = document.getElementById('server-status-bedrock');
+    serverStatusBedrock.innerHTML = '<p>获取服务器状态失败</p>';
 });
