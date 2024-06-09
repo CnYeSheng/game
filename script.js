@@ -102,7 +102,7 @@ window.onload = function () {
 
                     // 定義需要語音合成的內容
                     var contents = [
-                        "最新更新：" + latestDate,
+                        latestDate,
                     ];
 
                     // 將新增和修改分開
