@@ -2,102 +2,12 @@
 <html lang="zh-TW">
 
 <head>
+    <link rel="stylesheet" href="./close.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="close.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>閉站</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .close-container {
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-radius: 10px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        h1 {
-            font-size: 400px;
-            color: #333;
-            margin: 0;
-            line-height: 1;
-            animation: bounceIn 1.5s;
-        }
-
-        h2 {
-            font-size: 24px;
-            color: #666;
-            line-height: 1.5;
-            margin-top: 20px;
-            animation: fadeInUp 2s;
-        }
-
-        b {
-            color: #e74c3c;
-        }
-
-        footer {
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            color: #666;
-            font-size: 14px;
-            animation: fadeIn 3s;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes bounceIn {
-            from {
-                transform: scale(0.3);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 25vw;
-            }
-            h2 {
-                font-size: 18px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -106,6 +16,63 @@
         <h2>網站已在<br><b>August 18, 2024</b><br>正式關閉</h2>
     </div>
     <footer>&copy; 2024 YeSheng</footer>
+
+    <div id="closing-message">
+        <p style="font-size: 40px;">感謝</p>
+        <p>各位用戶的使用及提交建議</p>
+        <p style="font-size: 45px;">源代碼</p>
+        <p>
+            <ul>
+                <a class="btn" href="https://github.com/davidzheng048/sudoku_solver" target="_blank">數獨破解</a>
+                <a class="btn" href="https://github.com/gabrielecirulli/2048" target="_blank">2048</a>
+                <a class="btn" href="https://github.com/yell0wsuit/chrome-dino-enhanced" target="_blank">小恐龍</a>
+                <a class="btn" href="https://github.com/Jeswin-8802/tic-tac-toe" target="_blank">井字棋</a>
+                <a class="btn" href="https://github.com/chvin/react-tetris" target="_blank">俄羅斯方塊</a>
+                <a class="btn" href="https://github.com/juliangarnier/3D-Hartwig-chess-set" target="_blank">國際象棋</a>
+                <a class="btn" href="https://github.com/noanonoa/flappy-bird" target="_blank">像素鳥</a>
+                <a class="btn" href="https://github.com/yell0wsuit/ms-edge-letssurf" target="_blank">滑板</a>
+                <a class="btn" href="https://github.com/PrestonTseng/1A2B" target="_blank">1A2B</a>
+                <a class="btn" href="https://github.com/luciopanepinto/pacman" target="_blank">小精靈</a>
+                <a class="btn" href="https://github.com/mohdriyaan/snake-game" target="_blank">貪吃蛇</a>
+                <a class="btn" href="https://github.com/flyerq/minesweeper" target="_blank">踩地雷</a>
+                <a class="btn" href="https://github.com/jeffsieu/quards" target="_blank">接龍</a>
+                <a class="btn" href="https://github.com/AhmadAlkholy/Javascript-Chess-Game" target="_blank">西洋棋</a>
+                <a class="btn" href="https://github.com/RedEdge967/connect-four" target="_blank">四子棋</a>
+                <a class="btn" href="https://github.com/ScriptRaccoon/mahjong-solitaire" target="_blank">麻將配對</a>
+                <a class="btn" href="https://github.com/nvios/gomoku" target="_blank">五子棋</a>
+                <a class="btn" href="https://github.com/molefish3614/chineseChess" target="_blank">象棋</a>
+                <a class="btn" href="https://github.com/gd4Ark/star-battle" target="_blank">飛船射擊</a>
+                <a class="btn" href="https://github.com/sr-tamim/scientific-calculator" target="_blank">計算機</a>
+                <a class="btn" href="https://github.com/tinuxcc/lunarFun/tree/master" target="_blank">時鐘API</a>
+                <a class="btn" href="https://github.com/trananhtuat/javascript-sudoku" target="_blank">數獨</a>
+                <a class="btn" href="https://github.com/GregPeck/1024-moves" target="_blank">1024移動</a>
+                <a class="btn" href="https://github.com/rottencandy/js13k2020" target="_blank">四倍</a>
+                <a class="btn" href="https://github.com/SimonHung/Klotski" target="_blank">華容道</a>
+                <a class="btn" href="https://github.com/OleksandrYehorov/fifteen-puzzle" target="_blank">數字華容道</a>
+                <a class="btn" href="https://github.com/ncase/crowds" target="_blank">現今社會</a>
+                <a class="btn" href="https://github.com/ncase/trust" target="_blank">信任</a>
+                <a class="btn" href="https://github.com/Erikas-Ramanauskas/Milestone-Project-2" target="_blank">木塊拼圖</a>
+                <a class="btn" href="https://github.com/esviji/esviji-ubuntu-touch" target="_blank">疊疊樂</a>
+                <a class="btn" href="https://github.com/pdt1806/erg-wordle" target="_blank">猜單字</a>
+                <a class="btn" href="https://github.com/bsehovac/the-cube" target="_blank">魔術方塊</a>
+                <a class="btn" href="https://github.com/noowxela/phaser-examples" target="_blank">像素鳥</a>
+                <a class="btn" href="https://github.com/Hextris/hextris" target="_blank">Hextris</a>
+                <a class="btn" href="https://github.com/acorn13/acorn13.github.io" target="_blank">見縫插針</a>
+                <a class="btn" href="https://github.com/kunjgit/GameZone" target="_blank">磚塊消除, 躲避方塊, 瞄準測驗, 魔方陣, 乒乓球, 貪吃蛇, 西洋棋</a>
+            </ul>
+        </p>
+        <p style="font-size: 50px;">特別感謝</p>
+        <p>由</p>
+        <p>Vercel 託管網站</p>
+        <p>Cloudflare DNS解析</p>
+        <p>eu.org 域名註冊</p>
+        <p>Github 託管源代碼</p>
+        <p>ChatGPT 和 Claude 提供技術支持</p>
+        <p>YeSheng 製作 兼 美化 兼 優化 兼 監製</p>
+        <a style="text-decoration: none;" href="https://github.com/CnYeSheng/game" target="_blank">源代碼</a>
+        <footer>&copy; 2024 YeSheng</footer>
+    </div>
+
 </body>
 
 </html>

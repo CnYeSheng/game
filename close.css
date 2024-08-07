@@ -1,0 +1,123 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.close-container {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+    font-size: 400px;
+    color: #333;
+    margin: 0;
+    line-height: 1;
+    animation: bounceIn 1.5s;
+}
+
+h2 {
+    font-size: 24px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 20px;
+    animation: fadeInUp 2s;
+}
+
+b {
+    color: #e74c3c;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: #666;
+    font-size: 14px;
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 25vw; }
+    h2 { font-size: 18px; }
+}
+
+#closing-message {
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 20px;
+    font-size: 24px;
+    line-height: 1.5;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: roll-up 35s linear 1;
+    animation-fill-mode: forwards; /* 確保動畫結束後保持最後一幀 */
+}
+
+@keyframes roll-up {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-220%);
+    }
+}
+
+#closing-message p {
+    margin: 5px 0;
+}
+.btn {
+    text-decoration: none;
+    border: 2px solid #7952b3;
+    background-color: #7952b3;
+    color: white;
+    border-radius: 12px;
+    font-size: 12px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    animation: scaleAnimation 0.5s ease-in-out;
+    -webkit-animation: scaleAnimation 0.5s ease-in-out;
+  }
