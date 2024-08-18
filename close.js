@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 設定定時器在正確的時間進行重定向
         setTimeout(function() {
-            window.location.href = '/close.html';
+            window.location.href = '/Close.html';
         }, timeUntilRedirect);
     }
 });
