@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentPath = window.location.pathname.split('/').pop();
 
     // 如果當前頁面不是 close.html 並且當前時間已經到達或超過重定向時間，進行重定向
-    if (currentPath !== 'close.html' && currentDate >= redirectDate) {
-        window.location.href = '/close.html';
-    } else if (currentPath !== 'close.html') {
+    if (currentPath !== 'Close.html' && currentDate >= redirectDate) {
+        window.location.href = '/Close.html';
+    } else if (currentPath !== 'Close.html') {
         // 計算到重定向時間的毫秒數
         const timeUntilRedirect = redirectDate - currentDate;
 
