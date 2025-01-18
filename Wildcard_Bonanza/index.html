@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:title" content="JUNO"/>
+		<meta property="og:site_name" content="JUNO"/>
+		<meta property="og:description" content="JavaScript UNO"/>
+		<title>JUNO</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+		<script type="text/javascript" src="juno.js"></script>
+	</head>
+	<body>
+		<div style="text-align: left; margin-left: 40px;
+        margin-top: 30px;
+        font-size: 30px;
+        padding: 5px; "><a href="#"><i style="color:black;" class="fas fa-home home-icon"></i></a></div>
+		<div id="container">
+			<div id="gameContainer">
+				<div id="computerContainer">
+					<div id="computerHead">
+						<div id="computerFace" class="mute">
+							<img src="./images/computerFace2.png" alt="computer">
+						</div>
+					</div>
+					<div id="computerHand"></div>
+					<div id="infoButton">?</div>
+					<div id="infoScreen" class="hide">
+						<div id="exitButton">&times;</div>
+						<div id="infoContainer">
+							<div id="gameMap"><img src="./images/gameMap.png" alt="game map"></div>
+							<div id="rulesContainer">
+								<div class="head">我該怎麼玩？</div>
+								<div class="paragraph">遊戲的目的是將所有的牌出完。要贏得比賽，你必須在電腦之前做到這一點！</div>
+								<div class="paragraph">通過匹配棄牌堆上的牌的數字、顏色或類型來出牌。例如，如果棄牌堆上的牌是黃色的5，你可以出任何數字5的牌、任何黃色的牌或萬用牌。</div>
+								<div class="paragraph">如果你無法匹配棄牌堆上的牌（或選擇不出牌），你必須抽一張牌。如果你抽到一張可用的牌，你可以選擇出牌或跳過。如果你不出牌，你必須跳過。</div>
+							</div>
+								<div id="gameTips"><img src="./images/gameTips.png" alt="遊戲提示"></div>
+								<div id="specialCardsContainer">
+									<div class="head">特殊牌</div>
+									<div class="paragraph"><span class="paragraphHead">跳過</span><br>跳過其他玩家的回合。<br>你可以連續出兩次牌！</div>
+									<div class="paragraph"><span class="paragraphHead">抽兩張</span><br>其他玩家必須抽兩張牌。</div>
+									<div class="paragraph"><span class="paragraphHead">萬用牌</span><br>你可以選擇棄牌堆的顏色。</div>
+									<div class="paragraph"><span class="paragraphHead">萬用抽四張</span><br>你可以選擇棄牌堆的顏色<span class="italic">並且</span>其他玩家必須抽四張牌。</div>
+							</div>
+							<div id="JUNOvsUNO">
+								<div class="head">這和UNO有什麼不同？</div>
+								<div class="paragraph">這個遊戲只有一名玩家。沒有計分系統。</div>
+								<div class="paragraph">沒有反轉牌。</div>
+								<div class="paragraph">抽兩張牌不會讓被出牌的玩家失去回合。</div>
+								<div class="paragraph">抽牌後，你可以出手中任何可用的牌，而不僅僅是你抽到的那張。</div>
+								<div class="paragraph">對於何時可以出萬用抽四張牌沒有任何限制。</div>
+								<div class="paragraph">你不必喊"UNO"（但如果你想喊也可以）。</div>
+							</div>
+							<div id="about">
+								<div class="head">為什麼要做這個？</div>
+								<div class="paragraph">主要是為了學習JavaScript——因此得名——以及HTML/CSS。有人告訴我，建造一些東西是學習的最佳方式，所以在完成Codecademy的JS課程後，我認為製作一個UNO遊戲會是一個有趣的挑戰。我在不使用jQuery或其他庫的情況下製作了JUNO，以便教自己如何處理DOM、事件處理、動畫等。</div>
+								<div class="paragraph">如有任何意見或問題，請通過<a href="mailto:dougtebay@gmail.com">dougtebay@gmail.com</a>聯繫我。</div>
+							</div>
+							<div></div>
+						</div>
+					</div>
+				</div>
+				<div id="discardPileContainer">
+					<div id="welcomeMessage" class="hide">
+						<div>輪到你了！點擊一張牌來出牌。<br>如果你不能出牌，請抽牌。</div>
+						<div id="triangleDown"></div>
+					</div>
+					<div id="wildMenu" class="hide">
+						<div id="triangleLeft"></div>
+						<div>請選擇顏色</div>
+						<div class="wildButton" id="Red"></div>
+						<div class="wildButton" id="Green"></div>
+						<div class="wildButton" id="Blue"></div>
+						<div class="wildButton" id="Yellow"></div>
+					</div>
+					<div id="overlay" class="hide"></div>
+					<div id="gameOverScreen" class="hide">
+						<div id="gameOverMessage"></div>
+						<div id="gameOverMenu">再玩一次嗎?
+							<div id="yesButton">當然</div>
+							<div id="noButton">算了</div>
+						</div>
+					</div>
+					<div id="discardPile"></div>
+				</div>
+				<div id="playerContainer">
+					<div id="playerHead">
+						<div id="playerFace">
+							<img src="./images/playerFace3.png" alt="player">
+						</div>
+					</div>
+					<div id="sidebar">
+						<div id="drawButton">抽牌</div>
+						<div id="passButton" class="disabled">跳過</div>
+					</div>
+					<div id="playerHand"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

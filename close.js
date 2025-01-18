@@ -1,6 +1,7 @@
+/*
 document.addEventListener('DOMContentLoaded', function() {
     // 設定重定向的日期和時間
-    const redirectDate = new Date('2024-08-18T00:00:00+08:00');
+    const redirectDate = new Date('2025-02-18T00:00:00+08:00');
 
     // 取得當前時間
     const currentDate = new Date();
@@ -21,3 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, timeUntilRedirect);
     }
 });
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> 3a0ad76 (reopen)

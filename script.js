@@ -414,7 +414,7 @@ window.addEventListener('load', function() {
     }
 });
 
-
+/*
 //mcserver
 // 获取 Java 版服务器状态
 fetch('https://api.mcsrvstat.us/3/mc.cyss.us.eu.org')
@@ -453,3 +453,65 @@ fetch('https://api.mcsrvstat.us/bedrock/3/mc.cyss.us.eu.org')
     const serverStatusBedrock = document.getElementById('server-status-bedrock');
     serverStatusBedrock.innerHTML = '<p>获取服务器状态失败</p>';
 });
+*/
+
+// 函數來處理更新檢查，根據平台自動選擇 APK 或 EXE
+function checkForUpdates(platformUrl, offlineTitle, onlineTitle, offlineLinkSelector, onlineLinkSelector) {
+    fetch(platformUrl)
+        .then(response => response.json())
+        .then(data => {
+            const latestVersion = data.latest_version;
+            
+            // 根據平台生成不同的下載鏈接
+            let githubOfflineUrl, githubOnlineUrl;
+
+            if (platformUrl.includes('mobile')) {
+                // Android下載鏈接
+                githubOfflineUrl = `https://github.com/CnYeSheng/mobilegame/releases/download/${latestVersion}/io.yesheng.game-${latestVersion}_Offline.apk`;
+                githubOnlineUrl = `https://github.com/CnYeSheng/mobilegame/releases/download/${latestVersion}/io.yesheng.game-${latestVersion}_Online.apk`;
+            } else {
+                // Windows下載鏈接
+                githubOfflineUrl = `https://github.com/CnYeSheng/pcgame/releases/download/${latestVersion}/Setup.${latestVersion}_Offline.exe`;
+                githubOnlineUrl = `https://github.com/CnYeSheng/pcgame/releases/download/${latestVersion}/Setup.${latestVersion}_Online.exe`;
+            }
+
+            // 更新最新版本和下載鏈接
+            const versionSpanOffline = document.getElementById(offlineTitle);
+            const downloadLinkOffline = document.querySelector(offlineLinkSelector);
+            const versionSpanOnline = document.getElementById(onlineTitle);
+            const downloadLinkOnline = document.querySelector(onlineLinkSelector);
+
+            if (versionSpanOffline && downloadLinkOffline) {
+                versionSpanOffline.textContent = latestVersion;
+                downloadLinkOffline.href = githubOfflineUrl;
+            }
+
+            if (versionSpanOnline && downloadLinkOnline) {
+                versionSpanOnline.textContent = latestVersion;
+                downloadLinkOnline.href = githubOnlineUrl;
+            }
+        })
+        .catch(error => {
+            const versionSpanOffline = document.getElementById(offlineTitle);
+            const versionSpanOnline = document.getElementById(onlineTitle);
+            const updateMessage = document.getElementById('updateMessage');
+
+            if (versionSpanOffline) {
+                versionSpanOffline.textContent = "無法檢查更新。";
+            }
+            if (versionSpanOnline) {
+                versionSpanOnline.textContent = "無法檢查更新。";
+            }
+            if (updateMessage) {
+                updateMessage.textContent = "請稍後重試。";
+                updateMessage.style.color = "orange";
+            }
+
+            // 顯示錯誤到控制台
+            console.error("Error fetching update data:", error);
+        });
+}
+
+// 呼叫函數來檢查 Android 和 Windows 更新
+checkForUpdates('https://mobilegamecersion.yesheng.workers.dev', 'latestVersionOfflineAndroid', 'latestVersionOnlineAndroid', 'a[title="AndroidOffline"]', 'a[title="AndroidOnline"]');
+checkForUpdates('https://windowsgamecersion.yesheng.workers.dev', 'latestVersionOfflineWindows', 'latestVersionOnlineWindows', 'a[title="WindowsOffline"]', 'a[title="WindowsOnline"]');

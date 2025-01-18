@@ -49,7 +49,7 @@ main {
   }
   .card {
     width: 197px;
-    height: 342px;
+    /* height: 342px; */ 
     margin: 10px;
     border-radius: 5px;
     overflow: visible;
