@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狼人殺</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="app">
+        <h1>狼人殺</h1>
+
+        <div class="setup-screen" id="setupScreen">
+            <div class="role-setup" id="roleSetup">
+                <div class="role-item">
+                    <span>狼人</span>
+                    <select id="wolfCount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="role-item">
+                    <span>平民</span>
+                    <select id="villagerCount">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="role-item">
+                    <span>預言家</span>
+                    <select id="seerCount">
+                        <option value="1" selected>1</option>
+                    </select>
+                </div>
+                <div class="role-item">
+                    <span>女巫</span>
+                    <select id="witchCount">
+                        <option value="0">0</option>
+                        <option value="1" selected>1</option>
+                    </select>
+                </div>
+                <div class="role-item">
+                    <span>獵人</span>
+                    <select id="hunterCount">
+                        <option value="0">0</option>
+                        <option value="1" selected>1</option>
+                    </select>
+                </div>
+                <div class="role-item">
+                    <span>守衛</span>
+                    <select id="guardCount">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="role-item">
+                    <span>白痴</span>
+                    <select id="idiotCount">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="role-item">
+                    <span>騎士</span>
+                    <select id="knightCount">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="role-item">
+                    <span>狼王</span>
+                    <select id="wolfKingCount">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+            </div>
+            <button class="start-button" onclick="setupPlayers()">設置玩家</button>
+        </div>
+
+        <div class="game-board" id="gameBoard" style="display: none;">
+            <div class="current-phase" id="currentPhase">當前階段：準備開始</div>
+            <div class="players-container" id="playersContainer"></div>
+            <div class="game-log" id="gameLog"></div>
+        </div>
+    </div>
+
+    <div class="night-overlay" id="nightOverlay"></div>
+</body>
+</html> 
