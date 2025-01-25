@@ -2,14 +2,13 @@
 <html lang="zh-TW">
 
 <head>
-    <!--<script src="close.js"></script>-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小遊戲</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style/styles.css">
+    <script src="./script/script.js"></script>
     <link rel="icon" href="./logo.ico" sizes='500x500' type="image/x-icon"/>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="./json/manifest.json">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.min.css">   
 </head>
@@ -35,6 +34,7 @@
 <button id="darkModeToggle">🌓</button>
 
 <body>
+    <!-- <script src="/script/close.js"></script> -->
     <div id="title">
         <h1>小遊戲</h1>
         <h2>這裡擁有許多好玩的遊戲</h2>
@@ -48,223 +48,219 @@
     <summary>小遊戲</summary>
     <div id="games-chose">
 	
-		<a href="./Werewolf/" class="btn moblie" target="_blank" title="狼人殺">狼人殺
+		<a href="./Item/Werewolf/" class="btn mobile" target="_blank" title="狼人殺">狼人殺
             <span class="info-icon" title="說明" gamePlay="狼人殺">i</span>
         </a>
 
-        <p class="btn" title="塔羅牌">塔羅牌
+        <a href="./Item/TarotNew/" class="btn mobile" target="_blank" title="塔羅牌">塔羅牌
             <span class="info-icon" title="說明" gamePlay="塔羅牌">i</span>
-        </p>
+        </a>
 
-        <p class="btn" title="猜數字">猜數字
+        <a href="./Item/GuessNumber/" class="btn mobile" target="_blank" title="猜數字">猜數字
             <span class="info-icon" title="說明" gamePlay="猜數字">i</span>
-        </p>
+        </a>
 
-        <p class="btn" title="真心話大冒險">真心話大冒險
+        <a href="./Item/TruthOrDare/" class="btn mobile" target="_blank" title="真心話大冒險">真心話大冒險
             <span class="info-icon" title="說明" gamePlay="真心話大冒險">i</span>
-        </p>
+        </a>
 
-        <p class="btn" title="誰是臥底">誰是臥底
+        <a href="./Item/WhoisSpy/" class="btn mobile" target="_blank" title="誰是臥底">誰是臥底
             <span class="info-icon" title="說明" gamePlay="誰是臥底">i</span>
-        </p>
+        </a>
 
-        <p class="btn" title="轉盤">轉盤
-            <span class="info-icon" title="說明" gamePlay="轉盤">i</span>
-        </p>
-
-        <p class="btn" title="骰子">骰子
+        <a href="./Item/Dice/" class="btn mobile" target="_blank" title="骰子">骰子
             <span class="info-icon" title="說明" gamePlay="骰子">i</span>
-        </p>
+        </a>
 
-        <p class="btn" title="麻將骰子">麻將骰子
+        <a href="./Item/MahjongDice/" class="btn mobile" target="_blank" title="麻將骰子">麻將骰子
             <span class="info-icon" title="說明" gamePlay="麻將骰子">i</span>
-        </p>
+        </a>
 
-        <p class="btn" title="Emoji成語">Emoji成語
+        <a href="./Item/EmojiIdiom/" class="btn mobile" target="_blank" title="Emoji成語">Emoji成語
             <span class="info-icon" title="說明" gamePlay="使用Emoji猜成語">i</span>
-        </p>
+        </a>
 
-        <a href="./Tower_Blocks/" class="btn moblie" target="_blank" title="堆疊方塊">堆疊方塊
+        <a href="./Item/Tower_Blocks/" class="btn mobile" target="_blank" title="堆疊方塊">堆疊方塊
             <span class="info-icon" title="說明" gamePlay="目標是將塊堆疊得盡可能高而不會錯過">i</span>
         </a>
 
-        <a href="./Lights_Out/" class="btn moblie" target="_blank" title="熄燈">熄燈
+        <a href="./Item/Lights_Out/" class="btn mobile" target="_blank" title="熄燈">熄燈
             <span class="info-icon" title="說明" gamePlay="目標是關閉網格上的所有燈。找到正確的儲存格點擊組合來關閉格上的所有燈">i</span>
         </a>
 
-        <a href="./Menja/" class="btn moblie" target="_blank" title="Menja">Menja
+        <a href="./Item/Menja/" class="btn mobile" target="_blank" title="Menja">Menja
             <span class="info-icon" title="說明" gamePlay="劃過立方體 ，如果您讓任何立方體到螢幕底部，遊戲將結束，請小心電藍色立方體，因為它們會產生慢動作效果">i</span>
         </a>
 
-        <a href="./Ludo_Game/" class="btn moblie" target="_blank" title="擲骰子">擲骰子
+        <a href="./Item/Ludo_Game/" class="btn mobile" target="_blank" title="擲骰子">擲骰子
             <span class="info-icon" title="說明" gamePlay="獲得 100 分的人獲勝。您獲得的骰子會為您分配一個分數。 您可以保留您的分數並將機會傳遞給其他玩家，或者再次擲骰子。 如果您拿到 1 的骰子，您當前的分數將重置">i</span>
         </a>
 
-        <a href="./Simon_Game_Challenge/" class="btn moblie" target="_blank" title="記憶力挑戰">記憶力挑戰
+        <a href="./Item/Simon_Game_Challenge/" class="btn" target="_blank" title="記憶力挑戰">記憶力挑戰
             <span class="info-icon" title="說明" gamePlay="記住每次的顏色">i</span>
         </a>
 
-        <a href="./Emoji_Puzzle_Game/" class="btn moblie" target="_blank" title="Emoji Puzzle Game">表情符號數學
+        <a href="./Item/Emoji_Puzzle_Game/" class="btn mobile" target="_blank" title="Emoji Puzzle Game">表情符號數學
             <span class="info-icon" title="說明" gamePlay="表情符號數學">i</span>
         </a>
 
-        <a href="./Wildcard_Bonanza/" class="btn moblie" target="_blank" title="JUNO">JUNO
+        <a href="./Item/Wildcard_Bonanza/" class="btn" target="_blank" title="JUNO">JUNO
             <span class="info-icon" title="說明" gamePlay="類似UNO玩法">i</span>
         </a>
 
-        <a href="./Ping_Pong_Multiplayer/" class="btn mobile" target="_blank" title="Ping_Pong">乒乓球
+        <a href="./Item/Ping_Pong_Multiplayer/" class="btn" target="_blank" title="Ping_Pong">乒乓球
             <span class="info-icon" title="說明" gamePlay="透過鍵盤來完成乒乓球<br>左邊玩家:<br>W:上, S:下<br>右邊玩家:<br>方向鍵上:上, 方向鍵下:下">i</span>
         </a>
 
-        <a href="./Snake/" class="btn mobile" target="_blank" title="Snake">貪吃蛇
+        <a href="./Item/Snake/" class="btn" target="_blank" title="Snake">貪吃蛇
             <span class="info-icon" title="說明" gamePlay="透過方向鍵移動走向，碰觸綠色方塊得分">i</span>
         </a>
 
-        <a href="./Truth-or-Dare/" class="btn" target="_blank" title="Truth-or-Dare">真心話大冒險
+        <a href="./Item/Truth-or-Dare/" class="btn mobile" target="_blank" title="Truth-or-Dare">真心話大冒險
             <span class="info-icon" title="說明" gamePlay="真心話大冒險">i</span>
         </a>
 
-        <a href="./coreball/" class="btn" target="_blank" title="CoreBall">見縫插針
+        <a href="./Item/coreball/" class="btn mobile" target="_blank" title="CoreBall">見縫插針
             <span class="info-icon" title="說明" gamePlay="點擊畫面將小球插到大球上，同時不碰到任何其他小球。">i</span>
         </a>
 
-        <a href="./Hextris/" class="btn" target="_blank" title="六邊形">六邊形
+        <a href="./Item/Hextris/" class="btn mobile" target="_blank" title="六邊形">六邊形
             <span class="info-icon" title="說明" gamePlay="它六邊形方塊會從某些邊掉顏色下來<br>湊滿3個(or 以上)它會消除">i</span>
         </a>
 
-        <a href="./Crowds/" class="btn" target="_blank" title="群眾">群眾
+        <a href="./Item/Crowds/" class="btn mobile" target="_blank" title="群眾">群眾
             <span class="info-icon" title="說明" gamePlay="透過提示破關">i</span>
         </a>
 
-        <a href="./Trust/" class="btn" target="_blank" title="信任">信任
+        <a href="./Item/Trust/" class="btn mobile" target="_blank" title="信任">信任
             <span class="info-icon" title="說明" gamePlay="透過提示破關">i</span>
         </a>
 
-        <a href="./Minesweeper/" class="btn" target="_blank" title="踩地雷">踩地雷
+        <a href="./Item/Minesweeper/" class="btn mobile" target="_blank" title="踩地雷">踩地雷
             <span class="info-icon" title="說明" gamePlay="根據周圍地雷數字提示，推測地雷位置">i</span>
         </a>
 
-        <a href="./Subway/" class="btn" target="_blank" title="地鐵跑酷">地鐵跑酷
+        <a href="./Item/Subway/" class="btn mobile" target="_blank" title="地鐵跑酷">地鐵跑酷
             <span class="info-icon" title="說明" gamePlay="在地鐵環境中奔跑、跳躍、躲避障礙物">i</span>
         </a>
 
-        <a href="./HeadSoccer/" class="btn mobile" target="_blank" title="足球">足球
+        <a href="./Item/HeadSoccer/" class="btn" target="_blank" title="足球">足球
             <span class="info-icon" title="說明" gamePlay="控制卡通風格的足球選手使用他們的頭部來踢球，進行各種有趣和瘋狂的比賽">i</span>
         </a>
 
-        <a href="./Rubik's-Cube/" class="btn" target="_blank" title="魔術方塊">魔術方塊
+        <a href="./Item/Rubik's-Cube/" class="btn mobile" target="_blank" title="魔術方塊">魔術方塊
             <span class="info-icon" title="說明" gamePlay="透過旋轉、滑動來完成魔術方塊">i</span>
         </a>
 
-        <a href="./Wood-Blocks/" class="btn" target="_blank" title="木塊拼圖">木塊拼圖
+        <a href="./Item/Wood-Blocks/" class="btn mobile" target="_blank" title="木塊拼圖">木塊拼圖
             <span class="info-icon" title="說明" gamePlay="放置方塊使直排、橫排、九宮格放滿即可加分">i</span>
         </a>
 
-        <a href="./Flappy-Bird/" class="btn" target="_blank" title="像素鳥">像素鳥
+        <a href="./Item/Flappy-Bird/" class="btn mobile" target="_blank" title="像素鳥">像素鳥
             <span class="info-icon" title="說明" gamePlay="透過點擊讓小鳥在管道中上下飛行，避開障礙物獲得分數">i</span>
         </a>
 
-        <a href="./Esviji/" class="btn" target="_blank" title="彩球消除">彩球消除
+        <a href="./Item/Esviji/" class="btn mobile" target="_blank" title="彩球消除">彩球消除
             <span class="info-icon" title="說明" gamePlay="根據球的顏色和位置在棋盤上消除球">i</span>
         </a>
 
-        <a href="./Wordle/" class="btn" target="_blank" title="猜單字">猜單字
+        <a href="./Item/Wordle/" class="btn mobile" target="_blank" title="猜單字">猜單字
             <span class="info-icon" title="說明" gamePlay="透過提示猜單字">i</span>
         </a>
 
-        <a href="./Crossy-Road/" class="btn" target="_blank" title="天天過馬路">天天過馬路
+        <a href="./Item/Crossy-Road/" class="btn mobile" target="_blank" title="天天過馬路">天天過馬路
             <span class="info-icon" title="說明" gamePlay="控制角色在繁忙的車流中穿越，避開障礙物，安全通過道路">i</span>
         </a>
 
-        <a href="./1024-Moves/" class="btn mobile" target="_blank" title="1024移動">1024移動
+        <a href="./Item/1024-Moves/" class="btn" target="_blank" title="1024移動">1024移動
             <span class="info-icon" title="說明" gamePlay="通過移動方塊來通關。">i</span>
         </a>
 
-        <a href="./Fourfold/" class="btn mobile" target="_blank" title="四倍">四倍
+        <a href="./Item/Fourfold/" class="btn" target="_blank" title="四倍">四倍
             <span class="info-icon" title="說明" gamePlay="透過四個步驟的跳躍來導航缺失的平台，挑戰空間感與思考策略">i</span>
         </a>
 
-        <a href="./Klotski/" class="btn" target="_blank" title="華容道">華容道
+        <a href="./Item/Klotski/" class="btn mobile" target="_blank" title="華容道">華容道
             <span class="info-icon" title="說明" gamePlay="將不同形狀的方塊在限定的空間中移動，將大正方形方塊移除框外即可">i</span>
         </a>
 
-        <a href="./N-Puzzle/" class="btn" target="_blank" title="數字華容道">數字華容道
+        <a href="./Item/N-Puzzle/" class="btn mobile" target="_blank" title="數字華容道">數字華容道
             <span class="info-icon" title="說明" gamePlay="移動帶有數字的方塊，讓它們按照順序排列">i</span>
         </a>
 
-        <a href="./Sudoku/" class="btn" target="_blank" title="數獨">數獨
+        <a href="./Item/Sudoku/" class="btn mobile" target="_blank" title="數獨">數獨
             <span class="info-icon" title="說明" gamePlay="填滿9x9的方格，使每一行、每一列和每個3x3的九宮格內的數字都是1到9，且不重複">i</span>
         </a>
 
-        <a href="./Tetris/" class="btn" target="_blank" title="俄羅斯方塊">俄羅斯方塊
+        <a href="./Item/Tetris/" class="btn mobile" target="_blank" title="俄羅斯方塊">俄羅斯方塊
             <span class="info-icon" title="說明" gamePlay="控制不同形狀的方塊，讓它們在一個逐漸下降的方塊矩陣中進行旋轉和移動，以拼湊成完整的水平行並清除矩陣中的方塊，避免方塊堆疊到頂部">i</span>
         </a>
 
-        <a href="./2048/" class="btn" target="_blank" title="2048">2048
+        <a href="./Item/2048/" class="btn mobile" target="_blank" title="2048">2048
             <span class="info-icon" title="說明" gamePlay="在矩陣中滑動方塊，使相同數字的方塊合併疊加，避免填滿整個且無法移動的情況">i</span>
         </a>
 
-        <a href="./Gomoku/" class="btn" target="_blank" title="五子棋">五子棋
+        <a href="./Item/Gomoku/" class="btn mobile" target="_blank" title="五子棋">五子棋
             <span class="info-icon" title="說明" gamePlay="玩家(or AI)輪流在空格中下黑白兩色的棋子，目標是先將自己的五個棋子連成一條直線（橫向、縱向、斜向皆可）即可獲勝，同時需要防止對手形成連線。">i</span>
         </a>
 
-        <a href="./Angry-Birds/" class="btn" target="_blank" title="憤怒鳥">憤怒鳥
+        <a href="./Item/Angry-Birds/" class="btn" target="_blank" title="憤怒鳥">憤怒鳥
             <span class="info-icon" title="說明" gamePlay="玩家需要控制彩色小鳥，利用彈弓將它們射向搭建在各種結構物上的綠色豬，目標是將所有豬都消除以過關，不同類型的鳥擁有不同的特殊技能，玩家需要巧妙利用這些技能來擊倒豬">i</span>
         </a>
 
-        <a href="./1A2B/" class="btn" target="_blank" title="1A2B">1A2B
+        <a href="./Item/1A2B/" class="btn mobile" target="_blank" title="1A2B">1A2B
             <span class="info-icon" title="說明" gamePlay="玩家需猜出由電腦隨機產生的一個數字，並根據猜測的結果獲得提示，其中'A'表示猜測的數字正確且位置也正確，'B'表示猜測的數字正確但位置不正確，通過多次猜測和分析提示，最終猜出正確的數字來獲勝">i</span>
         </a>
 
-        <a href="./Connect-Four/" class="btn" target="_blank" title="四子棋">四子棋
+        <a href="./Item/Connect-Four/" class="btn mobile" target="_blank" title="四子棋">四子棋
             <span class="info-icon" title="說明" gamePlay="玩家輪流下紅黃兩色的棋子到任意未被填滿的行中，目標是在水平、垂直或對角線上先將自己的四個棋子連成一線，即可獲勝。這種遊戲需要玩家考慮攻守兼顧，同時防止對手形成連線">i</span>
         </a>
 
-        <a href="./Tic-Tac-Toe/" class="btn" target="_blank" title="井字棋">井字棋
+        <a href="./Item/Tic-Tac-Toe/" class="btn mobile" target="_blank" title="井字棋">井字棋
             <span class="info-icon" title="說明" gamePlay="在3x3(or 4x4)的方格棋盤上進行。兩位玩家(or AI)輪流在空格中下'X'或'O'兩種不同的符號，目標是先將自己的符號擺成一條直線（橫向、縱向、斜向皆可）即可獲勝。如果棋盤填滿而沒有任何一方連成一線，則為平局">i</span>
         </a>
 
-        <a href="./Dino/" class="btn" target="_blank" title="小恐龍">小恐龍
+        <a href="./Item/Dino/" class="btn mobile" target="_blank" title="小恐龍">小恐龍
             <span class="info-icon" title="說明" gamePlay="按下空白鍵即可開始這款遊戲，玩家需要控制小恐龍跳躍避開障礙物，挑戰自己的反應速度和遊戲記錄">i</span>
         </a>
 
-        <a href="./Guesses/" class="btn" target="_blank" title="猜數字">猜數字
+        <a href="./Item/Guesses/" class="btn" target="_blank" title="猜數字">猜數字
             <span class="info-icon" title="說明" gamePlay="由電腦設定一個隨機數字，玩家需猜出數字是多少。遊戲進行時，玩家可以提出一組數字，電腦會給出相應的提示，猜測數字的範圍。玩家通過這些提示來猜測，直到猜出正確的數字為止">i</span>
         </a>
 
-        <a href="./Tarot/" class="btn" target="_blank" title="塔羅牌">塔羅牌
+        <a href="./Item/Tarot/" class="btn mobile" target="_blank" title="塔羅牌">塔羅牌
             <span class="info-icon" title="說明" gamePlay="塔羅牌由78張卡牌組成的占卜工具，常被用來探索心靈、思想和命運等主題。這套卡牌通常分為22張大牌和56張小牌，透過輸入問題來獲取對該問題的牌型。通常以3張牌">i</span>
         </a>
 
-        <a href="./Book-of-Answers/" class="btn" target="_blank" title="解答之書">解答之書
+        <a href="./Item/Book-of-Answers/" class="btn mobile" target="_blank" title="解答之書">解答之書
             <span class="info-icon" title="說明" gamePlay="透過選擇類型來獲得相對應的解答">i</span>
         </a>
 
-        <a href="./Solitaire/" class="btn" target="_blank" title="接龍">接龍
+        <a href="./Item/Solitaire/" class="btn" target="_blank" title="接龍">接龍
             <span class="info-icon" title="說明" gamePlay="遊戲的目標是將所有的牌按照花色和數字依次由小到大堆疊在四個基地區，也就是A到K的順序。同時，玩家還可以利用庫牌堆和場上的列牌來移動牌，要求移動的牌必須是一張紅色和一張黑色交替堆疊的。當一列的最上方牌為K時，可以將該列移至空位或另一張牌底部為K的列上。">i</span>
         </a>
 
-        <a href="./Pac-Man/" class="btn" target="_blank" title="小精靈">小精靈
+        <a href="./Item/Pac-Man/" class="btn" target="_blank" title="小精靈">小精靈
             <span class="info-icon" title="說明" gamePlay="玩家控制圓形角色Pac-Man在迷宮中吃豆子、避開鬼魂，挑戰高分">i</span>
         </a>
 
-        <a href="./Chess/" class="btn" target="_blank" title="西洋棋">西洋棋
+        <a href="./Item/Chess/" class="btn mobile" target="_blank" title="西洋棋">西洋棋
             <span class="info-icon" title="說明" gamePlay="棋盤上有64個方格，玩家輪流移動各種不同類型的棋子，包括國王、皇后、城堡、主教、騎士和兵，以攻擊對方的國王並保護自己的國王，最終目標是將對方的國王逼入無法逃脫的狀況，即獲勝">i</span>
         </a>
 
         <!--
-        <a href="./Mahjong-Solitaire/" class="btn" target="_blank" title="對對碰">對對碰
+        <a href="./Item/Mahjong-Solitaire/" class="btn" target="_blank" title="對對碰">對對碰
             <span class="info-icon" title="說明" gamePlay="玩家需要配對相同的牌來清除牌堆，最終的目標是清空整個牌桌">i</span>
         </a>
         -->
 
         <!--
-        <a href="./Chinese-Chess/" class="btn" target="_blank" title="象棋">象棋
+        <a href="./Item/Chinese-Chess/" class="btn" target="_blank" title="象棋">象棋
             <span class="info-icon" title="說明" gamePlay="利用不同棋子的走法和策略，將對方的帥（將）將軍，以獲得勝利">i</span>
         </a>
         -->
 
-        <a href="./Surf/" class="btn" target="_blank" title="滑板">滑板
+        <a href="./Item/Surf/" class="btn mobile" target="_blank" title="滑板">滑板
             <span class="info-icon" title="說明" gamePlay="透過前後左右鍵(or 觸控)進行遊戲，遊玩時需注意避免觸碰到玩家、障礙物、章魚，否則將損失一條血，共三條血">i</span>
         </a>
 
@@ -317,24 +313,28 @@
     <summary>小工具</summary>
     <div id="games-chose">
 
-        <a href="./Calculator/" class="btn" target="_blank" title="計算機">計算機
+        <a href="./Item/Calculator/" class="btn mobile" target="_blank" title="計算機">計算機
             <span class="info-icon" title="說明" gamePlay="進行各種數字和數學運算的工具，包括基本運算、函數計算">i</span>
         </a>
 
-        <a href="./Clock/" class="btn" target="_blank" title="時鐘">時鐘
+        <a href="./Item/Clock/" class="btn mobile" target="_blank" title="時鐘">時鐘
             <span class="info-icon" title="說明" gamePlay="瞭解現在時間，擁有年月日 時分秒星期外 還有農曆紀年">i</span>
         </a>
 
-        <a href="./Password-Generate/" class="btn" target="_blank" title="密碼生成">密碼生成
+        <a href="./Item/Password-Generate/" class="btn mobile" target="_blank" title="密碼生成">密碼生成
             <span class="info-icon" title="說明" gamePlay="通過隨機生成具有一定複雜度的密碼，用於保護資訊和帳戶安全。這些密碼通常包含數字、字母（大小寫）、符號等元素的組合，以增加其安全性，避免被猜測或破解">i</span>
         </a>
 
-        <a href="./pomodoro/" class="btn" target="_blank" title="番茄鐘">番茄鐘
+        <a href="./Item/pomodoro/" class="btn mobile" target="_blank" title="番茄鐘">番茄鐘
             <span class="info-icon" title="說明" gamePlay="決定需要先完成的任務。<br>設定番茄工作法定時器至 n 分鐘（通常為25分鐘）。<br>持續工作直至定時器提示，記下一個番茄。<br>短暫休息3-5分鐘。<br>每四個番茄，休息15-30分。">i</span>
         </a>
 
-        <a href="./draw/" class="btn" target="_blank" title="抽籤">抽籤
+        <a href="./Item/draw/" class="btn mobile" target="_blank" title="抽籤">抽籤
             <span class="info-icon" title="說明" gamePlay="抽籤">i</span>
+        </a>
+
+        <a href="./Item/Spinwheel/" class="btn mobile" target="_blank" title="轉盤">轉盤
+            <span class="info-icon" title="說明" gamePlay="轉盤">i</span>
         </a>
 
     </div>
@@ -344,19 +344,19 @@
     <summary>軟體專區</summary>
     <div id="games-chose">
 
-        <a href="${githubOfflineUrl}" class="btn" target="_blank" title="AndroidOffline">Android(本地版)
+        <a href="${githubOfflineUrl}" class="btn mobile" target="_blank" title="AndroidOffline">Android(本地版)
             <br><span id="latestVersionOfflineAndroid"></span>
         </a>
         
-        <a href="${githubOnlineUrl}" class="btn" target="_blank" title="AndroidOnline">Android(網路版)
+        <a href="${githubOnlineUrl}" class="btn mobile" target="_blank" title="AndroidOnline">Android(網路版)
             <br><span id="latestVersionOnlineAndroid"></span>
         </a>
         
-        <a href="${githubOfflineUrl}" class="btn" target="_blank" title="WindowsOffline">Windows(本地版)
+        <a href="${githubOfflineUrl}" class="btn mobile" target="_blank" title="WindowsOffline">Windows(本地版)
             <br><span id="latestVersionOfflineWindows"></span>
         </a>
         
-        <a href="${githubOnlineUrl}" class="btn" target="_blank" title="WindowsOnline">Windows(網路版)
+        <a href="${githubOnlineUrl}" class="btn mobile" target="_blank" title="WindowsOnline">Windows(網路版)
             <br><span id="latestVersionOnlineWindows"></span>
         </a>
         
@@ -370,7 +370,7 @@
     <div id="games-chose">
 
         <a href="https://www.coze.com/store/bot/7360978745429671954" class="btn" target="_blank" title="Coze(官方)">
-            <img src="./coze.svg" width="30" height="30" alt="Coze" class="bi"/>
+            <img src="./Item/coze.svg" width="30" height="30" alt="Coze" class="bi"/>
             Coze(官方)
         </a>
 
@@ -410,11 +410,11 @@
         <summary>回報服務</summary>
         <div id="games-chose">
 
-            <a href="https://forms.office.com/r/qBSv1eaned" class="btn" target="_blank" title="新增建議">新增建議
+            <a href="https://forms.office.com/r/qBSv1eaned" class="btn mobile" target="_blank" title="新增建議">新增建議
                 <span class="info-icon" title="說明" gamePlay="透過表單悉知用戶心想之遊戲">i</span>
             </a>
     
-            <a href="https://forms.office.com/r/QZSzZx3qFz" class="btn" target="_blank" title="問題回報">問題回報
+            <a href="https://forms.office.com/r/QZSzZx3qFz" class="btn mobile" target="_blank" title="問題回報">問題回報
                 <span class="info-icon" title="說明" gamePlay="透過表單悉知網站問題並解決">i</span>
             </a>
 
@@ -436,6 +436,13 @@
         -->
     <h1>New Update:</h1>
     <h5>MM/DD/YY or DD MM, YYYY</h5>
+
+    <div class="update-section">
+        <h3>25 Jan, 2025</h3>
+        <p class="add">新增狼人殺, 塔羅牌, 猜數字, 真心話大冒險, 誰是臥底, 轉盤, 骰子, 麻將骰子, Emoji成語</p>
+        <p class="other">對手機用戶隱藏無法正常使用之網站</p>
+        <p class="remove">移除語音, 限時回歸</p>
+    </div>
 
     <div class="update-section">
         <h3>11 Jan, 2025</h3>

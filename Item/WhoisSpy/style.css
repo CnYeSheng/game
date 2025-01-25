@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2c3e50;
+    padding: 20px;
+    flex-direction: column;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.screen {
+    transition: opacity 0.3s;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 設置界面 */
+.setup-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* 角色界面 */
+.role-display {
+    text-align: center;
+}
+
+#roleText {
+    margin: 20px 0;
+}
+
+#wordDisplay {
+    font-size: 2em;
+    color: #e74c3c;
+    margin: 15px 0;
+}
+
+/* 遊戲進行界面 */
+.game-controls {
+    text-align: center;
+}
+
+.game-controls p {
+    margin: 20px 0;
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+/* 結束界面 */
+.end-display {
+    text-align: center;
+}
+
+#resultDisplay {
+    margin: 20px 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* 按鈕樣式 */
+button {
+    padding: 12px 24px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+button#endGame {
+    background: #e74c3c;
+}
+
+button#endGame:hover {
+    background: #c0392b;
+}
+
+/* 響應式設計 */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #wordDisplay {
+        font-size: 1.5em;
+    }
+}
+
+/* 添加投票相關樣式 */
+.voting-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.player-vote-btn {
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: auto;
+    min-width: 120px;
+}
+
+.player-vote-btn:hover {
+    background: #2980b9;
+}
+
+.player-vote-btn.voted {
+    background: #e74c3c;
+}
+
+.vote-result {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.action-btn {
+    background: #2ecc71;
+}
+
+.action-btn:hover {
+    background: #27ae60;
+}
+
+.voting-area {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+/* 添加下拉選單樣式 */
+select {
+    padding: 10px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    background: white;
+}
+
+/* 統一表決模式的按鈕樣式 */
+.consensus-btn {
+    margin: 10px;
+    width: 45%;
+    max-width: 200px;
+}
+
+/* 修改查看詞語相關樣式 */
+.word-check-area {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.player-select {
+    margin-bottom: 15px;
+}
+
+.player-select select {
+    margin: 0 10px;
+    padding: 5px;
+    border: 1px solid #3498db;
+    border-radius: 3px;
+    width: auto;
+}
+
+.confirm-btn {
+    background: #3498db;
+    padding: 5px 15px;
+    margin: 0;
+    display: inline-block;
+    width: auto;
+}
+
+.check-btn {
+    background: #e74c3c;
+    margin: 20px auto;
+}
+
+#playerWord {
+    margin-top: 15px;
+}
+
+#playerWordDisplay {
+    color: #e74c3c;
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+/* 修改資訊按鈕樣式 */
+.info-btn {
+    background: #f39c12;
+    margin-top: 20px;
+}
+
+.info-btn:hover {
+    background: #d68910;
+}
+
+/* 玩家按鈕區域樣式 */
+.player-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.player-btn {
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: auto;
+    min-width: 120px;
+}
+
+.player-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.player-btn.eliminated {
+    background: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 操作按鈕區域樣式 */
+.action-buttons {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.action-buttons h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* 詞語顯示區域樣式 */
+.word-check-area {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.close-btn {
+    background: #95a5a6;
+    margin-top: 15px;
+}
+
+.close-btn:hover {
+    background: #7f8c8d;
+}
+
+/* 添加玩家名稱設置相關樣式 */
+.player-names {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.player-names h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.names-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.name-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.name-input-group label {
+    min-width: 80px;
+}
+
+.name-input-group input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #3498db;
+    border-radius: 3px;
+}
+
+/* 修改玩家名稱設置相關樣式 */
+.names-setup {
+    text-align: center;
+}
+
+.names-setup h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.setup-btn {
+    background: #9b59b6;
+}
+
+.setup-btn:hover {
+    background: #8e44ad;
+}
+
+/* 添加詞庫設置相關樣式 */
+.words-setup {
+    text-align: center;
+}
+
+.words-setup h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.words-container {
+    margin: 20px 0;
+}
+
+.word-pair {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.word-pair input {
+    padding: 8px;
+    border: 1px solid #3498db;
+    border-radius: 3px;
+    width: 120px;
+}
+
+.word-pair button {
+    background: #e74c3c;
+    padding: 8px;
+    width: auto;
+    margin: 0;
+}
+
+.word-pair button:hover {
+    background: #c0392b;
+}
+
+#addWordPairBtn {
+    margin: 20px auto;
+}
+
+footer {
+    color: white;
+}
+
+/* 添加警告按鈕樣式 */
+.warning-btn {
+    background: #e67e22;
+    margin-top: 10px;
+}
+
+.warning-btn:hover {
+    background: #d35400;
+}

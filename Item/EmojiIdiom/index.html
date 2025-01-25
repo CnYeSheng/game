@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji 猜成語</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Emoji 猜成語</h1>
+        
+        <div class="game-area">
+            <div class="emoji-display">
+                <p id="emoji-puzzle"></p>
+                <p class="hint"></p>
+            </div>
+
+            <div class="character-buttons">
+                <!-- 文字按鈕會由 JavaScript 動態生成 -->
+            </div>
+
+            <div class="answer-display">
+                <div id="answer-box"></div>
+                <button id="clear-btn">清除</button>
+            </div>
+
+            <div class="score-area">
+                <p>得分：<span id="score">0</span></p>
+                <button id="next-btn">下一題</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: gold;
+}
+
+.tarot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.question-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.question-section textarea {
+    width: 100%;
+    max-width: 600px;
+    height: 100px;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px solid #4a148c;
+    border-radius: 10px;
+    font-size: 1.1em;
+    resize: vertical;
+}
+
+.card-count-selector {
+    margin: 1rem 0;
+}
+
+.card-count-selector label {
+    margin-right: 1rem;
+    font-size: 1.1em;
+}
+
+.card-count-selector select {
+    padding: 0.5rem 1rem;
+    font-size: 1em;
+    border: 2px solid #4a148c;
+    border-radius: 5px;
+    background: white;
+}
+
+#submit-question {
+    padding: 12px 30px;
+    font-size: 1.2em;
+    background: linear-gradient(45deg, #4a148c, #6a1b9a);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#submit-question:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#submit-question:disabled {
+    background: #9e9e9e;
+    cursor: not-allowed;
+}
+
+#submit-question:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.cards-section {
+    position: relative;
+    margin: 2rem auto;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.deck {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    margin-bottom: 2rem;
+    min-height: 200px;
+    user-select: none;
+    touch-action: none;
+}
+
+.deck .card {
+    position: absolute;
+    transform-origin: center center;
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: transform 0.3s ease;
+    cursor: grab;
+}
+
+.deck .card:active {
+    cursor: grabbing;
+}
+
+.selected-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 2rem;
+    min-height: 200px;
+    width: 100%;
+    perspective: 1000px;
+}
+
+.card {
+    width: 120px;
+    height: 180px;
+    position: absolute;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.deck .card.back {
+    background: linear-gradient(45deg, #1a237e, #3949ab);
+    border-radius: 10px;
+    border: 2px solid gold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.deck .card.back:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000 !important;
+}
+
+.selected-cards .card {
+    position: relative;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.deck .card.back::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: url('cards/back.png') center/cover;
+    opacity: 0.8;
+}
+
+#shuffle-btn {
+    margin: 20px 0;
+    padding: 10px 30px;
+    font-size: 1.2em;
+    background-color: #4a148c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#shuffle-btn:hover {
+    background-color: #6a1b9a;
+    transform: scale(1.05);
+}
+
+#shuffle-btn:disabled {
+    background-color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+#draw-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #4a148c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#draw-btn:hover {
+    background-color: #6a1b9a;
+}
+
+.shuffle-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.2em;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.reading-result {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(42, 42, 42, 0.8);
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.reading-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reading-header {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8em;
+    font-weight: bold;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.reading-content {
+    line-height: 1.6;
+}
+
+.card-title {
+    color: #34495e;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.reading-paragraph {
+    margin: 0.8rem 0;
+    color: #444;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+.reading-paragraph strong {
+    display: block;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 1.5rem 0 0.8rem;
+}
+
+.reading-title {
+    font-size: 1.4em;
+    color: #4a148c;
+    margin: 1.5rem 0 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.card img {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.6s;
+}
+
+.card.reversed img {
+    transform: rotate(180deg);
+}
+
+.restart-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    background: linear-gradient(45deg, #4a148c, #6a1b9a);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.restart-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

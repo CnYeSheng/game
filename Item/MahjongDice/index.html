@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻將骰子模擬器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>麻將骰子模擬器</h1>
+        <div class="mahjong-table">
+            <div class="player top">3. 對家</div>
+            <div class="player left">4. 上家</div>
+            <div class="player right">2. 下家</div>
+            <div class="player bottom">1. 莊家(自己)</div>
+            <div class="dice-container">
+                <div class="dice" id="dice1">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class="dot"></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+                <div class="dice" id="dice2">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class="dot"></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+                <div class="dice" id="dice3">
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class="dot"></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+            </div>
+        </div>
+        <button id="rollButton">擲骰子</button>
+        <div class="results">
+            <p id="diceResult"></p>
+            <div id="drawSequence"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

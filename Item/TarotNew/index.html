@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>塔羅牌占卜</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>塔羅牌占卜</h1>
+        <div class="tarot-container">
+            <div class="question-section">
+                <h2>請輸入您的問題</h2>
+                <textarea id="question" placeholder="請輸入你想諮詢的問題..."></textarea>
+                <div class="card-count-selector">
+                    <label for="card-count">選擇抽牌數量：</label>
+                    <select id="card-count">
+                        <option value="1">1張</option>
+                        <option value="2">2張</option>
+                        <option value="3" selected>3張</option>
+                        <option value="4">4張</option>
+                        <option value="5">5張</option>
+                    </select>
+                </div>
+                <button id="submit-question">開始占卜</button>
+            </div>
+            <div class="cards-section">
+                <div id="deck" class="deck"></div>
+                <div id="selected-cards" class="selected-cards"></div>
+            </div>
+            <div id="reading-result" class="reading-result"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

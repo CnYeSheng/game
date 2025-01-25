@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>誰是臥底</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>誰是臥底</h1>
+        <h2>遊玩前請先注意詞庫是否眾所皆知</h2>
+        
+        <!-- 遊戲設置界面 -->
+        <div id="setupScreen" class="screen">
+            <div class="setup-controls">
+                <div class="input-group">
+                    <label>玩家人數:</label>
+                    <input type="number" id="playerCount" min="4" max="20" value="6">
+                </div>
+                <div class="input-group">
+                    <label>臥底人數:</label>
+                    <input type="number" id="spyCount" min="1" max="2" value="1">
+                </div>
+                <div class="input-group">
+                    <label>白板人數 (0-1人):</label>
+                    <input type="number" id="blankCount" min="0" max="1" value="1">
+                </div>
+                <button id="setNamesBtn" class="setup-btn">設置玩家名稱</button>
+                <button id="customWordsBtn" class="setup-btn">自定義詞庫</button>
+                <button id="startBtn">開始遊戲</button>
+            </div>
+        </div>
+
+        <!-- 添加玩家名稱設置頁面 -->
+        <div id="namesScreen" class="screen hidden">
+            <div class="names-setup">
+                <h2>設置玩家名稱</h2>
+                <div class="names-container"></div>
+                <button id="saveNamesBtn" class="action-btn">保存名稱</button>
+                <button id="backToSetupBtn" class="info-btn">返回設置</button>
+            </div>
+        </div>
+
+        <!-- 添加自定義詞庫頁面 -->
+        <div id="wordsScreen" class="screen hidden">
+            <div class="words-setup">
+                <h2>自定義詞庫</h2>
+                <div class="words-container">
+                    <div class="word-pair-list"></div>
+                    <button id="addWordPairBtn" class="info-btn">新增詞語對</button>
+                </div>
+                <button id="saveWordsBtn" class="action-btn">保存詞庫</button>
+                <button id="restoreDefaultWordsBtn" class="warning-btn">恢復預設詞庫</button>
+                <button id="backToSetupFromWordsBtn" class="info-btn">返回設置</button>
+            </div>
+        </div>
+
+        <!-- 查看身份界面 -->
+        <div id="roleScreen" class="screen hidden">
+            <div class="role-display">
+                <h2><span id="currentPlayer">玩家1</span></h2>
+                <button id="showRole">點擊查看身份</button>
+                <div id="roleText" class="hidden">
+                    <p>你的詞語是：</p>
+                    <h3 id="wordDisplay"></h3>
+                </div>
+                <button id="nextPlayer" class="hidden">下一位玩家</button>
+            </div>
+        </div>
+
+        <!-- 遊戲進行界面 -->
+        <div id="gameScreen" class="screen hidden">
+            <div class="game-controls">
+                <h2>遊戲進行中</h2>
+                <p>請玩家輪流描述自己看到的詞語，注意不能直接說出詞語！</p>
+                
+                <!-- 玩家按鈕區域 -->
+                <div id="playerButtons" class="player-buttons"></div>
+                
+                <!-- 操作按鈕區域 -->
+                <div id="actionButtons" class="action-buttons hidden">
+                    <h3>選擇操作</h3>
+                    <p><span id="selectedPlayer"></span></p>
+                    <button id="showWordBtn" class="info-btn">查看詞語</button>
+                    <button id="votePlayerBtn" class="action-btn">投票淘汰</button>
+                </div>
+                
+                <!-- 詞語顯示區域 -->
+                <div id="wordCheckArea" class="word-check-area hidden">
+                    <p><span id="checkingPlayer"></span>的詞語是：</p>
+                    <h3 id="playerWordDisplay"></h3>
+                    <button id="closeWordBtn" class="close-btn">關閉</button>
+                </div>
+            </div>
+            
+            <!-- 投票結果區域 -->
+            <div id="voteResult" class="vote-result hidden">
+                <h3>投票結果</h3>
+                <p id="voteCount"></p>
+            </div>
+        </div>
+
+        <!-- 遊戲結束界面 -->
+        <div id="endScreen" class="screen hidden">
+            <div class="end-display">
+                <h2>遊戲結束</h2>
+                <div id="resultDisplay"></div>
+                <button id="restartBtn">重新開始</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <footer>&copy YeSheng</footer>
+</body>
+</html> 

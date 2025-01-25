@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸運轉盤</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucky-canvas"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>幸運轉盤</h1>
+        <div id="my-lucky"></div>
+        
+        <div class="controls">
+            <div class="prize-input">
+                <h2>設定獎項</h2>
+                <div class="input-group">
+                    <textarea id="prize-input" placeholder="輸入獎項（多個獎項請用換行分隔）"></textarea>
+                    <button id="add-prize">新增獎項</button>
+                </div>
+            </div>
+            
+            <div class="prize-list">
+                <h2>獎項列表</h2>
+                <div class="prize-list-header">
+                    <button id="delete-all" class="danger-btn">全部刪除</button>
+                </div>
+                <ul id="prizes"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

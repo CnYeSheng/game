@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft JhengHei", sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.emoji-display {
+    margin: 2rem 0;
+}
+
+#emoji-puzzle {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hint {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.input-area {
+    margin: 2rem 0;
+}
+
+input[type="text"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    margin-right: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#next-btn {
+    background-color: #2196F3;
+}
+
+#next-btn:hover {
+    background-color: #1976D2;
+}
+
+.score-area {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+.character-buttons {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.char-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    background-color: #4a5568;
+    color: white;
+    border: 1px solid #2d3748;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0.25rem;
+}
+
+.char-btn:hover {
+    background-color: #2d3748;
+}
+
+.char-btn.used {
+    background-color: #718096;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.answer-display {
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#answer-box {
+    min-height: 2.5rem;
+    min-width: 200px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#clear-btn {
+    background-color: #dc3545;
+}
+
+#clear-btn:hover {
+    background-color: #c82333;
+} 
